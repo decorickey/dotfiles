@@ -1,4 +1,4 @@
-source ~/dotfiles/vim/key-remap.vim
-source ~/dotfiles/vim/basic.vim
+source ~/dotfiles/.vimrc
+
 let mapleader=","
 set easymotion

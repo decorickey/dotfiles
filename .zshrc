@@ -1,3 +1,7 @@
+alias vi="nvim"
+alias vim="nvim"
+alias view="nvim -R"
+
 # 環境変数
 export LANG=ja_JP.UTF-8
 
