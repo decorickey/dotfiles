@@ -1,5 +1,4 @@
 source ~/dotfiles/vim/key-remap.vim
-source ~/dotfiles/vim/vim-plug.vim
 
 " zshを使う
 set shell=/bin/zsh
