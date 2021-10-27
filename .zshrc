@@ -3,6 +3,12 @@ alias vi="nvim"
 alias vim="nvim"
 alias view="nvim -R"
 
+# fzfを使えるようにする
+source ~/.fzf.zsh
+
+# zsh基本設定
+setopt no_beep # 音を鳴らさない
+
 # history設定
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
@@ -15,10 +21,7 @@ setopt append_history       # 履歴に追加保存
 setopt hist_no_store        # historyコマンドは履歴に登録しない
 setopt hist_reduce_blanks   # 余分な空白は詰めて保存
 
-# fzfを使えるようにする
-source ~/.fzf.zsh
-
-# oh-my-zshプラグイン
+# oh-my-zsh設定
 plugins=(web-search fzf)
 
 # ブランチをgitコマンドの引数にわたす（peco）
