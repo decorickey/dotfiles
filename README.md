@@ -1,6 +1,19 @@
 # dotfiles
 
-## fzfのインストール
+## oh-my-zsh
+
+### インストール
+
+* 公式サイトからインストール
+* 自動生成された.zshrcからカスタマイズ.zshrcを読み込む
+
+```
+source ~/dotfiles/.zshrc
+```
+
+## fzf
+
+### インストール
 
 ```
 brew install fzf
@@ -13,6 +26,7 @@ brew install fzf
 https://github.com/junegunn/vim-plug
 
 ### gitのプラグイン（git blameなど）
+
 * neovimだとインストール先が違うので注意
 * https://github.com/tpope/vim-fugitive
 

@@ -1,1 +1,4 @@
 source ~/dotfiles/.vimrc
+
+set incsearch
+
