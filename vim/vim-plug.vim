@@ -9,7 +9,11 @@ call plug#begin()
     " コード補完（node.jsが必要）
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+    " インデント色付け
     Plug 'nathanaelkane/vim-indent-guides'
+
+    " 括弧などの補完
+    Plug 'cohama/lexima.vim'
 
 call plug#end()
 
