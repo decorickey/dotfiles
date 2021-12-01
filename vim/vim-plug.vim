@@ -22,3 +22,30 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 
 " インデント色付け
 let g:indent_guides_enable_on_vim_startup = 1
+
+" coc-nvimの拡張機能管理
+let g:coc_global_extensions = [
+  \'coc-cfn-lint',
+  \'coc-css',
+  \'coc-cssmodules',
+  \'coc-eslint',
+  \'coc-git',
+  \'coc-go',
+  \'coc-golines',
+  \'coc-highlight',
+  \'coc-html',
+  \'coc-html-css-support',
+  \'coc-htmlhint',
+  \'coc-json',
+  \'coc-markdownlint',
+  \'coc-prettier',
+  \'coc-pydocstring',
+  \'coc-python',
+  \'coc-sh',
+  \'coc-sql',
+  \'coc-stylelint',
+  \'coc-tsserver',
+  \'coc-vetur',
+  \'coc-xml',
+  \'coc-yaml'
+\]
