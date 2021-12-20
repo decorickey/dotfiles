@@ -4,13 +4,11 @@ source ~/dotfiles/vim/vim-plug.vim
 " zshを使う
 set shell=/bin/zsh
 
-" インデントとタブのデフォルト設定
-set shiftwidth=2 " インデントのスペース数
-set expandtab " タブでスペース入力
-set tabstop=2 " タブのスペース数
-
 " インデントとタブの個別設定
-autocmd FileType markdown setlocal shiftwidth=2 expandtab tabstop=2
+" shiftwidth: インデントのスペース数
+" expandtab/noexpandtab: タブ入力時のスペース切り替え
+" tabstop: タブのスペース数
+autocmd FileType markdown setlocal shiftwidth=4 expandtab tabstop=4
 autocmd FileType html setlocal shiftwidth=2 expandtab tabstop=2
 autocmd FileType css setlocal shiftwidth=2 expandtab tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 expandtab tabstop=2

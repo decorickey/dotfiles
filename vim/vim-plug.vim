@@ -37,7 +37,6 @@ let g:coc_global_extensions = [
   \'coc-html-css-support',
   \'coc-htmlhint',
   \'coc-json',
-  \'coc-markdownlint',
   \'coc-prettier',
   \'coc-pydocstring',
   \'coc-python',
