@@ -1,27 +1,47 @@
 # dotfiles
 
-## oh-my-zsh
+## Macのセットアップ
 
-### インストール
+### 各種アプリケーション
 
-* 公式サイトからインストール
-* 自動生成された.zshrcからカスタマイズ.zshrcを読み込む
+* Google Chrome
+* Google日本語入力
+* Slack
+* Alfred
+* Magnet or Rectangle
+* Clipy
+* CotEditer
+* App Cleaner
+* The Unarchiver
+* iTerm2
+* Visual Studio Code
+* JetBrains Toolbox
+* Docker Desktop
+* Logi Options
+* (1Password)
 
-```
+### Homebrew
+
+* https://brew.sh/index_ja
+
+### oh-my-zsh
+
+* https://ohmyz.sh/
+
+```bash
+# oh-my-zshにより自動生成された.zshrcからカスタマイズ.zshrcを読み込む
 source ~/dotfiles/.zshrc
 ```
 
-## fzf
+### Vim/NeoVim/fzf
 
-### インストール
-
-```
+```bash
+brew install vim
+brew install neovim
 brew install fzf
 ```
 
-## Vimのプラグイン
-
-### Vim Plugのインストール
+## Vim Plug
 
 https://github.com/junegunn/vim-plug
 
