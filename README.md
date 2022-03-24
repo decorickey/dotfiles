@@ -31,14 +31,18 @@
 
 * https://brew.sh/index_ja
 
-### Vim/NeoVim/fzf/Peco
+### Vim/NeoVim/Peco
 
 ```bash
 brew install vim
 brew install neovim
-brew install fzf
 brew install peco
 ```
+
+### fzf
+
+* https://github.com/junegunn/fzf
+  * brewでもインストールできるがgitでインストールしたほうがいい
 
 ### oh-my-zsh
 

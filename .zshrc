@@ -25,3 +25,6 @@ setopt hist_reduce_blanks   # 余分な空白は詰めて保存
 alias -g lb='`git branch    | grep -v HEAD | sed "s/*//g" | sed "s/ //g" | sed "s/remotes\/origin\///g" | sort -u | peco `'
 alias -g rb='`git branch -a | grep -v HEAD | sed "s/*//g" | sed "s/ //g" | sed "s/remotes\/origin\///g" | sort -u | peco `'
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
