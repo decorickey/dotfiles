@@ -53,14 +53,11 @@ source ~/dotfiles/.zshrc
 
 ### Vim Plug
 
-https://github.com/junegunn/vim-plug
+* https://github.com/junegunn/vim-plug
 
-### gitのプラグイン（git blameなど）
+### gitのプラグイン
 
-* neovimだとインストール先が違うので注意
 * https://github.com/tpope/vim-fugitive
-
-### gitのプラグイン（変更点表示）
-
+  * neovimだとインストール先が違うので注意
 * https://github.com/airblade/vim-gitgutter
 
