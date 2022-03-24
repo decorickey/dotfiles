@@ -24,14 +24,5 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 let g:indent_guides_enable_on_vim_startup = 1
 
 " coc-nvimの拡張機能管理
-let g:coc_global_extensions = [
-  \'coc-docker',
-  \'coc-git',
-  \'coc-highlight',
-  \'coc-json',
-  \'coc-sh',
-  \'coc-spell-checker',
-  \'coc-sql',
-  \'coc-xml',
-  \'coc-yaml'
-\]
+let g:coc_global_extensions = []
+
