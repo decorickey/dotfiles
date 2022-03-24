@@ -1,4 +1,5 @@
 # oh-my-zsh設定
+ZSH_THEME="kolo"
 plugins=(web-search fzf)
 
 # エイリアス
