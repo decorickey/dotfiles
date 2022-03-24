@@ -2,4 +2,3 @@
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "~/dotfiles/vim/key-remap.vim"
 }
-
