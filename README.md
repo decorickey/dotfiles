@@ -2,27 +2,43 @@
 
 ## Macのセットアップ
 
-### 各種アプリケーション
+### AppStore
+
+* (1Password)
+* Slack
+* CotEditor
+* Magnet or Rectangle
+  * Rectangleは公式サイトから
+
+### その他アプリケーション
 
 * Google Chrome
 * Google日本語入力
-* Slack
-* Alfred
-* Magnet or Rectangle
-* Clipy
-* CotEditer
-* App Cleaner
-* The Unarchiver
 * iTerm2
+* Alfred
+  * AppStore版もあるがアップデートされていない上に機能が少ない
+* Authy
+* Clipy
 * Visual Studio Code
 * JetBrains Toolbox
 * Docker Desktop
 * Logi Options
-* (1Password)
+* (AppCleaner)
 
 ### Homebrew
 
+時間かかるので注意
+
 * https://brew.sh/index_ja
+
+### Vim/NeoVim/fzf/Peco
+
+```bash
+brew install vim
+brew install neovim
+brew install fzf
+brew install peco
+```
 
 ### oh-my-zsh
 
@@ -33,15 +49,9 @@
 source ~/dotfiles/.zshrc
 ```
 
-### Vim/NeoVim/fzf
+## Vim
 
-```bash
-brew install vim
-brew install neovim
-brew install fzf
-```
-
-## Vim Plug
+### Vim Plug
 
 https://github.com/junegunn/vim-plug
 

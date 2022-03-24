@@ -1,10 +1,10 @@
+# oh-my-zsh設定
+plugins=(web-search fzf)
+
 # エイリアス
 alias vi="nvim"
 alias vim="nvim"
 alias view="nvim -R"
-
-# fzfを使えるようにする
-source ~/.fzf.zsh
 
 # zsh基本設定
 setopt no_beep # 音を鳴らさない
@@ -21,8 +21,8 @@ setopt append_history       # 履歴に追加保存
 setopt hist_no_store        # historyコマンドは履歴に登録しない
 setopt hist_reduce_blanks   # 余分な空白は詰めて保存
 
-# oh-my-zsh設定
-plugins=(web-search fzf)
+# fzfを使えるようにする
+source ~/.fzf.zsh
 
 # ブランチをgitコマンドの引数にわたす（peco）
 alias -g lb='`git branch    | grep -v HEAD | sed "s/*//g" | sed "s/ //g" | sed "s/remotes\/origin\///g" | sort -u | peco `'
