@@ -61,3 +61,7 @@ source ~/dotfiles/.zshrc
   * neovimだとインストール先が違うので注意
 * https://github.com/airblade/vim-gitgutter
 
+### 複数行コメント（gc）
+
+* https://github.com/tpope/vim-commentary
+
