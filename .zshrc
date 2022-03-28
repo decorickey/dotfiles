@@ -21,10 +21,8 @@ setopt append_history       # 履歴に追加保存
 setopt hist_no_store        # historyコマンドは履歴に登録しない
 setopt hist_reduce_blanks   # 余分な空白は詰めて保存
 
-# ブランチをgitコマンドの引数にわたす（peco）
-alias -g lb='`git branch    | grep -v HEAD | sed "s/*//g" | sed "s/ //g" | sed "s/remotes\/origin\///g" | sort -u | peco `'
-alias -g rb='`git branch -a | grep -v HEAD | sed "s/*//g" | sed "s/ //g" | sed "s/remotes\/origin\///g" | sort -u | peco `'
-
-# fzf
+# fzf設定
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias -g lb='`git branch    | grep -v HEAD | sed "s/*//g" | sed "s/ //g" | sed "s/remotes\/origin\///g" | sort -u | fzf `'
+alias -g rb='`git branch -a | grep -v HEAD | sed "s/*//g" | sed "s/ //g" | sed "s/remotes\/origin\///g" | sort -u | fzf `'
 

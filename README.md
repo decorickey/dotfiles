@@ -44,12 +44,11 @@
 
 * https://brew.sh/index_ja
 
-### Vim/NeoVim/Peco
+### Vim/NeoVim
 
 ```bash
 brew install vim
 brew install neovim
-brew install peco
 ```
 
 ### fzf
