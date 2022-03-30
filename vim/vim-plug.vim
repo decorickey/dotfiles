@@ -3,17 +3,17 @@ call plug#begin()
     " ファイルツリー
     Plug 'preservim/nerdtree'
 
-    " ファイル検索
+    " fzf
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
-    " コード補完（node.jsが必要）
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " インデント色付け
     Plug 'nathanaelkane/vim-indent-guides'
 
     " 括弧などの補完
     Plug 'cohama/lexima.vim'
+
+    " コード補完（node.jsが必要）
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
