@@ -8,12 +8,12 @@ set shell=/bin/zsh
 " shiftwidth: インデントのスペース数
 " expandtab/noexpandtab: タブ入力時のスペース切り替え
 " tabstop: タブのスペース数
-autocmd FileType markdown setlocal shiftwidth=4 expandtab tabstop=4
-autocmd FileType html setlocal shiftwidth=2 expandtab tabstop=2
-autocmd FileType css setlocal shiftwidth=2 expandtab tabstop=2
+autocmd FileType markdown   setlocal shiftwidth=4 expandtab tabstop=4
+autocmd FileType html       setlocal shiftwidth=2 expandtab tabstop=2
+autocmd FileType css        setlocal shiftwidth=2 expandtab tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 expandtab tabstop=2
-autocmd FileType vue setlocal shiftwidth=2 expandtab tabstop=2
-autocmd FileType python setlocal shiftwidth=4 expandtab tabstop=4
+autocmd FileType vue        setlocal shiftwidth=2 expandtab tabstop=2
+autocmd FileType python     setlocal shiftwidth=4 expandtab tabstop=4
 
 " 行番号を表示する
 set number
@@ -34,9 +34,18 @@ set noswapfile
 set list
 set listchars=tab:»-,trail:-,
 
+" 自動で改行しない
 set textwidth=0
+
+" 自動でインデントする
 set autoindent
+
+" 検索結果をハイライトする
 set hlsearch
+
+" ヤンクしたテキストをクリップボードにコピーする
 set clipboard=unnamed
+
+" デフォルトの設定でハイライトする
 syntax on
 
