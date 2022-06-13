@@ -1,5 +1,5 @@
 {
   "vim.vimrc.enable": true,
-  "vim.vimrc.path": "~/dotfiles/vim/key-remap.vim",
+  "vim.vimrc.path": "~/dotfiles/.vimrc",
   "workbench.startupEditor": "none"
 }
