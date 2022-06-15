@@ -9,6 +9,9 @@ call plug#begin()
     " 括弧などの補完
     Plug 'cohama/lexima.vim'
 
+    " インデントガイド
+    Plug 'Yggdroot/indentLine'
+
     " コード補完（node.jsが必要）
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
