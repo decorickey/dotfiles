@@ -1,5 +1,5 @@
 {
   "vim.vimrc.enable": true,
-  "vim.vimrc.path": "~/dotfiles/.vimrc",
+  "vim.vimrc.path": "~/dotfiles/.vscodevimrc",
   "workbench.startupEditor": "none"
 }
