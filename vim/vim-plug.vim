@@ -40,14 +40,11 @@ let g:coc_global_extensions =
 \[
 \   'coc-json',
 \   'coc-yaml',
-\   'coc-sql',
-\   'coc-groovy',
 \   'coc-markdownlint',
 \   'coc-pyright',
 \   'coc-eslint',
 \   'coc-stylelint',
 \   'coc-stylelintplus',
-\   'coc-vetur',
 \]
 
 " coc-nvimのキーマップ
