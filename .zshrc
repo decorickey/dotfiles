@@ -1,5 +1,5 @@
 # oh-my-zsh設定
-plugins=(web-search fzf)
+plugins=(fzf)
 
 # エイリアス
 alias vi="nvim"
