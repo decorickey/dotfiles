@@ -1,5 +1,8 @@
 " Vim Plugによるプラグインの設定
 call plug#begin()
+    " カラースキーム
+    Plug 'joshdick/onedark.vim'
+
     " ファイルツリー
     Plug 'preservim/nerdtree'
 
@@ -16,6 +19,9 @@ call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
+
+" カラースキーム
+colorscheme onedark
 
 " nerdtreeのキーマップ
 nnoremap <C-n> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
