@@ -1,6 +1,3 @@
-# oh-my-zsh設定
-plugins=(fzf)
-
 # エイリアス
 alias vi="nvim"
 alias vim="nvim"
