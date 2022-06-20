@@ -9,9 +9,6 @@ call plug#begin()
     " fzf
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-    " 括弧などの補完
-    Plug 'cohama/lexima.vim'
-
     " インデントガイド
     Plug 'Yggdroot/indentLine'
 
@@ -47,6 +44,7 @@ autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 " coc-nvimの拡張機能管理
 let g:coc_global_extensions = 
 \[
+\   'coc-pairs',
 \   'coc-json',
 \   'coc-yaml',
 \   'coc-markdownlint',
