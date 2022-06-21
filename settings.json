@@ -1,6 +1,7 @@
 {
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "~/dotfiles/.vscodevimrc",
+  "vim.useSystemClipboard": true,
   "workbench.startupEditor": "none",
   "redhat.telemetry.enabled": false
 }
