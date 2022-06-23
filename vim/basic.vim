@@ -27,18 +27,6 @@ set listchars=tab:»-,trail:-,
 " 自動で改行しない
 set textwidth=0
 
-" 自動でインデントする
-set autoindent
-
-" 検索結果をハイライトする
-set hlsearch
-
 " ヤンクしたテキストをクリップボードにコピーする
 set clipboard=unnamed
-
-" デフォルトの設定でハイライトする
-syntax on
-
-" インクリメンタルサーチ
-set incsearch
 
