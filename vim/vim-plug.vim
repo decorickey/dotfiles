@@ -2,16 +2,16 @@
 call plug#begin()
   " カラースキーム
   Plug 'joshdick/onedark.vim'
-  
+
   " ファイルツリー
   Plug 'preservim/nerdtree'
 
   " fzf
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
-  " インデントガイド
-  Plug 'Yggdroot/indentLine'
   Plug 'junegunn/fzf.vim'
+
+  " インデント可視化
+  Plug 'Yggdroot/indentLine'
 
   " コード補完（node.jsが必要）
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
