@@ -44,18 +44,6 @@
 
 * https://brew.sh/index_ja
 
-### Vim/NeoVim
-
-```bash
-brew install vim
-brew install neovim
-```
-
-### fzf
-
-* https://github.com/junegunn/fzf
-  * brewでもインストールできるがgitでインストールしたほうがいい
-
 ### oh-my-zsh
 
 * https://ohmyz.sh/
@@ -65,13 +53,28 @@ brew install neovim
 source ~/dotfiles/.zshrc
 ```
 
-## Vim
 
-### Vim Plug
+### fzf
+
+* https://github.com/junegunn/fzf
+  * brewでもインストールできるがgitでインストールしたほうがいい
+
+### ripgrep
+
+* https://github.com/BurntSushi/ripgrep
+
+### Vim/NeoVim
+
+```bash
+brew install vim
+brew install neovim
+```
+
+#### Vim Plug
 
 * https://github.com/junegunn/vim-plug
 
-### gitのプラグイン
+#### gitのプラグイン
 
 * https://github.com/tpope/vim-fugitive
   * neovimだとインストール先が違うので注意

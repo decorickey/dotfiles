@@ -1,19 +1,20 @@
 " Vim Plugによるプラグインの設定
 call plug#begin()
-    " カラースキーム
-    Plug 'joshdick/onedark.vim'
+  " カラースキーム
+  Plug 'joshdick/onedark.vim'
+  
+  " ファイルツリー
+  Plug 'preservim/nerdtree'
 
-    " ファイルツリー
-    Plug 'preservim/nerdtree'
+  " fzf
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-    " fzf
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  " インデントガイド
+  Plug 'Yggdroot/indentLine'
+  Plug 'junegunn/fzf.vim'
 
-    " インデントガイド
-    Plug 'Yggdroot/indentLine'
-
-    " コード補完（node.jsが必要）
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " コード補完（node.jsが必要）
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -44,14 +45,14 @@ autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 " coc-nvimの拡張機能管理
 let g:coc_global_extensions = 
 \[
-\   'coc-pairs',
-\   'coc-json',
-\   'coc-yaml',
-\   'coc-markdownlint',
-\   'coc-pyright',
-\   'coc-eslint',
-\   'coc-stylelint',
-\   'coc-stylelintplus',
+\ 'coc-pairs',
+\ 'coc-json',
+\ 'coc-yaml',
+\ 'coc-markdownlint',
+\ 'coc-pyright',
+\ 'coc-eslint',
+\ 'coc-stylelint',
+\ 'coc-stylelintplus',
 \]
 
 " coc-nvimのキーマップ
