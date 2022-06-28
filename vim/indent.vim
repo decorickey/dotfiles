@@ -7,4 +7,5 @@ set expandtab
 set tabstop=2
 autocmd FileType python   setlocal shiftwidth=4 expandtab tabstop=4
 autocmd FileType markdown setlocal shiftwidth=4 expandtab tabstop=4
+autocmd FileType groovy   setlocal shiftwidth=4 expandtab tabstop=4
 
