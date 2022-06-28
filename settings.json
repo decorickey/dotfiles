@@ -4,5 +4,6 @@
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
   "workbench.startupEditor": "none",
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "files.autoSave": "onFocusChange"
 }
