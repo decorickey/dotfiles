@@ -30,3 +30,6 @@ set textwidth=0
 " ヤンクしたテキストをクリップボードにコピーする
 set clipboard=unnamed
 
+" Leaderキー
+let mapleader = ","
+
