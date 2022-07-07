@@ -1,3 +1,4 @@
 source ~/dotfiles/vim/basic.vim
 source ~/dotfiles/vim/key-remap.vim
 
+set incsearch
