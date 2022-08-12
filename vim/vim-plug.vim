@@ -36,16 +36,17 @@ autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 " coc-nvimの拡張機能管理
 let g:coc_global_extensions = 
 \[
-\ 'coc-spell-checker',
-\ 'coc-pairs',
-\ 'coc-json',
-\ 'coc-yaml',
-\ 'coc-markdownlint',
-\ 'coc-pyright',
+\ 'coc-cfn-lint',
 \ 'coc-eslint',
+\ 'coc-json',
+\ 'coc-markdownlint',
+\ 'coc-pairs',
+\ 'coc-prettier',
+\ 'coc-pyright',
+\ 'coc-spell-checker',
 \ 'coc-stylelint',
 \ 'coc-stylelintplus',
-\ 'coc-prettier',
+\ 'coc-yaml',
 \]
 
 " coc-nvimのキーマップ
