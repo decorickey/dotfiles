@@ -45,6 +45,7 @@
 ### その他アプリケーション
 
 * Google Chrome
+* Google日本語入力
 * iTerm2
 * Alfred
   * AppStore版もあるがアップデートされていない上に機能が少ない
