@@ -17,7 +17,8 @@ call plug#end()
 colorscheme onedark
 
 " nerdtreeのキーマップ
-nnoremap <C-n> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
+" nnoremap <C-n> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
