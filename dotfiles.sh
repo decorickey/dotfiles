@@ -1,5 +1,26 @@
 #!/bin/zsh
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
-ln -sf ~/dotfiles/.vimrc ~/.config/nvim/init.vim
 ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc
-ln -sf ~/dotfiles/settings.json ~/Library/Application\ Support/Code/User/settings.json
+
+DIR="${HOME}/.config/nvim"
+if [ -d ${DIR} ]; then
+  ln -sf ~/dotfiles/.vimrc "${DIR}/init.vim"
+else
+  echo "Not Found \"${DIR}\""
+fi
+
+DIR="${HOME}/Library/Application Support/Code/User"
+if [ -d ${DIR} ]; then
+  ln -sf ~/dotfiles/settings.json "${DIR}/settings.json"
+else
+  echo "Not Found \"${DIR}\""
+fi
+
+DIR="${HOME}/.ipython/profile_default"
+if [ -d ${DIR} ]; then
+  ln -sf ~/dotfiles/ipython_config.py "${DIR}ipython_config.py"
+else
+  echo "Not Found \"${DIR}\""
+  echo "Exec \"ipython profile create\""
+fi
+
