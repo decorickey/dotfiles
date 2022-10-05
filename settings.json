@@ -34,5 +34,8 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
-  ]
+  ],
+  "[html]": {
+    "editor.defaultFormatter": "Vue.volar"
+  }
 }
