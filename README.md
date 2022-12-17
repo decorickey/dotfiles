@@ -38,9 +38,7 @@
 
 * 1Password
 * Slack
-* CotEditor
-* Magnet (or Rectangle)
-  * Rectangleは公式サイトから
+* Bear
 
 ### その他アプリケーション
 
@@ -49,6 +47,7 @@
 * iTerm2
 * Alfred
   * AppStore版もあるがアップデートされていない上に機能が少ない
+* Rectangle
 * Authy
 * Clipy
 * Visual Studio Code
