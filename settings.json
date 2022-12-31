@@ -1,11 +1,17 @@
 {
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.fixAll.eslint": true,
+    "source.fixAll.markdownlint": true
+  },
+  "explorer.confirmDelete": false,
+  "files.autoSave": "onFocusChange",
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "~/dotfiles/.vscodevimrc",
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
   "workbench.startupEditor": "none",
   "redhat.telemetry.enabled": false,
-  "files.autoSave": "onFocusChange",
   "yaml.customTags": [
     "!And",
     "!And sequence",
@@ -34,8 +40,5 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
-  ],
-  "[html]": {
-    "editor.defaultFormatter": "Vue.volar"
-  }
+  ]
 }
