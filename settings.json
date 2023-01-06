@@ -40,5 +40,9 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
+  ],
+  "cSpell.userWords": [
+    "Nuxt",
+    "vuetify"
   ]
 }
