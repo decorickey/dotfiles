@@ -35,6 +35,10 @@
 source ~/dotfiles/.zshrc
 ```
 
+## Volta
+
+* https://volta.sh/
+
 ## Vim/NeoVim
 
 ```bash
