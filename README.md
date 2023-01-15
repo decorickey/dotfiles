@@ -10,14 +10,9 @@
 
 * Google Chrome
   * デフォルトに設定
-* Rectangle
-
-* Google日本語入力
+* （Google日本語入力）
+* * Raycast
 * iTerm2
-* Alfred
-  * AppStore版もあるがアップデートされていない上に機能が少ない
-* Authy
-* Clipy
 * Visual Studio Code
 * JetBrains Toolbox
 * Docker Desktop
