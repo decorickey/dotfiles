@@ -10,11 +10,12 @@
 
 * Google Chrome
   * デフォルトに設定
+* Rectangle
+
 * Google日本語入力
 * iTerm2
 * Alfred
   * AppStore版もあるがアップデートされていない上に機能が少ない
-* Rectangle
 * Authy
 * Clipy
 * Visual Studio Code
@@ -22,11 +23,13 @@
 * Docker Desktop
 * Logi Options
 
-## Homebrew
+## 開発ツール（必須）
+
+### Homebrew
 
 * https://brew.sh/index_ja
 
-## oh-my-zsh
+### oh-my-zsh
 
 * https://ohmyz.sh/
 
@@ -35,31 +38,33 @@
 source ~/dotfiles/.zshrc
 ```
 
-## Volta
+### Volta
 
 * https://volta.sh/
 
-## Vim/NeoVim
+### Vim/NeoVim
 
 ```bash
 brew install vim
 brew install neovim
 ```
 
-## VimPlug
+### VimPlug
 
 * https://github.com/junegunn/vim-plug
 * coc.nvimを利用するためにnode.jsも必要
 
-## fzf
+## 開発ツール（補助）
+
+### fzf
 
 * https://github.com/junegunn/fzf
 
-## ripgrep
+### ripgrep
 
 * https://github.com/BurntSushi/ripgrep
 
-## gitのプラグイン
+### gitのプラグイン
 
 * https://github.com/tpope/vim-fugitive
   * neovimだとインストール先が違うので注意
