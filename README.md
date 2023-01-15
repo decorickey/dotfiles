@@ -35,15 +35,6 @@
 source ~/dotfiles/.zshrc
 ```
 
-## fzf
-
-* https://github.com/junegunn/fzf
-  * brewでもインストールできるがgitでインストールしたほうがいい
-
-## ripgrep
-
-* https://github.com/BurntSushi/ripgrep
-
 ## Vim/NeoVim
 
 ```bash
@@ -51,10 +42,18 @@ brew install vim
 brew install neovim
 ```
 
-## Vim Plug
+## VimPlug
 
 * https://github.com/junegunn/vim-plug
 * coc.nvimを利用するためにnode.jsも必要
+
+## fzf
+
+* https://github.com/junegunn/fzf
+
+## ripgrep
+
+* https://github.com/BurntSushi/ripgrep
 
 ## gitのプラグイン
 
