@@ -25,7 +25,6 @@
 ## Homebrew
 
 * https://brew.sh/index_ja
-  * 時間かかるので注意
 
 ## oh-my-zsh
 
