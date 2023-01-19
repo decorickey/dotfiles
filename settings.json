@@ -1,4 +1,8 @@
 {
+  "cSpell.userWords": [
+    "Nuxt",
+    "vuetify"
+  ],
   "editor.codeActionsOnSave": {
     "source.fixAll": false,
     "source.fixAll.eslint": true,
@@ -11,7 +15,6 @@
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
   "workbench.startupEditor": "none",
-  "redhat.telemetry.enabled": false,
   "yaml.customTags": [
     "!And",
     "!And sequence",
@@ -40,9 +43,5 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
-  ],
-  "cSpell.userWords": [
-    "Nuxt",
-    "vuetify"
   ]
 }
