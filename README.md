@@ -37,13 +37,14 @@ source ~/dotfiles/.zshrc
 brew install vim
 brew install neovim
 ```
+### Node.js(Volta)
+
+* https://volta.sh/
 
 ### VimPlug
 
 * https://github.com/junegunn/vim-plug
 * coc.nvimを利用するためにnode.jsも必要
-
-## 開発ツール（補助）
 
 ### fzf
 
@@ -53,9 +54,7 @@ brew install neovim
 
 * https://github.com/BurntSushi/ripgrep
 
-### Volta
-
-* https://volta.sh/
+## 開発ツール（補助）
 
 ### gitのプラグイン
 
