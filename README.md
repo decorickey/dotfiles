@@ -10,13 +10,11 @@
 
 * Google Chrome
   * デフォルトに設定
-* （Google日本語入力）
-* * Raycast
-* iTerm2
+* Raycast
+* Logi Options
 * Visual Studio Code
 * JetBrains Toolbox
 * Docker Desktop
-* Logi Options
 
 ## 開発ツール（必須）
 
@@ -32,10 +30,6 @@
 # oh-my-zshにより自動生成された.zshrcからカスタマイズ.zshrcを読み込む
 source ~/dotfiles/.zshrc
 ```
-
-### Volta
-
-* https://volta.sh/
 
 ### Vim/NeoVim
 
@@ -58,6 +52,10 @@ brew install neovim
 ### ripgrep
 
 * https://github.com/BurntSushi/ripgrep
+
+### Volta
+
+* https://volta.sh/
 
 ### gitのプラグイン
 
