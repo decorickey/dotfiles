@@ -10,13 +10,11 @@
 
 * Google Chrome
   * デフォルトに設定
-* （Google日本語入力）
-* * Raycast
-* iTerm2
+* Raycast
+* Logi Options
 * Visual Studio Code
 * JetBrains Toolbox
 * Docker Desktop
-* Logi Options
 
 ## 開発ツール（必須）
 
@@ -33,23 +31,20 @@
 source ~/dotfiles/.zshrc
 ```
 
-### Volta
-
-* https://volta.sh/
-
 ### Vim/NeoVim
 
 ```bash
 brew install vim
 brew install neovim
 ```
+### Node.js(Volta)
+
+* https://volta.sh/
 
 ### VimPlug
 
 * https://github.com/junegunn/vim-plug
 * coc.nvimを利用するためにnode.jsも必要
-
-## 開発ツール（補助）
 
 ### fzf
 
@@ -58,6 +53,8 @@ brew install neovim
 ### ripgrep
 
 * https://github.com/BurntSushi/ripgrep
+
+## 開発ツール（補助）
 
 ### gitのプラグイン
 
