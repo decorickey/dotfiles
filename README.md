@@ -50,10 +50,6 @@ brew install neovim
 
 * https://github.com/junegunn/fzf
 
-### ripgrep
-
-* https://github.com/BurntSushi/ripgrep
-
 ## 開発ツール（補助）
 
 ### gitのプラグイン
