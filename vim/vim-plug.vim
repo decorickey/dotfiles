@@ -11,6 +11,9 @@ call plug#begin()
   " インデント可視化
   Plug 'Yggdroot/indentLine'
 
+  " ステータスライン拡張
+  Plug 'itchyny/lightline.vim'
+
 call plug#end()
 
 " カラースキーム
@@ -42,3 +45,4 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 vmap <leader>a <Plug>(coc-codeaction-selected)
 nmap <leader>a <Plug>(coc-codeaction-selected)
+
