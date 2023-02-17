@@ -42,7 +42,7 @@ brew install neovim
 ### VimPlug
 
 * https://github.com/junegunn/vim-plug
- * coc.nvimを利用するためにnode.jsが必要
+   * coc.nvimを利用するためにnode.jsが必要
 
 ### fzf
 
