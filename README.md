@@ -50,7 +50,7 @@ brew install neovim
 
 ```
 [core]
-	editor = nvim
+  editor = nvim
 ```
 
 ### VimPlug
