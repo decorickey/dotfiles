@@ -1,7 +1,9 @@
 " Vim Plugによるプラグインの設定
 call plug#begin()
-  Plug 'preservim/nerdtree'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+  " ファイルツリー
+  Plug 'preservim/nerdtree'
 
   " カラースキーム
   Plug 'joshdick/onedark.vim'
@@ -34,6 +36,7 @@ autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 " coc-nvimの拡張機能管理
 let g:coc_global_extensions = 
 \[
+\  'coc-git',
 \]
 
 " coc-nvimのキーマップ
