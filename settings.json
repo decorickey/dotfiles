@@ -43,5 +43,9 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
-  ]
+  ],
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "redhat.telemetry.enabled": true,
 }
