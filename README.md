@@ -9,12 +9,12 @@
 ## アプリケーション
 
 * Google Chrome
-  * デフォルトに設定
+* warp or iterm2
 * Raycast
-* Logi Options
 * Visual Studio Code
 * JetBrains Toolbox
 * Docker Desktop
+* Logi Options
 
 ## 開発ツール（必須）
 
@@ -22,27 +22,13 @@
 
 * https://brew.sh/index_ja
 
-### oh-my-zsh
-
-* https://ohmyz.sh/
-
-```bash
-# oh-my-zshにより自動生成された.zshrcからカスタマイズ.zshrcを読み込む
-source ~/dotfiles/.zshrc
-```
-
 ### Node.js(Volta)
 
 * https://volta.sh/
 
-### fzf
-
-* https://github.com/junegunn/fzf
-
-### Vim/NeoVim
+### NeoVim
 
 ```bash
-brew install vim
 brew install neovim
 ```
 
@@ -56,14 +42,19 @@ brew install neovim
 ### VimPlug
 
 * https://github.com/junegunn/vim-plug
-* coc.nvimを利用するためにnode.jsが必要
+ * coc.nvimを利用するためにnode.jsが必要
+
+### fzf
+
+* https://github.com/junegunn/fzf
 
 ## 開発ツール（補助）
 
-### gitのプラグイン
+### oh-my-zsh（iterm2の場合）
 
-* https://github.com/tpope/vim-fugitive
-  * neovimだとインストール先が違うので注意
-* https://github.com/tpope/vim-commentary
-  * neovimだとインストール先が違うので注意
-* https://github.com/airblade/vim-gitgutter
+* https://ohmyz.sh/
+
+```bash
+# oh-my-zshにより自動生成された.zshrcからカスタマイズ.zshrcを読み込む
+source ~/dotfiles/.zshrc
+```
