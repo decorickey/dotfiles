@@ -31,24 +31,32 @@
 source ~/dotfiles/.zshrc
 ```
 
+### Node.js(Volta)
+
+* https://volta.sh/
+
+### fzf
+
+* https://github.com/junegunn/fzf
+
 ### Vim/NeoVim
 
 ```bash
 brew install vim
 brew install neovim
 ```
-### Node.js(Volta)
 
-* https://volta.sh/
+.gitconfigに以下を追記
+
+```
+[core]
+	editor = nvim
+```
 
 ### VimPlug
 
 * https://github.com/junegunn/vim-plug
-* coc.nvimを利用するためにnode.jsも必要
-
-### fzf
-
-* https://github.com/junegunn/fzf
+* coc.nvimを利用するためにnode.jsが必要
 
 ## 開発ツール（補助）
 
