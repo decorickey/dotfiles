@@ -53,6 +53,7 @@ brew install neovim
 ### oh-my-zsh（iterm2の場合）
 
 * https://ohmyz.sh/
+* themaは `kolo`
 
 ```bash
 # oh-my-zshにより自動生成された.zshrcからカスタマイズ.zshrcを読み込む
