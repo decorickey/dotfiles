@@ -9,18 +9,28 @@
 ## アプリケーション
 
 * Google Chrome
-* warp or iterm2
+* warp/iterm2
 * Raycast
 * Visual Studio Code
 * JetBrains Toolbox
 * Docker Desktop
 * Logi Options
 
-## 開発ツール（必須）
+## 開発ツール
 
 ### Homebrew
 
 * https://brew.sh/index_ja
+
+### oh-my-zsh
+
+* https://ohmyz.sh/
+* themeは `kolo`
+
+```bash
+# oh-my-zshにより自動生成された.zshrcからカスタマイズ.zshrcを読み込む
+source ~/dotfiles/.zshrc
+```
 
 ### Node.js(Volta)
 
@@ -47,14 +57,3 @@ brew install neovim
 ### fzf
 
 * https://github.com/junegunn/fzf
-
-## 開発ツール（補助）
-
-### oh-my-zsh（iterm2の場合）
-
-* https://ohmyz.sh/
-
-```bash
-# oh-my-zshにより自動生成された.zshrcからカスタマイズ.zshrcを読み込む
-source ~/dotfiles/.zshrc
-```
