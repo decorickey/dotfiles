@@ -48,4 +48,5 @@
     "editor.formatOnType": true
   },
   "redhat.telemetry.enabled": true,
+  "editor.tabSize": 2,
 }
