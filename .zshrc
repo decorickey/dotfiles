@@ -31,6 +31,7 @@ fbr() {
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
+alias gitcheckout="fbr"
 # Select a running docker container to stop
 function ds() {
   local cid
@@ -45,4 +46,5 @@ function deit() {
 
   [ -n "$cid" ] && docker exec -it "$cid" bash
 }
+alias dockerexecit="deit"
 
