@@ -18,10 +18,6 @@ setopt append_history       # 履歴に追加保存
 setopt hist_no_store        # historyコマンドは履歴に登録しない
 setopt hist_reduce_blanks   # 余分な空白は詰めて保存
 
-# fzfエイリアス
-alias -g lb='`git branch    | grep -v HEAD | sed "s/*//g" | sed "s/ //g" | sed "s/remotes\/origin\///g" | sort -u | fzf `'
-alias -g rb='`git branch -a | grep -v HEAD | sed "s/*//g" | sed "s/ //g" | sed "s/remotes\/origin\///g" | sort -u | fzf `'
-
 # fzf関数
 # fbr - checkout git branch (including remote branches)
 fbr() {
@@ -31,7 +27,9 @@ fbr() {
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
-alias gitcheckout="fbr"
+# global alias
+alias -g rb='`git branch --all | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
+alias -g lb='`git branch       | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
 # Select a running docker container to stop
 function ds() {
   local cid
@@ -39,12 +37,5 @@ function ds() {
 
   [ -n "$cid" ] && docker stop "$cid"
 }
-# Custom (docker exec -it hoge bash)
-function deit() {
-  local cid
-  cid=$(docker ps | sed 1d | fzf -q "$1" | awk '{print $1}')
-
-  [ -n "$cid" ] && docker exec -it "$cid" bash
-}
-alias dockerexecit="deit"
-
+# global alias
+alias -g cid='`docker ps | sed 1d | fzf -q "$1" | awk '\''{print $1}'\''`'
