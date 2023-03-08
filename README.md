@@ -8,6 +8,7 @@
 
 ## アプリケーション
 
+* Google日本語入力
 * Google Chrome
 * warp/iterm2
 * Raycast
