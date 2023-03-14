@@ -28,9 +28,10 @@ fbr() {
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 # global alias
-alias -g lb='`git branch          | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
-alias -g rb='`git branch --all    | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
-alias -g mb='`git branch --merged | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
+alias -g lb='`git branch           | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
+alias -g ab='`git branch --all     | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
+alias -g rb='`git branch --remotes | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
+alias -g mb='`git branch --merged  | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
 # Select a running docker container to stop
 function ds() {
   local cid
