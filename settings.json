@@ -18,7 +18,7 @@
   },
   "editor.tabSize": 2,
   "explorer.confirmDelete": false,
-  "files.autoSave": "off",
+  "files.autoSave": "onFocusChange",
   "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
