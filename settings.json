@@ -1,6 +1,9 @@
 {
   "cSpell.userWords": [
+    "httpclient",
     "Nuxt",
+    "openapi",
+    "restapi",
     "vuetify"
   ],
   "editor.codeActionsOnSave": {
@@ -53,4 +56,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.fontSize": 14,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "[go]": {
+      "editor.defaultFormatter": "golang.go"
+  },
+  "go.formatTool": "goimports"
 }
