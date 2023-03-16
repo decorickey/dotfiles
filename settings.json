@@ -11,8 +11,19 @@
     "source.fixAll.eslint": true,
     "source.fixAll.markdownlint": true
   },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontSize": 16,
+  "[go]": {
+      "editor.defaultFormatter": "golang.go"
+  },
+  "editor.tabSize": 2,
   "explorer.confirmDelete": false,
-  "files.autoSave": "onFocusChange",
+  "files.autoSave": "off",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "go.formatTool": "goimports",
+  "redhat.telemetry.enabled": true,
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "~/dotfiles/.vscodevimrc",
   "vim.useSystemClipboard": true,
@@ -46,21 +57,5 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
-  ],
-  "[python]": {
-    "editor.formatOnType": true
-  },
-  "redhat.telemetry.enabled": true,
-  "editor.tabSize": 2,
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.fontSize": 16,
-  "gitlens.codeLens.enabled": false,
-  "gitlens.currentLine.enabled": false,
-  "gitlens.hovers.currentLine.over": "line",
-  "[go]": {
-      "editor.defaultFormatter": "golang.go"
-  },
-  "go.formatTool": "goimports"
+  ]
 }
