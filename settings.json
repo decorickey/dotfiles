@@ -12,7 +12,7 @@
     "source.fixAll.markdownlint": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontSize": 16,
+  "editor.fontSize": 14,
   "[go]": {
       "editor.defaultFormatter": "golang.go"
   },
