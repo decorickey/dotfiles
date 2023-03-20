@@ -6,7 +6,8 @@
     "source.fixAll.markdownlint": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontSize": 12,
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "[go]": {
     "editor.defaultFormatter": "golang.go"
