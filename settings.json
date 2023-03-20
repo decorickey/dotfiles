@@ -1,11 +1,5 @@
 {
-  "cSpell.userWords": [
-    "httpclient",
-    "Nuxt",
-    "openapi",
-    "restapi",
-    "vuetify"
-  ],
+  "cSpell.userWords": ["httpclient", "Nuxt", "openapi", "restapi", "vuetify"],
   "editor.codeActionsOnSave": {
     "source.fixAll": false,
     "source.fixAll.eslint": true,
@@ -15,7 +9,7 @@
   "editor.fontSize": 12,
   "editor.formatOnSave": true,
   "[go]": {
-      "editor.defaultFormatter": "golang.go"
+    "editor.defaultFormatter": "golang.go"
   },
   "editor.tabSize": 2,
   "explorer.confirmDelete": false,
@@ -58,5 +52,6 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
-  ]
+  ],
+  "go.toolsManagement.autoUpdate": true
 }
