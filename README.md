@@ -58,9 +58,3 @@ brew install neovim
 
 * https://github.com/junegunn/fzf
 
-### AstroNvim
-
-* https://astronvim.com/
-  * https://www.nerdfonts.com/font-downloads (font-jetbrains-mono-nerd-font)
-  * https://github.com/BurntSushi/ripgrep
-  * https://github.com/jesseduffield/lazygit
