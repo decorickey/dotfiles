@@ -2,13 +2,15 @@
   "cSpell.userWords": ["httpclient", "Nuxt", "openapi", "restapi", "vuetify"],
   "editor.codeActionsOnSave": {
     "source.fixAll": false,
-    "source.fixAll.eslint": true,
-    "source.fixAll.markdownlint": true
+    "source.fixAll.eslint": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "'JetBrainsMono Nerd Font', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 14,
   "editor.formatOnSave": true,
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
