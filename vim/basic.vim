@@ -34,5 +34,5 @@ set clipboard=unnamed
 set incsearch
 
 " Leaderキー
-let mapleader = ","
+let mapleader = "\<Space>"
 
