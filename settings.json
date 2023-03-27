@@ -7,13 +7,6 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "'JetBrainsMono Nerd Font', Monaco",
   "editor.fontSize": 14,
-  "editor.formatOnSave": true,
-  "[markdown]": {
-    "editor.formatOnSave": false
-  },
-  "[go]": {
-    "editor.defaultFormatter": "golang.go"
-  },
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
   "explorer.confirmDelete": false,
@@ -22,6 +15,7 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
   "go.formatTool": "goimports",
+  "go.toolsManagement.autoUpdate": true,
   "redhat.telemetry.enabled": true,
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "~/dotfiles/.vscodevimrc",
@@ -57,5 +51,7 @@
     "!Split",
     "!Split sequence"
   ],
-  "go.toolsManagement.autoUpdate": true
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
 }
