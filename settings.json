@@ -1,4 +1,5 @@
 {
+  "cfnLint.path": "/opt/homebrew/bin/cfn-lint",
   "cSpell.userWords": ["httpclient", "Nuxt", "openapi", "restapi", "vuetify"],
   "editor.codeActionsOnSave": {
     "source.fixAll": false,
