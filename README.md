@@ -2,12 +2,12 @@
 
 ## AppStore
 
-* 1Password
 * Bear
 * Slack
 
 ## アプリケーション
 
+* 1Password 8
 * Google日本語入力
 * Google Chrome
 * warp/iterm2
