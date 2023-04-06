@@ -1,6 +1,13 @@
 {
   "cfnLint.path": "/opt/homebrew/bin/cfn-lint",
-  "cSpell.userWords": ["httpclient", "Nuxt", "openapi", "restapi", "vuetify"],
+  "cSpell.userWords": [
+    "composables",
+    "httpclient",
+    "Nuxt",
+    "openapi",
+    "restapi",
+    "vuetify"
+  ],
   "editor.codeActionsOnSave": {
     "source.fixAll": false,
     "source.fixAll.eslint": true
