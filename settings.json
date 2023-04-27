@@ -2,6 +2,7 @@
   "cfnLint.path": "/opt/homebrew/bin/cfn-lint",
   "cSpell.userWords": [
     "composables",
+    "Datetime",
     "httpclient",
     "Nuxt",
     "openapi",
