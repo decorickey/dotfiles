@@ -38,5 +38,6 @@ let g:coc_global_extensions =
 \  'coc-yaml',
 \  'coc-json',
 \  'coc-eslint',
+\  'coc-pyright',
 \]
 
