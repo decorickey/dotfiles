@@ -9,13 +9,6 @@ else
   echo "Not Found \"${DIR}\""
 fi
 
-DIR="${HOME}/Library/Application Support/Code/User"
-if [ -d ${DIR} ]; then
-  ln -sf ~/dotfiles/settings.json "${DIR}/settings.json"
-else
-  echo "Not Found \"${DIR}\""
-fi
-
 DIR="${HOME}/.ipython/profile_default"
 if [ -d ${DIR} ]; then
   ln -sf ~/dotfiles/ipython_config.py "${DIR}/ipython_config.py"
