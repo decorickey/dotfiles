@@ -63,4 +63,5 @@
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
+  "html.autoClosingTags": false,
 }
