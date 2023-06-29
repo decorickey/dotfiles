@@ -1,38 +1,17 @@
-" zshを使う
-set shell=/bin/zsh
-
-" 行番号を表示する
-set number
-
-" カーソル行の背景色を変える
-set cursorline
-
-" 検索時に大文字と小文字を区別しない
-set ignorecase
-
-" 検索時に大文字と小文字を混在させると考慮する
-set smartcase
-
-" swapファイルを作らない
-set noswapfile
-
-" バックアップファイルを作らない
-set nobackup
-set nowritebackup
-
-" 不可視文字を表示する
-set list
-set listchars=tab:»-,trail:-,
-
-" 自動で改行しない
-set textwidth=0
-
-" ヤンクしたテキストをクリップボードにコピーする
-set clipboard=unnamed
-
-" インクリメンタルサーチ
-set incsearch
-
-" Leaderキー
 let mapleader = "\<Space>"
+
+" Vim共通設定
+set clipboard=unnamed,unnamedplus  " クリップボードと共有
+set cursorline                     " カーソル業の背景色
+set ignorecase                     " 検索時に大文字と小文字を区別しない 
+set nobackup                       " バックアップファイルを作らない
+set noswapfile                     " swapファイルを作らない
+set nowritebackup                  " バックアップファイルを作らない
+set number                         " 行番号表示
+set smartcase                      " 検索時に大文字と小文字を混在させると考慮する
+set textwidth=0                    " 自動で改行しない
+
+" 以下はNvimデフォルト設定（vscode/idea用）
+set hlsearch
+set incsearch
 
