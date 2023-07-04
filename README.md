@@ -2,7 +2,6 @@
 
 ## AppStore
 
-* Bear
 * Slack
 
 ## アプリケーション
@@ -32,6 +31,10 @@
 # oh-my-zshにより自動生成された.zshrcからカスタマイズ.zshrcを読み込む
 source ~/dotfiles/.zshrc
 ```
+
+### Python
+
+Homebrew経由でインストール
 
 ### Node.js(Volta)
 
