@@ -25,7 +25,6 @@
 ```bash:.zshrc
 ZSH_THEME="kolo"
 
-# oh-my-zshにより自動生成された.zshrcからカスタマイズ.zshrcを読み込む
 source ~/dotfiles/.zshrc
 ```
 
