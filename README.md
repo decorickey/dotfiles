@@ -18,16 +18,15 @@
 
 ## 開発ツール
 
-### Homebrew
-
-* https://brew.sh/index_ja
+### [Homebrew](https://brew.sh/index_ja)
 
 ### oh-my-zsh
 
-* https://ohmyz.sh/
-* themeは `kolo`
+https://ohmyz.sh/
 
-```bash
+```bash:.zshrc
+ZSH_THEME="kolo"
+
 # oh-my-zshにより自動生成された.zshrcからカスタマイズ.zshrcを読み込む
 source ~/dotfiles/.zshrc
 ```
@@ -38,7 +37,7 @@ Homebrew経由でインストール
 
 ### Node.js(Volta)
 
-* https://volta.sh/
+https://volta.sh/
 
 ### NeoVim
 
@@ -55,13 +54,13 @@ brew install neovim
 
 ### VimPlug
 
-* https://github.com/junegunn/vim-plug
+https://github.com/junegunn/vim-plug
 
 ### fzf
 
-* https://github.com/junegunn/fzf
+https://github.com/junegunn/fzf
 
 ### cfn-lint
 
-* https://github.com/aws-cloudformation/cfn-lint
+https://github.com/aws-cloudformation/cfn-lint
 
