@@ -20,9 +20,7 @@
 
 ### [Homebrew](https://brew.sh/index_ja)
 
-### oh-my-zsh
-
-https://ohmyz.sh/
+### [oh-my-zsh](https://ohmyz.sh/)
 
 ```bash:.zshrc
 ZSH_THEME="kolo"
@@ -35,9 +33,7 @@ source ~/dotfiles/.zshrc
 
 Homebrew経由でインストール
 
-### Node.js(Volta)
-
-https://volta.sh/
+### [Node.js(Volta)](https://volta.sh/)
 
 ### NeoVim
 
@@ -52,15 +48,9 @@ brew install neovim
   editor = nvim
 ```
 
-### VimPlug
+### [VimPlug](https://github.com/junegunn/vim-plug)
 
-https://github.com/junegunn/vim-plug
+### [fzf](https://github.com/junegunn/fzf)
 
-### fzf
-
-https://github.com/junegunn/fzf
-
-### cfn-lint
-
-https://github.com/aws-cloudformation/cfn-lint
+### [cfn-lint](https://github.com/aws-cloudformation/cfn-lint)
 
