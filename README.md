@@ -20,7 +20,7 @@
 
 ### [Homebrew](https://brew.sh/index_ja)
 
-### [oh-my-zsh](https://ohmyz.sh/)
+### [Oh My Zsh](https://ohmyz.sh/)
 
 ```bash:.zshrc
 ZSH_THEME="kolo"
