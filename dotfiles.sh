@@ -1,5 +1,4 @@
 #!/bin/zsh
-ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc
 
 DIR="${HOME}/.config/nvim"
