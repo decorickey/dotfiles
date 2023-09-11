@@ -11,7 +11,3 @@ set number                         " 行番号表示
 set smartcase                      " 検索時に大文字と小文字を混在させると考慮する
 set textwidth=0                    " 自動で改行しない
 
-" 以下はNvimデフォルト設定（vscode/idea用）
-set hlsearch
-set incsearch
-
