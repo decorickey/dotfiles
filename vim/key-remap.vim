@@ -4,4 +4,3 @@ vnoremap <C-j> <esc>
 
 noremap <C-a> ^
 noremap <C-e> $
-
