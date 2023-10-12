@@ -1,5 +1,5 @@
 source ~/dotfiles/vim/base.vim
-source ~/dotfiles/vim/key-remap.vim
+source ~/dotfiles/vim/keymap.vim
 
 if exists('g:vscode')
   " VSCode extension
