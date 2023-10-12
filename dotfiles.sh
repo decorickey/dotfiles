@@ -3,7 +3,7 @@ ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc
 
 DIR="${HOME}/.config/nvim"
 if [ -d ${DIR} ]; then
-  ln -sf ~/dotfiles/init.vim "${DIR}/init.vim"
+  ln -sf ~/dotfiles/init.lua "${DIR}/init.lua"
 else
   echo "Not Found \"${DIR}\""
 fi
