@@ -28,10 +28,6 @@ ZSH_THEME="kolo"
 source ~/dotfiles/.zshrc
 ```
 
-### Python
-
-Homebrew経由でインストール
-
 ### [Node.js(Volta)](https://volta.sh/)
 
 ### NeoVim
@@ -47,9 +43,20 @@ brew install neovim
   editor = nvim
 ```
 
-### [VimPlug](https://github.com/junegunn/vim-plug)
+### [AstroNvim](https://docs.astronvim.com/)
+
+init.luaの先頭に追記
+
+```
+vim.cmd('source ~/dotfiles/.vimrc')
+if vim.g.vscode then return end
+```
 
 ### [fzf](https://github.com/junegunn/fzf)
 
 ### [cfn-lint](https://github.com/aws-cloudformation/cfn-lint)
+
+### Python
+
+Homebrew経由でインストール
 

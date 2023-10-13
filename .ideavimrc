@@ -1,7 +1,0 @@
-source ~/dotfiles/vim/base.vim
-source ~/dotfiles/vim/keymap.vim
-
-# Neovimデフォルト
-set hlsearch
-set incsearch
-

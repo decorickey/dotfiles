@@ -1,12 +1,11 @@
 #!/bin/zsh
-ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc
+ln -sf ~/dotfiles/.vimrc ~/.ideavimrc
 
-DIR="${HOME}/.config/nvim"
-if [ -d ${DIR} ]; then
-  ln -sf ~/dotfiles/init.lua "${DIR}/init.lua"
-else
-  echo "Not Found \"${DIR}\""
+DIR="${HOME}/.config/nvim/lua/user"
+if [ ! -d ${DIR} ]; then
+  mkdir ${DIR}
 fi
+ln -sf ~/dotfiles/init.lua ~/.config/nvim/lua/user/init.lua
 
 DIR="${HOME}/.ipython/profile_default"
 if [ -d ${DIR} ]; then
