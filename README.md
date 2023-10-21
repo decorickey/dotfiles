@@ -15,6 +15,7 @@
 * JetBrains Toolbox
 * Docker Desktop
 * Logi Options
+* Xmind
 
 ## 開発ツール
 
