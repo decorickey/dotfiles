@@ -5,7 +5,7 @@ DIR="${HOME}/.config/nvim/lua/user"
 if [ ! -d ${DIR} ]; then
   mkdir ${DIR}
 fi
-ln -sf ~/dotfiles/init.lua ~/.config/nvim/lua/user/init.lua
+ln -sf ~/dotfiles/init.lua "${DIR}/init.lua"
 
 DIR="${HOME}/.ipython/profile_default"
 if [ -d ${DIR} ]; then
