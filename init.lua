@@ -3,16 +3,15 @@ if vim.g.vscode then
   return {
     vim.cmd("source ~/dotfiles/.vimrc"),
     
+    -- コメント
+    vim.keymap.set({"n", "v"}, "<leader>/", "<Cmd>call VSCodeNotify('editor.action.commentLine')<CR>", { noremap = true }),
+
     -- fold
     vim.keymap.set({"n"}, "zf", "<Cmd>call VSCodeNotify('editor.fold')<CR>", { noremap = true }),
     vim.keymap.set({"n"}, "zd", "<Cmd>call VSCodeNotify('editor.unfold')<CR>", { noremap = true }),
-    
-    -- カーソル移動時にfoldをスキップ
+    -- （カーソル移動時にfoldをスキップ）
     vim.keymap.set({"n"}, "j", "<Cmd>call VSCodeCall('cursorMove', { 'to': 'down', 'by': 'wrappedLine', 'value': v:count ? v:count : 1 })<CR>", { noremap = true }),
     vim.keymap.set({"n"}, "k", "<Cmd>call VSCodeCall('cursorMove', { 'to': 'up', 'by': 'wrappedLine', 'value': v:count ? v:count : 1 })<CR>", { noremap = true }),
-    
-    -- コメント
-    vim.keymap.set({"n", "v"}, "<leader>/", "<Cmd>call VSCodeNotify('editor.action.commentLine')<CR>", { noremap = true }),
     
     -- Telescope
     vim.keymap.set({"n"}, "<leader>ff", "<Cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>", { noremap = true }),
