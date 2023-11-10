@@ -46,13 +46,6 @@ brew install neovim
 
 ### [AstroNvim](https://docs.astronvim.com/)
 
-init.luaの先頭に追記
-
-```
-vim.cmd('source ~/dotfiles/.vimrc')
-if vim.g.vscode then return end
-```
-
 ### [fzf](https://github.com/junegunn/fzf)
 
 ### [cfn-lint](https://github.com/aws-cloudformation/cfn-lint)
