@@ -28,9 +28,6 @@ if has('ide')
   map <leader>sp <Action>(MoveTabRight)
   map <leader>usp <Action>(Unsplit)
 
-  " エラー/警告の表示
-  map J <Action>(ShowErrorDescription)
-  
   " AstroNvim -----------------------------------------
   " バッファ
   map <leader>c <Action>(CloseEditor)
@@ -43,6 +40,8 @@ if has('ide')
 
   " LSP
   map <leader>la <Action>(ShowIntentionActions)
+  map <leader>ld <Action>(ShowErrorDescription)
+  map <leader>lf <Action>(ReformatCode)
   
   " ターミナル
   map <leader>th <Action>(ActivateTerminalToolWindow)
@@ -59,6 +58,7 @@ if has('ide')
   " Telescope
   map <leader>ff <Action>(GotoFile)
   map <leader>fw <Action>(FindInPath)
+  map <leader>fo <Action>(RecentFiles)
   
   " Neo-Tree
   map <leader>e <Action>(HideAllWindows)

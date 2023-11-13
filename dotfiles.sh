@@ -6,6 +6,7 @@ if [ ! -d ${DIR} ]; then
   mkdir ${DIR}
 fi
 ln -sf ~/dotfiles/init.lua "${DIR}/init.lua"
+ln -sf ~/dotfiles/plugins "${DIR}/plugins"
 
 DIR="${HOME}/.ipython/profile_default"
 if [ -d ${DIR} ]; then
