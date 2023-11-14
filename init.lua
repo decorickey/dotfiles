@@ -51,6 +51,11 @@ else
   -- ordinary Neovim
   return {
     vim.cmd("source ~/dotfiles/.vimrc"),
+    options = {
+      opt = {
+        relativenumber = false,
+      },
+    },
     lsp = {
       formatting = {
         format_on_save = {
