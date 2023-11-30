@@ -3,19 +3,56 @@ if vim.g.vscode then
   return {
     vim.cmd("source ~/dotfiles/.vimrc"),
 
-    -- ターミナル
+    -- VSCode -----------------------------------------
+    -- Split
     vim.keymap.set(
-      { "n" }, "<leader>th", "workbench.action.terminal.new", { noremap = true }
+      { "n" }, "<leader>sp", "<Cmd>call VSCodeNotify('workbench.action.splitEditorRight')<CR>", { noremap = true }
     ),
 
-    -- コメント
+    -- AstroNvim -----------------------------------------
+    -- Buffer
+    vim.keymap.set(
+      { "n" }, "<leader>c", "<Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>", { noremap = true }
+    ),
+    vim.keymap.set(
+      { "n" }, "]b", "<Cmd>call VSCodeNotify('workbench.action.nextEditor')<CR>", { noremap = true }
+    ),
+    vim.keymap.set(
+      { "n" }, "[b", "<Cmd>call VSCodeNotify('workbench.action.previousEditor')<CR>", { noremap = true }
+    ),
+    -- map <C-h> <Action>(PrevSplitter)
+    -- map <C-j> <Action>(NextSplitter)
+    -- map <C-k> <Action>(PrevSplitter)
+    -- map <C-l> <Action>(NextSplitter)
+
+    -- LSP
+    vim.keymap.set(
+      { "n" }, "<leader>la", "<Cmd>call VSCodeNotify('editor.action.sourceAction')<CR>", { noremap = true }
+    ),
+    vim.keymap.set(
+      { "n" }, "<leader>ld", "<Cmd>call VSCodeNotify('editor.action.showHover')<CR>", { noremap = true }
+    ),
+    vim.keymap.set(
+      { "n" }, "<leader>lf", "<Cmd>call VSCodeNotify('editor.action.formatDocument')<CR>", { noremap = true }
+    ),
+
+    -- Terminal
+    vim.keymap.set(
+      { "n" }, "<leader>th", "<Cmd>call VSCodeNotify('workbench.action.terminal.new')<CR>", { noremap = true }
+    ),
+
+    -- Comment
     vim.keymap.set(
       { "n" }, "<leader>/", "<Cmd>call VSCodeNotify('editor.action.commentLine')<CR>", { noremap = true }
     ),
 
-    -- fold
-    vim.keymap.set({ "n" }, "zf", "<Cmd>call VSCodeNotify('editor.fold')<CR>", { noremap = true }),
-    vim.keymap.set({ "n" }, "zd", "<Cmd>call VSCodeNotify('editor.unfold')<CR>", { noremap = true }),
+    -- Fold
+    vim.keymap.set(
+      { "n" }, "zf", "<Cmd>call VSCodeNotify('editor.fold')<CR>", { noremap = true }
+    ),
+    vim.keymap.set(
+      { "n" }, "zd", "<Cmd>call VSCodeNotify('editor.unfold')<CR>", { noremap = true }
+    ),
     -- カーソル移動時にfoldをスキップ（VSCodeの挙動変更）
     vim.keymap.set(
       { "n" }, "j",
