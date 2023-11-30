@@ -17,19 +17,19 @@ set ignorecase
 " 検索時に大文字と小文字を混在させると考慮する
 set smartcase
 
-" .ideavimrc用設定 -----------------------------------------
+" .ideavimrc -----------------------------------------
 if has('ide')
-  " Neovimデフォルト -----------------------------------------
+  " Neovim default -----------------------------------------
   set hlsearch
   set incsearch
 
-  " Idea固有操作 -----------------------------------------
-  " 分割（split）
+  " Idea -----------------------------------------
+  " Split
   map <leader>sp <Action>(MoveTabRight)
   map <leader>usp <Action>(Unsplit)
 
   " AstroNvim -----------------------------------------
-  " バッファ
+  " Buffer
   map <leader>c <Action>(CloseEditor)
   map ]b <Action>(NextTab)
   map [b <Action>(PreviousTab)
@@ -43,10 +43,10 @@ if has('ide')
   map <leader>ld <Action>(ShowErrorDescription)
   map <leader>lf <Action>(ReformatCode)
   
-  " ターミナル
+  " Terminal
   map <leader>th <Action>(ActivateTerminalToolWindow)
   
-  " コメント
+  " Comment
   map <leader>/ <Action>(CommentByLineComment)
   
   " Fold
