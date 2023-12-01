@@ -20,10 +20,18 @@ if vim.g.vscode then
     vim.keymap.set(
       { "n" }, "[b", "<Cmd>call VSCodeNotify('workbench.action.previousEditor')<CR>", { noremap = true }
     ),
-    -- map <C-h> <Action>(PrevSplitter)
-    -- map <C-j> <Action>(NextSplitter)
-    -- map <C-k> <Action>(PrevSplitter)
-    -- map <C-l> <Action>(NextSplitter)
+    vim.keymap.set(
+      { "n" }, "<C-h>", "<Cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>", { noremap = true }
+    ),
+    vim.keymap.set(
+      { "n" }, "<C-l>", "<Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>", { noremap = true }
+    ),
+    vim.keymap.set(
+      { "n" }, "<C-k>", "<Cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<CR>", { noremap = true }
+    ),
+    vim.keymap.set(
+      { "n" }, "<C->", "<Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>", { noremap = true }
+    ),
 
     -- LSP
     vim.keymap.set(
