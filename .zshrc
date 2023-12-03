@@ -5,9 +5,6 @@ alias view="nvim -R"
 # zsh基本設定
 setopt no_beep # 音を鳴らさない
 
-# pycacheディレクトリを作成しない
-export PYTHONDONTWRITEBYTECODE=1
-
 # history設定
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
@@ -44,3 +41,11 @@ function ds() {
 }
 # global alias
 alias -g cid='`docker ps | sed 1d | fzf -q "$1" | awk '\''{print $1}'\''`'
+
+
+# go
+export PATH=$PATH:~/go/bin
+
+# pycacheディレクトリを作成しない
+export PYTHONDONTWRITEBYTECODE=1
+
