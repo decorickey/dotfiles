@@ -1,21 +1,21 @@
 # dotfiles
 
-## AppStore
+## 必須アプリケーション
+
+* Google Chrome
+* Google日本語入力
+* iTerm2/Warp
+* Raycast
+
+## 予備アプリケーション
 
 * Slack
-
-## アプリケーション
-
-* 1Password 8
-* Google日本語入力
-* Google Chrome
-* warp/iterm2
-* Raycast
+* 1Password
 * Visual Studio Code
 * JetBrains Toolbox
 * Docker Desktop
-* Logi Options
 * Xmind
+* Logi Options
 
 ## 開発ツール
 
@@ -49,8 +49,3 @@ brew install neovim
 ### [fzf](https://github.com/junegunn/fzf)
 
 ### [cfn-lint](https://github.com/aws-cloudformation/cfn-lint)
-
-### Python
-
-Homebrew経由でインストール
-
