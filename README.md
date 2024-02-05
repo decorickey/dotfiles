@@ -48,4 +48,3 @@ brew install neovim
 
 ### [fzf](https://github.com/junegunn/fzf)
 
-### [cfn-lint](https://github.com/aws-cloudformation/cfn-lint)
