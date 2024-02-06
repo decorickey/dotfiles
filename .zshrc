@@ -42,10 +42,9 @@ function ds() {
 # global alias
 alias -g cid='`docker ps | sed 1d | fzf -q "$1" | awk '\''{print $1}'\''`'
 
-
-# go
-export PATH=$PATH:~/go/bin
-
 # pycacheディレクトリを作成しない
 export PYTHONDONTWRITEBYTECODE=1
 
+# Volta設定
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
