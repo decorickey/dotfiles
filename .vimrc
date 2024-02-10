@@ -42,6 +42,9 @@ if has('ide')
   map <leader>la <Action>(ShowIntentionActions)
   map <leader>ld <Action>(ShowErrorDescription)
   map <leader>lf <Action>(ReformatCode)
+  map gy <Action>(GotoTypeDeclaration)
+  map gI <Action>(GotoImplementation)
+  map gr <Action>(FindUsages)
   
   " Terminal
   map <leader>th <Action>(ActivateTerminalToolWindow)
