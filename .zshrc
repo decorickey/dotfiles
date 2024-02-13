@@ -49,3 +49,7 @@ export PYTHONDONTWRITEBYTECODE=1
 # Volta
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# Golang
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
