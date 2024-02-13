@@ -28,6 +28,10 @@ if has('ide')
   map <leader>sp <Action>(MoveTabRight)
   map <leader>usp <Action>(Unsplit)
 
+  " LSP
+  map <leader>fu <Action>(FindUsages)
+  map gsm <Action>(GotoSuperMethod)
+
   " AstroNvim -----------------------------------------
   " Buffer
   map <leader>c <Action>(CloseEditor)
@@ -42,7 +46,6 @@ if has('ide')
   map <leader>la <Action>(ShowIntentionActions)
   map <leader>ld <Action>(ShowErrorDescription)
   map <leader>lf <Action>(ReformatCode)
-  map gy <Action>(GotoTypeDeclaration)
   map gI <Action>(GotoImplementation)
   map gr <Action>(FindUsages)
   
