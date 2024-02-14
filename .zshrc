@@ -17,24 +17,23 @@ setopt append_history       # 履歴に追加保存
 setopt hist_no_store        # historyコマンドは履歴に登録しない
 setopt hist_reduce_blanks   # 余分な空白は詰めて保存
 
-# fzf functions
-# fbr - checkout git branch (including remote branches)
-fbr() {
-  local branches branch
-  branches=$(git branch --all | grep -v HEAD) &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-}
+# Volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
-# git alias
-# alias -g lb='`git branch           | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
-# alias -g ab='`git branch --all     | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
-# alias -g rb='`git branch --all     | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
-# alias -g rb='`git branch --remotes | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
-# alias -g mb='`git branch --merged  | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
+# Golang
+export PATH="$HOME/go/bin:$PATH"
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# fzf - git
+alias -g lb='`git branch           | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
+alias -g ab='`git branch --all     | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
+alias -g rb='`git branch --remotes | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
+alias -g mb='`git branch --merged  | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
  
-# docker
+# fzf - docker
 function ds() {
   local cid
   cid=$(docker ps | sed 1d | fzf -q "$1" | awk '{print $1}')
@@ -42,13 +41,3 @@ function ds() {
   [ -n "$cid" ] && docker stop "$cid"
 }
 alias -g cid='`docker ps | sed 1d | fzf -q "$1" | awk '\''{print $1}'\''`'
-
-# pycacheディレクトリを作成しない
-export PYTHONDONTWRITEBYTECODE=1
-
-# Volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
-# Golang
-export PATH="$HOME/go/bin:$PATH"
