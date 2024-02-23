@@ -24,17 +24,19 @@ if has('ide')
   " Original
   map <leader>sp <Action>(MoveTabRight)
   map <leader>usp <Action>(Unsplit)
-  map <leader>fu <Action>(FindUsages)
   map gsm <Action>(GotoSuperMethod)
-  map nt <Action>(NextTab)
-  map pt <Action>(PreviousTab)
 
   " AstroNvim
   " Comment
   map <leader>/ <Action>(CommentByLineComment)
   
-  " Buffers
-  map <leader>c <Action>(CloseEditor)
+  " Buffers(Tabs)
+  map cb <Action>(CloseEditor)
+  map ct <Action>(CloseEditor)
+  map nb <Action>(NextTab)
+  map nt <Action>(NextTab)
+  map pb <Action>(PreviousTab)
+  map pt <Action>(PreviousTab)
   map <C-h> <Action>(PrevSplitter)
   map <C-j> <Action>(NextSplitter)
   map <C-k> <Action>(PrevSplitter)
@@ -45,6 +47,14 @@ if has('ide')
   map <leader>o <Action>(ActivateProjectToolWindow)
   
   " LSP
+  map <leader>la <Action>(ShowIntentionActions)
+  map <leader>ld <Action>(ShowErrorDescription)
+  map <leader>lf <Action>(ReformatCode)
+  map <leader>lR <Action>(FindUsages)
+  map <leader>lr <Action>(RenameElement)
+  map gI <Action>(GotoImplementation)
+  map gr <Action>(FindUsages)
+  map gy <Action>(GotoTypeDeclaration)
 
   " Telescope
   map <leader>ff <Action>(GotoFile)
@@ -55,19 +65,10 @@ if has('ide')
   map <leader>th <Action>(ActivateTerminalToolWindow)
   
   " AstroNvim -----------------------------------------
-  " Buffer
+  " Buffers
   map ]b <Action>(NextTab)
   map [b <Action>(PreviousTab)
 
-  " LSP
-  map <leader>la <Action>(ShowIntentionActions)
-  map <leader>ld <Action>(ShowErrorDescription)
-  map <leader>lf <Action>(ReformatCode)
-  map gI <Action>(GotoImplementation)
-  
-  " Telescope
-  map <leader>fo <Action>(RecentFiles)
-  
   " Fold
   map zf <Action>(CollapseRegion)
   map zaf <Action>(CollapseAllRegions)
