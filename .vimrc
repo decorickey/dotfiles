@@ -31,12 +31,9 @@ if has('ide')
   map <leader>/ <Action>(CommentByLineComment)
   
   " Buffers(Tabs)
-  map cb <Action>(CloseEditor)
-  map ct <Action>(CloseEditor)
-  map nb <Action>(NextTab)
-  map nt <Action>(NextTab)
-  map pb <Action>(PreviousTab)
-  map pt <Action>(PreviousTab)
+  map <leader>c <Action>(CloseEditor)
+  map ]b <Action>(NextTab)
+  map [b <Action>(PreviousTab)
   map <C-h> <Action>(PrevSplitter)
   map <C-j> <Action>(NextSplitter)
   map <C-k> <Action>(PrevSplitter)
@@ -64,11 +61,6 @@ if has('ide')
   " Terminal
   map <leader>th <Action>(ActivateTerminalToolWindow)
   
-  " AstroNvim -----------------------------------------
-  " Buffers
-  map ]b <Action>(NextTab)
-  map [b <Action>(PreviousTab)
-
   " Fold
   map zf <Action>(CollapseRegion)
   map zaf <Action>(CollapseAllRegions)
