@@ -29,7 +29,7 @@ ZSH_THEME="kolo"
 source ~/dotfiles/.zshrc
 ```
 
-## [GitHub CLI](https://github.com/cli/cli#installation)
+### [GitHub CLI](https://github.com/cli/cli#installation)
 
 ### [Node.js(Volta)](https://volta.sh/)
 
