@@ -64,9 +64,9 @@ if has('ide')
   map <leader>th <Action>(ActivateTerminalToolWindow)
   
   " Fold
-  map zf <Action>(CollapseRegion)
-  map zaf <Action>(CollapseAllRegions)
-  map zd <Action>(ExpandRegion)
-  map zad <Action>(ExpandAllRegions)
+  map zc <Action>(CollapseRegion)
+  map zC <Action>(CollapseAllRegions)
+  map zo <Action>(ExpandRegion)
+  map zO <Action>(ExpandAllRegions)
 endif
 
