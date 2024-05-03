@@ -33,20 +33,20 @@ source ~/dotfiles/.zshrc
 
 ### [Node.js(Volta)](https://volta.sh/)
 
-### NeoVim
+### [AstroNvim](https://docs.astronvim.com/)
 
-```bash
-brew install neovim
+init.luaに以下を追記している
+
+```lua
+vim.cmd("source ~/dotfiles/.vimrc")
 ```
 
 .gitconfigに以下を追記
 
-```
+```gitconfig
 [core]
   editor = nvim
 ```
-
-### [AstroNvim](https://docs.astronvim.com/)
 
 ### [fzf](https://github.com/junegunn/fzf)
 

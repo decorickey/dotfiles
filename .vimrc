@@ -10,13 +10,13 @@ nnoremap <C-e> $
 vnoremap <C-e> $
 
 " basic settings ------------------------------------------
-set clipboard=unnamed,unnamedplus
-set ignorecase
-set smartcase
+" set clipboard=unnamed,unnamedplus
+" set ignorecase
+" set smartcase
 
 " Neovim default -----------------------------------------
-set hlsearch
-set incsearch
+" set hlsearch
+" set incsearch
 
 " .ideavimrc -----------------------------------------
 if has('ide')
@@ -32,10 +32,10 @@ if has('ide')
   
   " Buffers(Tabs)
   map <leader>c <Action>(CloseEditor)
-  " map ]b <Action>(NextTab)
-  " map [b <Action>(PreviousTab)
-  map <leader>j <Action>(NextTab)
-  map <leader>k <Action>(PreviousTab)
+  map ]b <Action>(NextTab)
+  map [b <Action>(PreviousTab)
+  map L <Action>(NextTab)
+  map H <Action>(PreviousTab)
   map <C-h> <Action>(PrevSplitter)
   map <C-j> <Action>(NextSplitter)
   map <C-k> <Action>(PrevSplitter)
