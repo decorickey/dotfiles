@@ -14,7 +14,7 @@ set clipboard=unnamed,unnamedplus
 set ignorecase
 set smartcase
 
-" Neovim default -----------------------------------------
+" basic settings (Neovim default) -----------------------------------------
 set hlsearch
 set incsearch
 
