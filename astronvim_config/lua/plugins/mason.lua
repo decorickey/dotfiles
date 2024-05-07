@@ -13,11 +13,7 @@ return {
         -- add more arguments for adding more language servers
         "eslint",
         "gopls",
-        "terraformls",
-        "tflint",
         "tsserver",
-        "volar",
-        "yamlls",
       })
     end,
   },
@@ -31,8 +27,6 @@ return {
         "prettier",
         "stylua",
         -- add more arguments for adding more null-ls sources
-        "cfn-lint",
-        "code-spell",
       })
     end,
   },
