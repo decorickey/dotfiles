@@ -20,6 +20,10 @@ set incsearch
 
 " .ideavimrc -----------------------------------------
 if has('ide')
+  " Quickfix
+  map <C-o> <Action>(Back)
+  map <C-i> <Action>(Forward)
+
   " Completed Version -----------------------------------------
   " Original
   map <leader>sp <Action>(MoveTabRight)
