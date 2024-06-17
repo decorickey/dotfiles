@@ -29,6 +29,8 @@ if has('ide')
   map <leader>sp <Action>(MoveTabRight)
   map <leader>usp <Action>(Unsplit)
   map gsm <Action>(GotoSuperMethod)
+  map gnc <Action>(VcsShowNextChangeMarker)
+  map gpc <Action>(VcsShowPrevChangeMarker)
 
   " AstroNvim
   " Comment
