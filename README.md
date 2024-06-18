@@ -35,12 +35,6 @@ source ~/dotfiles/.zshrc
 
 ### [AstroNvim](https://docs.astronvim.com/)
 
-init.luaに以下を追記している
-
-```lua
-vim.cmd("source ~/dotfiles/.vimrc")
-```
-
 .gitconfigに以下を追記
 
 ```gitconfig
