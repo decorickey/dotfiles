@@ -23,7 +23,7 @@
 
 ### [Oh My Zsh](https://ohmyz.sh/)
 
-```bash:.zshrc
+```sh:.zshrc
 ZSH_THEME="kolo"
 
 source ~/dotfiles/.zshrc
@@ -44,3 +44,10 @@ source ~/dotfiles/.zshrc
 
 ### [fzf](https://github.com/junegunn/fzf)
 
+## 設定
+
+### Git
+
+```sh
+git config --global push.autoSetupRemote true
+```
