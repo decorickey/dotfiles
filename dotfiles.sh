@@ -8,7 +8,7 @@ fi
 
 # NeoVim設定
 CONFIG_DIR=~/.config
-NVIM_DIR=~/.config/nvim
+NVIM_DIR=${CONFIG_DIR}/nvim
 
 # 既存のNeovim設定を削除
 rm -rf $CONFIG_DIR
