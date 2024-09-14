@@ -12,6 +12,7 @@ vnoremap <C-e> $
 set clipboard=unnamed,unnamedplus
 set ignorecase
 set smartcase
+set norelativenumber
 
 " basic settings (Neovim default) -----------------------------------------
 set hlsearch
