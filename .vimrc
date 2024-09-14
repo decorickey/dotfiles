@@ -1,6 +1,5 @@
 " leader key ------------------------------------------
 let mapleader = " "
-let maplocalleader = ","
 
 " key mappings ------------------------------------------
 inoremap jj <esc>
