@@ -11,6 +11,9 @@ CONFIG_DIR=~/.config
 NVIM_DIR=${CONFIG_DIR}/nvim
 
 # 既存のNeovim設定を削除
+rm -rf ~/.local/share/nvim
+rm -rf ~/.local/state/nvim
+rm -rf ~/.cache/nvim
 rm -rf $CONFIG_DIR
 mkdir -p $CONFIG_DIR
 
