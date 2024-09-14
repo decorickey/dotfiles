@@ -4,18 +4,14 @@
 
 * Google Chrome
 * Google日本語入力
-* iTerm2/Warp
+* iTerm2
 * Raycast
+* 1Password
+* JetBrains Toolbox
+* Docker Desktop
 
 ## 予備アプリケーション
 
-* Slack
-* 1Password
-* Visual Studio Code
-* JetBrains Toolbox
-* Docker Desktop
-* Xmind
-* Logi Options
 
 ## 開発ツール
 
@@ -29,11 +25,7 @@ ZSH_THEME="kolo"
 source ~/dotfiles/.zshrc
 ```
 
-### [GitHub CLI](https://github.com/cli/cli#installation)
-
-### [Node.js(Volta)](https://volta.sh/)
-
-### [AstroNvim](https://docs.astronvim.com/)
+### NeoVim
 
 .gitconfigに以下を追記
 
@@ -44,3 +36,6 @@ source ~/dotfiles/.zshrc
 
 ### [fzf](https://github.com/junegunn/fzf)
 
+### [GitHub CLI](https://github.com/cli/cli#installation)
+
+### [Node.js(Volta)](https://volta.sh/)
