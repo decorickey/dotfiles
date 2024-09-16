@@ -2,7 +2,7 @@
 
 # 引数が渡されているかをチェック
 if [ -z "$1" ]; then
-  echo "エラー: 引数が必要です (lazy または astro)"
+  echo "エラー: 引数が必要です (lazyvim または astronvim)"
   exit 1
 fi
 
@@ -16,6 +16,16 @@ rm -rf ~/.local/state/nvim
 rm -rf ~/.cache/nvim
 rm -rf $CONFIG_DIR
 mkdir -p $CONFIG_DIR
+
+# 共通設定
+ln -sf ~/dotfiles/lazynvim-plugins/go.lua lazyvim/lua/plugins
+ln -sf ~/dotfiles/lazynvim-plugins/go.lua astronvim/lua/plugins
+ln -sf ~/dotfiles/lazynvim-plugins/markdown.lua lazyvim/lua/plugins
+ln -sf ~/dotfiles/lazynvim-plugins/markdown.lua astronvim/lua/plugins
+ln -sf ~/dotfiles/lazynvim-plugins/mason.lua lazyvim/lua/plugins
+ln -sf ~/dotfiles/lazynvim-plugins/mason.lua astronvim/lua/plugins
+ln -sf ~/dotfiles/lazynvim-plugins/treesitter.lua lazyvim/lua/plugins
+ln -sf ~/dotfiles/lazynvim-plugins/treesitter.lua astronvim/lua/plugins
 
 # 引数に応じて処理を分岐
 if [ "$1" = "lazyvim" ]; then
