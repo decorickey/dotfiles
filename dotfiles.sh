@@ -18,10 +18,10 @@ rm -rf $CONFIG_DIR
 mkdir -p $CONFIG_DIR
 
 # 引数に応じて処理を分岐
-if [ "$1" = "lazy" ]; then
-  ln -s ~/dotfiles/lazynvim $NVIM_DIR
+if [ "$1" = "lazyvim" ]; then
+  ln -s ~/dotfiles/lazyvim $NVIM_DIR
   echo "LazyVim を設定しました。"
-elif [ "$1" = "astro" ]; then
+elif [ "$1" = "astronvim" ]; then
   ln -s ~/dotfiles/astronvim $NVIM_DIR
   echo "AstroNvim を設定しました。"
 else

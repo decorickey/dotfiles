@@ -1,0 +1,1 @@
+/Users/decorickey/dotfiles/lazynvim-plugins/markdown.lua
