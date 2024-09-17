@@ -1,0 +1,11 @@
+/astronvim/lua/plugins/go.lua
+/lazyvim/lua/plugins/go.lua
+
+/astronvim/lua/plugins/markdown.lua
+/lazyvim/lua/plugins/markdown.lua
+
+/astronvim/lua/plugins/mason.lua
+/lazyvim/lua/plugins/mason.lua
+
+/astronvim/lua/plugins/treesitter.lua
+/lazyvim/lua/plugins/treesitter.lua

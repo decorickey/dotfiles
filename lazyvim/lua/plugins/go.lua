@@ -1,1 +1,0 @@
-/Users/decorickey/dotfiles/lazynvim-plugins/go.lua
