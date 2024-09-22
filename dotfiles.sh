@@ -1,11 +1,5 @@
 #!/bin/zsh
 
-# 引数が渡されているかをチェック
-if [ -z "$1" ]; then
-  echo "エラー: 引数が必要です (lazyvim または astronvim)"
-  exit 1
-fi
-
 # NeoVim設定
 CONFIG_DIR=~/.config
 NVIM_DIR=${CONFIG_DIR}/nvim
@@ -17,27 +11,10 @@ rm -rf ~/.cache/nvim
 rm -rf $CONFIG_DIR
 mkdir -p $CONFIG_DIR
 
-# 共通設定
-ln -sf ~/dotfiles/lazynvim-plugins/go.lua lazyvim/lua/plugins
-ln -sf ~/dotfiles/lazynvim-plugins/go.lua astronvim/lua/plugins
-ln -sf ~/dotfiles/lazynvim-plugins/markdown.lua lazyvim/lua/plugins
-ln -sf ~/dotfiles/lazynvim-plugins/markdown.lua astronvim/lua/plugins
-ln -sf ~/dotfiles/lazynvim-plugins/mason.lua lazyvim/lua/plugins
-ln -sf ~/dotfiles/lazynvim-plugins/mason.lua astronvim/lua/plugins
-ln -sf ~/dotfiles/lazynvim-plugins/treesitter.lua lazyvim/lua/plugins
-ln -sf ~/dotfiles/lazynvim-plugins/treesitter.lua astronvim/lua/plugins
-
-# 引数に応じて処理を分岐
-if [ "$1" = "lazyvim" ]; then
-  ln -s ~/dotfiles/lazyvim $NVIM_DIR
-  echo "LazyVim を設定しました。"
-elif [ "$1" = "astronvim" ]; then
-  ln -s ~/dotfiles/astronvim $NVIM_DIR
-  echo "AstroNvim を設定しました。"
-else
-  echo "エラー: 不正な引数です。'lazy' または 'astro' を指定してください。"
-  exit 1
-fi
+# LazyVim設定
+rm ~/dotfiles/lazyvim/lazy-lock.json
+ln -s ~/dotfiles/lazyvim $NVIM_DIR
+echo "LazyVim を設定しました。"
 
 # IdeaVim設定
 ln -sf ~/dotfiles/.vimrc ~/.ideavimrc
