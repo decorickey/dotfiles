@@ -24,7 +24,20 @@ if has('ide')
   map <C-o> <Action>(Back)
   map <C-i> <Action>(Forward)
 
-  " Completed Version -----------------------------------------
+  " Buffers(Tabs)
+  map <leader>bd <Action>(CloseEditor)
+  map <leader>w <Action>(CloseEditor)
+  map L <Action>(NextTab)
+  map H <Action>(PreviousTab)
+  map <C-h> <Action>(PrevSplitter)
+  map <C-j> <Action>(NextSplitter)
+  map <C-k> <Action>(PrevSplitter)
+  map <C-l> <Action>(NextSplitter)
+
+  " Neo-Tree
+  map <leader>e <Action>(ActivateProjectToolWindow)
+
+  " -----------------------------------------
   " Original
   map <leader>sp <Action>(MoveTabRight)
   map <leader>usp <Action>(Unsplit)
@@ -35,21 +48,6 @@ if has('ide')
   " AstroNvim
   " Comment
   map <leader>/ <Action>(CommentByLineComment)
-  
-  " Buffers(Tabs)
-  map <leader>c <Action>(CloseEditor)
-  map ]b <Action>(NextTab)
-  map [b <Action>(PreviousTab)
-  map L <Action>(NextTab)
-  map H <Action>(PreviousTab)
-  map <C-h> <Action>(PrevSplitter)
-  map <C-j> <Action>(NextSplitter)
-  map <C-k> <Action>(PrevSplitter)
-  map <C-l> <Action>(NextSplitter)
-  
-  " Neo-Tree
-  map <leader>e <Action>(HideAllWindows)
-  map <leader>o <Action>(ActivateProjectToolWindow)
   
   " LSP
   map <leader>la <Action>(ShowIntentionActions)
