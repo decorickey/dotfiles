@@ -20,7 +20,13 @@ set incsearch
 
 " .ideavimrc -----------------------------------------
 if has('ide')
-  " Quickfix
+  " IDEA Original
+  map <leader>sp <Action>(MoveTabRight)
+  map <leader>usp <Action>(Unsplit)
+  map <leader>h <Action>(CallHierarchy)
+  map gsm <Action>(GotoSuperMethod)
+
+  " General
   map <C-o> <Action>(Back)
   map <C-i> <Action>(Forward)
 
@@ -37,11 +43,9 @@ if has('ide')
   " Neo-Tree
   map <leader>e <Action>(ActivateProjectToolWindow)
 
-  " -----------------------------------------
+  " ----------------------------------------------------------------------------------
+
   " Original
-  map <leader>sp <Action>(MoveTabRight)
-  map <leader>usp <Action>(Unsplit)
-  map gsm <Action>(GotoSuperMethod)
   map gnc <Action>(VcsShowNextChangeMarker)
   map gpc <Action>(VcsShowPrevChangeMarker)
 
