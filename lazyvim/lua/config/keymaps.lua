@@ -4,4 +4,4 @@
 
 local map = vim.keymap.set
 
-map("n", "<leader>w", "<leader>bd", { remap = true })
+map("n", "<leader>d", "<leader>bd", { remap = true })

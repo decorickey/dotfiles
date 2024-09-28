@@ -32,7 +32,7 @@ if has('ide')
 
   " Buffers(Tabs)
   map <leader>bd <Action>(CloseEditor)
-  map <leader>w <Action>(CloseEditor)
+  map <leader>d <Action>(CloseEditor)
   map L <Action>(NextTab)
   map H <Action>(PreviousTab)
   map <C-h> <Action>(PrevSplitter)
