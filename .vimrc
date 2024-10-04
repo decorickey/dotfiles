@@ -21,10 +21,11 @@ set incsearch
 " .ideavimrc -----------------------------------------
 if has('ide')
   " IDEA Original
+  map gsm <Action>(GotoSuperMethod)
+  map <leader>2 <Action>(CallHierarchy)
+  map <leader>3 <Action>(ActivateStructureToolWindow)
   map <leader>sp <Action>(MoveTabRight)
   map <leader>usp <Action>(Unsplit)
-  map <leader>h <Action>(CallHierarchy)
-  map gsm <Action>(GotoSuperMethod)
 
   " General
   map <C-o> <Action>(Back)
