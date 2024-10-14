@@ -29,7 +29,7 @@ if ! [ -d ~/.oh-my-zsh ]; then
   echo
   exit 0
 else
-  echo "Skip Oh My Zsh (favorite theme is kolo)"
+  echo "Skip Oh My Zsh (my favorite theme is kolo)"
   gsed -i '/^source ~\/dotfiles\/\.zshrc/d' ~/.zshrc
   echo 'source ~/dotfiles/.zshrc' >>~/.zshrc
 fi

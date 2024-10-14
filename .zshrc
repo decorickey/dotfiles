@@ -25,6 +25,9 @@ alias -g view="nvim -R"
 # Go
 export PATH="$HOME/go/bin:$PATH"
 
+# Volta
+export PATH="$HOME/.volta/bin:$PATH"
+
 # fzf
 source <(fzf --zsh)
 
