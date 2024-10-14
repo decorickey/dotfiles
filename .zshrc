@@ -1,7 +1,3 @@
-# vim alias
-alias -g vim="nvim"
-alias -g view="nvim -R"
-
 # basic settings
 setopt no_beep # 音を鳴らさない
 
@@ -17,15 +13,20 @@ setopt append_history       # 履歴に追加保存
 setopt hist_no_store        # historyコマンドは履歴に登録しない
 setopt hist_reduce_blanks   # 余分な空白は詰めて保存
 
-# Volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+# Git
+export PATH=/usr/local/bin/git:$PATH
+git config --global core.editor "nvim"
+git config --global push.autoSetupRemote true
 
-# Golang
+# NeoVim
+alias -g vim="nvim"
+alias -g view="nvim -R"
+
+# Go
 export PATH="$HOME/go/bin:$PATH"
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 # fzf - git
 alias -g lb='`git branch           | grep -v HEAD | fzf +m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
