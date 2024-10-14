@@ -7,6 +7,7 @@ return {
         "gopls",
         "eslint",
         "ts_ls",
+        "terraformls",
       },
     },
   },
