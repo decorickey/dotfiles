@@ -6,3 +6,4 @@ local map = vim.keymap.set
 
 map("n", "<leader>d", "<leader>bd", { remap = true, desc = "Delete buffer" })
 map("n", "<leader>t", "<leader>ft", { remap = true, desc = "Terminal" })
+map("n", "gn", "<Nop>")

@@ -22,6 +22,7 @@ set incsearch
 if has('ide')
   " IDEA Original
   map gsm <Action>(GotoSuperMethod)
+  map gne <Action>(GotoNextError)
   map <leader>2 <Action>(CallHierarchy)
   map <leader>3 <Action>(ActivateStructureToolWindow)
   map <leader>sp <Action>(MoveTabRight)
