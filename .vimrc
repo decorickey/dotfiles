@@ -23,14 +23,22 @@ if has('ide')
   " IDEA Original
   map gsm <Action>(GotoSuperMethod)
   map gne <Action>(GotoNextError)
+  map gnc <Action>(VcsShowNextChangeMarker)
+  map gpc <Action>(VcsShowPrevChangeMarker)
   map <leader>2 <Action>(CallHierarchy)
   map <leader>3 <Action>(ActivateStructureToolWindow)
   map <leader>sp <Action>(MoveTabRight)
   map <leader>usp <Action>(Unsplit)
 
-  " General
+  " Motion 
   map <C-o> <Action>(Back)
   map <C-i> <Action>(Forward)
+
+  " Fold
+  map zc <Action>(CollapseRegion)
+  map zC <Action>(CollapseAllRegions)
+  map zo <Action>(ExpandRegion)
+  map zO <Action>(ExpandAllRegions)
 
   " Buffers(Tabs)
   map <leader>bd <Action>(CloseEditor)
@@ -45,13 +53,7 @@ if has('ide')
   " Neo-Tree
   map <leader>e <Action>(ActivateProjectToolWindow)
 
-  " ----------------------------------------------------------------------------------
-
-  " Original
-  map gnc <Action>(VcsShowNextChangeMarker)
-  map gpc <Action>(VcsShowPrevChangeMarker)
-
-  " AstroNvim
+  " AstroNvim ----------------------------------------------------------------------------------
   " Comment
   map <leader>/ <Action>(CommentByLineComment)
   
@@ -72,11 +74,5 @@ if has('ide')
 
   " Terminal
   map <leader>th <Action>(ActivateTerminalToolWindow)
-  
-  " Fold
-  map zc <Action>(CollapseRegion)
-  map zC <Action>(CollapseAllRegions)
-  map zo <Action>(ExpandRegion)
-  map zO <Action>(ExpandAllRegions)
 endif
 
