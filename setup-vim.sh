@@ -12,53 +12,26 @@ rm -rf $CONFIG_DIR
 mkdir -p $CONFIG_DIR
 
 # LazyVim設定
+echo "***** Initialize LazyVim *****"
 rm ~/dotfiles/lazyvim/lazy-lock.json
 ln -s ~/dotfiles/lazyvim $NVIM_DIR
-echo "SetUp LazyVim"
-
 echo
 
 # IdeaVim設定
+echo "***** Initialize IdeaVim *****"
 ln -sf ~/dotfiles/.vimrc ~/.ideavimrc
-echo "SetUp IdeaVim"
-
 echo
 
 # ツール群
-if ! brew list gopls &>/dev/null; then
-  echo "Install gopls"
-  brew install gopls
-else
-  echo "Update gopls"
-  brew upgrade gopls
-fi
+tools=("gopls" "golangci-lint", "lazygit", "repgrep")
 
-echo
-
-if ! brew list golangci-lint &>/dev/null; then
-  echo "Install golangci-lint"
-  brew install golangci-lint
-else
-  echo "Update golangci-lint"
-  brew upgrade golangci-lint
-fi
-
-echo
-
-if ! brew list lazygit &>/dev/null; then
-  echo "Install lazygit"
-  brew install lazygit
-else
-  echo "Update lazygit"
-  brew upgrade lazygit
-fi
-
-echo
-
-if ! brew list ripgrep &>/dev/null; then
-  echo "Install ripgrep"
-  brew install ripgrep
-else
-  echo "Update ripgrep"
-  brew upgrade ripgrep
-fi
+for tool in "${tools[@]}"; do
+  if ! brew list "$tool" &>/dev/null; then
+    echo "***** Install $tool *****"
+    brew install "$tool"
+  else
+    echo "***** Upgrade $tool *****"
+    brew upgrade "$tool"
+  fi
+  echo
+done
