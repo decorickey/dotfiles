@@ -67,10 +67,10 @@ if has('ide')
   map gr <Action>(FindUsages)
   map gy <Action>(GotoTypeDeclaration)
 
-  " Telescope
+  " fzf + Telescope
+  map <leader>/ <Action>(FindInPath)
   map <leader>ff <Action>(GotoFile)
-  map <leader>fw <Action>(FindInPath)
-  map <leader>fo <Action>(RecentFiles)
+  map <leader>fr <Action>(RecentFiles)
 
   " Terminal
   map <leader>th <Action>(ActivateTerminalToolWindow)
