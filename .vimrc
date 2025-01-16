@@ -53,10 +53,9 @@ if has('ide')
   " Neo-Tree
   map <leader>e <Action>(ActivateProjectToolWindow)
 
-  " AstroNvim ----------------------------------------------------------------------------------
   " Comment
-  map <leader>/ <Action>(CommentByLineComment)
-  
+  map <C-/> <Action>(CommentByLineComment)
+
   " LSP
   map <leader>la <Action>(ShowIntentionActions)
   map <leader>ld <Action>(ShowErrorDescription)
