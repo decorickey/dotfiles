@@ -1,27 +1,15 @@
 #!/bin/bash
 
-if ! which brew &>/dev/null; then
-  echo "Install Homebrew"
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo >>~/.zprofile
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>~/.zprofile
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-else
-  echo "Update Homebrew"
-  brew update
-fi
-
-echo
-
-if ! brew list gsed &>/dev/null; then
-  echo "Install GNU sed"
-  brew install gsed
-else
-  echo "Update GNU sed"
-  brew upgrade gsed
-fi
-
-echo
+packages=(
+  "gsed"
+  "git"
+  "nvim"
+  "fzf"
+  "gh"
+  "volta"
+  "sqlite"
+  "yarn"
+)
 
 if ! [ -d ~/.oh-my-zsh ]; then
   echo "Manual Install Oh My Zsh"
@@ -36,70 +24,30 @@ fi
 
 echo
 
-if ! brew list git &>/dev/null; then
-  echo "Install Git by Homebrew"
-  brew install git
+if ! which brew &>/dev/null; then
+  echo "Install Homebrew"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo >>~/.zprofile
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>~/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 else
-  echo "Update Git by Homebrew"
-  brew upgrade git
+  echo "Update Homebrew"
+  brew update
 fi
 
 echo
 
-if ! brew list nvim &>/dev/null; then
-  echo "Install NeoVim"
-  brew install nvim
-else
-  echo "Update NeoVim"
-  brew upgrade nvim
-fi
+manage_package() {
+  if ! brew list $1 &>/dev/null; then
+    echo "Install $1"
+    brew install $1
+  else
+    echo "Update $1"
+    brew upgrade $1
+  fi
+  echo
+}
 
-echo
-
-if ! brew list fzf &>/dev/null; then
-  echo "Install fzf"
-  brew install fzf
-else
-  echo "Update fzf"
-  brew upgrade fzf
-fi
-
-echo
-
-if ! brew list gh &>/dev/null; then
-  echo "Install GitHub CLI"
-  brew install gh
-else
-  echo "Update GitHub CLI"
-  brew upgrade gh
-fi
-
-echo
-
-if ! brew list volta &>/dev/null; then
-  echo "Install Volta"
-  brew install volta
-else
-  echo "Update Volta"
-  brew upgrade volta
-fi
-
-echo
-
-if ! brew list sqlite &>/dev/null; then
-  echo "Install sqlite"
-  brew install sqlite
-else
-  echo "Update sqlite"
-  brew upgrade sqlite
-fi
-
-echo
-
-if ! brew list yarn &>/dev/null; then
-  echo "Install yarn"
-  brew install yarn
-else
-  echo "Update yarn"
-  brew upgrade yarn
-fi
+for package in "${packages[@]}"; do
+  manage_package $package
+done
