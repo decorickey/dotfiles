@@ -9,6 +9,10 @@ packages=(
   "volta"
   "sqlite"
   "yarn"
+  "gopls"
+  "golangci-lint"
+  "lazygit"
+  "repgrep"
 )
 
 if ! [ -d ~/.oh-my-zsh ]; then
@@ -51,3 +55,24 @@ manage_package() {
 for package in "${packages[@]}"; do
   manage_package $package
 done
+
+echo
+
+CONFIG_DIR=~/.config
+NVIM_DIR=${CONFIG_DIR}/nvim
+
+echo "***** Reset NeoVim *****"
+rm -rf ~/.local/share/nvim
+rm -rf ~/.local/state/nvim
+rm -rf ~/.cache/nvim
+rm -rf $CONFIG_DIR
+mkdir -p $CONFIG_DIR
+
+echo "***** Initialize LazyVim *****"
+rm ~/dotfiles/lazyvim/lazy-lock.json
+ln -s ~/dotfiles/lazyvim $NVIM_DIR
+echo
+
+echo "***** Initialize IdeaVim *****"
+ln -sf ~/dotfiles/.vimrc ~/.ideavimrc
+echo
