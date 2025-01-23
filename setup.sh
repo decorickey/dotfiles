@@ -2,7 +2,6 @@
 
 # List of packages to install or update
 packages=(
-  "zsh"
   "gsed"
   "git"
   "nvim"
@@ -37,6 +36,12 @@ if [ "$OS" == "Darwin" ]; then
   INSTALL_CMD="brew install"
   UPDATE_CMD="brew upgrade"
   SHELL_CONFIG="~/.zprofile"
+
+  # Skip zsh installation if it is already the default shell
+  if [ "$SHELL" != "/bin/zsh" ] && [ "$SHELL" != "/usr/bin/zsh" ]; then
+    packages+=("zsh")
+  fi
+
 elif [ -f /etc/debian_version ]; then
   # Debian-based Linux distributions
   if ! which apt &>/dev/null; then
@@ -47,6 +52,7 @@ elif [ -f /etc/debian_version ]; then
   INSTALL_CMD="sudo apt-get install -y"
   UPDATE_CMD="sudo apt-get upgrade -y"
   SHELL_CONFIG="~/.bashrc"
+  packages+=("zsh")
 elif [ -f /etc/redhat-release ]; then
   # RedHat-based Linux distributions
   if ! which yum &>/dev/null; then
@@ -57,6 +63,7 @@ elif [ -f /etc/redhat-release ]; then
   INSTALL_CMD="sudo yum install -y"
   UPDATE_CMD="sudo yum upgrade -y"
   SHELL_CONFIG="~/.bashrc"
+  packages+=("zsh")
 else
   echo "Unsupported OS"
   exit 1
