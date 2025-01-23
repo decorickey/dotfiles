@@ -95,13 +95,11 @@ echo
 if ! [ -d ~/.oh-my-zsh ]; then
   echo "Manual Install Oh My Zsh"
   echo 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
-  echo
-  exit 0
 else
   echo "Skip Oh My Zsh (my favorite theme is kolo)"
-  sed -i '/^source ~\/dotfiles\/\.zshrc/d' ~/.zshrc
-  echo 'source ~/dotfiles/.zshrc' >>~/.zshrc
 fi
+sed -i '/^source ~\/dotfiles\/\.zshrc/d' ~/.zshrc
+echo 'source ~/dotfiles/.zshrc' >>~/.zshrc
 
 echo
 
