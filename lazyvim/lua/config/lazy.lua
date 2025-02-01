@@ -51,4 +51,5 @@ require("lazy").setup({
       },
     },
   },
+  lockfile = nil, -- lockファイルを使わないようにする
 })

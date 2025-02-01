@@ -101,7 +101,7 @@ fi
 
 # Ensure the ~/.zshrc sources ~/dotfiles/.zshrc
 if ! grep -Fxq "source ~/dotfiles/.zshrc" ~/.zshrc; then
-  echo 'source ~/dotfiles/.zshrc' >> ~/.zshrc
+  echo 'source ~/dotfiles/.zshrc' >>~/.zshrc
 fi
 
 echo
@@ -119,7 +119,6 @@ mkdir -p $CONFIG_DIR
 echo
 
 echo "***** Initialize LazyVim *****"
-rm ~/dotfiles/lazyvim/lazy-lock.json
 ln -s ~/dotfiles/lazyvim $NVIM_DIR
 echo
 
