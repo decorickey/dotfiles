@@ -59,13 +59,13 @@ source ./_install-packages.sh
 echo
 
 echo
+source ./_install-fzf.sh
+echo
+
+echo
 source ./_install-oh-my-zsh.sh
 echo
 
 echo
 source ./_setup-neovim.sh
-echo
-
-echo
-source ./_install-fzf.sh
 echo

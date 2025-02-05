@@ -14,7 +14,6 @@ setopt hist_no_store        # historyコマンドは履歴に登録しない
 setopt hist_reduce_blanks   # 余分な空白は詰めて保存
 
 # Git
-export PATH=/usr/local/bin/git:$PATH
 git config --global core.editor "nvim"
 git config --global push.autoSetupRemote true
 
