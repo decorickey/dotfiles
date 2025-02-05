@@ -13,7 +13,6 @@ packages=(
 )
 
 brew_packages=(
-  "fzf"
   "volta"
   "golangci-lint"
   "lazygit"
