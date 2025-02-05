@@ -1,11 +1,11 @@
 #!/bin/bash
 
-echo "***** Install Oh My Zsh *****"
+echo "***** Oh My Zsh *****"
 if ! [ -d ~/.oh-my-zsh ]; then
-  echo "Manual Install Oh My Zsh (my favorite theme is kolo)"
-  echo 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
+  echo "Install (my favorite theme is kolo)"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else
-  echo "Skip Oh My Zsh (my favorite theme is kolo)"
+  echo "Skip (my favorite theme is kolo)"
 fi
 
 # Ensure the ~/.zshrc sources ~/dotfiles/.zshrc

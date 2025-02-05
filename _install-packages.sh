@@ -10,12 +10,10 @@ packages=(
   "yarn"
   "gopls"
   "ripgrep"
-  "volta"
-  "golangci-lint"
-  "lazygit"
 )
 
 brew_packages=(
+  "fzf"
   "volta"
   "golangci-lint"
   "lazygit"
