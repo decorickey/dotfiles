@@ -2,18 +2,20 @@
 
 # List of packages to install or update
 packages=(
-  "gsed"
   "git"
-  "nvim"
+  "neovim"
   "fzf"
   "gh"
-  "volta"
-  "sqlite"
+  "sqlite3"
   "yarn"
   "gopls"
+  "ripgrep"
+)
+
+brew_packages=(
+  "volta"
   "golangci-lint"
   "lazygit"
-  "repgrep"
 )
 
 # Detect the operating system
@@ -49,6 +51,7 @@ elif [ -f /etc/debian_version ]; then
     sudo apt-get update
     sudo apt-get install -y apt
   fi
+  sudo apt update
   INSTALL_CMD="sudo apt-get install -y"
   UPDATE_CMD="sudo apt-get upgrade -y"
   SHELL_CONFIG="~/.bashrc"
