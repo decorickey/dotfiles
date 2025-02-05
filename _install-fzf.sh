@@ -8,5 +8,5 @@ if ! [ -d ~/.fzf ]; then
 else
   echo "Update"
   cd ~/.fzf && git pull && ./install
-  cd
+  cd ~/dotfiles
 fi
