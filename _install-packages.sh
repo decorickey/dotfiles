@@ -4,18 +4,19 @@ echo "***** Install Packages *****"
 
 packages=(
   "git"
+  "zsh"
   "neovim"
+  "ripgrep"
   "gh"
+  "gopls"
   "sqlite3"
   "yarn"
-  "gopls"
-  "ripgrep"
 )
 
 brew_packages=(
-  "volta"
   "golangci-lint"
   "lazygit"
+  "volta"
 )
 
 # Install or update packages
