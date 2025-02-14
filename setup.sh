@@ -62,3 +62,6 @@ echo
 echo
 source ./_setup-neovim.sh
 echo
+
+chsh -s $(which zsh)
+exit
