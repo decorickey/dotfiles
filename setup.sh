@@ -64,4 +64,4 @@ source ./_setup-neovim.sh
 echo
 
 chsh -s $(which zsh)
-exit
+echo "Restart Terminal"
