@@ -20,6 +20,7 @@ if [ "$OS" == "Darwin" ]; then
   INSTALL_CMD="brew install"
   UPDATE_CMD="brew upgrade"
   SHELL_CONFIG="~/.zprofile"
+  echo
 
 elif [ -f /etc/debian_version ]; then
   # Debian-based Linux distributions
@@ -27,11 +28,14 @@ elif [ -f /etc/debian_version ]; then
     echo "***** apt package manager not found, installing... *****"
     sudo apt-get update
     sudo apt-get install -y apt
+    echo
   fi
   sudo apt update
   INSTALL_CMD="sudo apt-get install -y"
   UPDATE_CMD="sudo apt-get upgrade -y"
   SHELL_CONFIG="~/.bashrc"
+  echo
+
 elif [ -f /etc/redhat-release ]; then
   # RedHat-based Linux distributions
   if ! which yum &>/dev/null; then
@@ -42,26 +46,15 @@ elif [ -f /etc/redhat-release ]; then
   INSTALL_CMD="sudo yum install -y"
   UPDATE_CMD="sudo yum upgrade -y"
   SHELL_CONFIG="~/.bashrc"
+  echo
+
 else
   echo "***** Unsupported OS *****"
   exit 1
 fi
-
 echo
+
 source ./_install-packages.sh
-echo
-
-echo
 source ./_install-fzf.sh
-echo
-
-echo
-source ./_install-oh-my-zsh.sh
-echo
-
-echo
 source ./_setup-neovim.sh
-echo
-
-chsh -s $(which zsh)
-echo "Restart Terminal"
+source ./_install-oh-my-zsh.sh

@@ -1,12 +1,16 @@
 #!/bin/bash
 
-echo "***** fzf *****"
 if ! [ -d ~/.fzf ]; then
-  echo "Install"
+  echo "***** Install fzf *****"
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  ~/.fzf/install
+  cd ~/.fzf
+  ./install
+  cd ~/dotfiles
 else
-  echo "Update"
-  cd ~/.fzf && git pull && ./install
+  echo "***** Update fzf *****"
+  cd ~/.fzf
+  git pull
+  ./install
   cd ~/dotfiles
 fi
+echo

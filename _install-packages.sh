@@ -1,10 +1,7 @@
 #!/bin/bash
 
-echo "***** Install Packages *****"
-
 packages=(
   "git"
-  "zsh"
   "neovim"
   "ripgrep"
   "gh"
@@ -22,10 +19,10 @@ brew_packages=(
 # Install or update packages
 manage_package() {
   if ! which $1 &>/dev/null; then
-    echo "Install $1"
+    echo "***** Install $1 *****"
     $INSTALL_CMD $1
   else
-    echo "Update $1"
+    echo "***** Update $1 *****"
     $UPDATE_CMD $1
   fi
   echo
