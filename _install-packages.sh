@@ -2,18 +2,12 @@
 
 packages=(
   "git"
+  "gh"
   "neovim"
   "ripgrep"
-  "gh"
   "gopls"
   "sqlite3"
   "yarn"
-)
-
-brew_packages=(
-  "golangci-lint"
-  "lazygit"
-  "volta"
 )
 
 # Install or update packages
