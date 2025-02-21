@@ -8,11 +8,19 @@ else
 fi
 echo
 
-DEFAULT_SHELL=$(getent passwd "$USER" | cut -d: -f7)
-ZSH_PATH=$(which zsh)
-if [ "$DEFAULT_SHELL" != "$ZSH_PATH" ]; then
-    echo "***** Change Default Shell to Zsh *****"
-    chsh -s "$ZSH_PATH"
+if [ -n "$SHELL" ]; then
+  CURRENT_SHELL="$SHELL"
+elif command -v getent >/dev/null 2>&1; then
+  CURRENT_SHELL=$(getent passwd "$USER" | cut -d: -f7)
+elif command -v dscl >/dev/null 2>&1; then
+  CURRENT_SHELL=$(dscl . -read ~/ UserShell | awk '{print $2}')
+else
+  "Error: shell not found"
+  exit 1
+fi
+ZSH_PATH=$(command -v zsh)
+if [ "$CURRENT_SHELL" != "$ZSH_PATH" ]; then
+  chsh -s "$ZSH_PATH"
 fi
 echo
 
