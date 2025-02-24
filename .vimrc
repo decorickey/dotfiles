@@ -20,41 +20,39 @@ set incsearch
 
 " .ideavimrc -----------------------------------------
 if has('ide')
-  " IDEA Original
-  map gsm <Action>(GotoSuperMethod)
-  map gne <Action>(GotoNextError)
-  map gnc <Action>(VcsShowNextChangeMarker)
-  map gpc <Action>(VcsShowPrevChangeMarker)
-  map <leader>2 <Action>(CallHierarchy)
-  map <leader>3 <Action>(ActivateStructureToolWindow)
-  map <leader>sp <Action>(MoveTabRight)
-  map <leader>usp <Action>(Unsplit)
-
-  " Motion 
-  map <C-o> <Action>(Back)
-  map <C-i> <Action>(Forward)
-
-  " Fold
-  map zc <Action>(CollapseRegion)
-  map zC <Action>(CollapseAllRegions)
-  map zo <Action>(ExpandRegion)
-  map zO <Action>(ExpandAllRegions)
-
-  " Buffers(Tabs)
-  map <leader>bd <Action>(CloseEditor)
-  map <leader>d <Action>(CloseEditor)
+  " Basic
   map L <Action>(NextTab)
   map H <Action>(PreviousTab)
   map <C-h> <Action>(PrevSplitter)
   map <C-j> <Action>(NextSplitter)
   map <C-k> <Action>(PrevSplitter)
   map <C-l> <Action>(NextSplitter)
+  map <C-i> <Action>(Forward)
+  map <C-o> <Action>(Back)
+
+  " Buffers(Tabs)
+  map <leader>d <Action>(CloseEditor)
+  map <leader>t <Action>(ActivateTerminalToolWindow)
+
+  " Comment
+  map <C-/> <Action>(CommentByLineComment)
 
   " Neo-Tree
   map <leader>e <Action>(ActivateProjectToolWindow)
 
-  " Comment
-  map <C-/> <Action>(CommentByLineComment)
+  " Telescope
+  map <leader>/ <Action>(FindInPath)
+  map <leader>ff <Action>(GotoFile)
+  map <leader>fr <Action>(RecentFiles)
+
+  " Aerial
+  map <leader>cs <Action>(ActivateStructureToolWindow)
+
+  " Fold
+  map zc <Action>(CollapseRegion)
+  map zC <Action>(CollapseAllRegions)
+  map zo <Action>(ExpandRegion)
+  map zO <Action>(ExpandAllRegions)
 
   " LSP
   map <leader>la <Action>(ShowIntentionActions)
@@ -66,12 +64,14 @@ if has('ide')
   map gr <Action>(FindUsages)
   map gy <Action>(GotoTypeDeclaration)
 
-  " fzf + Telescope
-  map <leader>/ <Action>(FindInPath)
-  map <leader>ff <Action>(GotoFile)
-  map <leader>fr <Action>(RecentFiles)
+  " IDEA Original
+  map gsm <Action>(GotoSuperMethod)
+  map gne <Action>(GotoNextError)
+  map gnc <Action>(VcsShowNextChangeMarker)
+  map gpc <Action>(VcsShowPrevChangeMarker)
+  map <leader>ch <Action>(CallHierarchy)
+  map <leader>sp <Action>(MoveTabRight)
+  map <leader>usp <Action>(Unsplit)
 
-  " Terminal
-  map <leader>th <Action>(ActivateTerminalToolWindow)
 endif
 
