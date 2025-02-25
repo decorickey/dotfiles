@@ -37,16 +37,16 @@ if has('ide')
   " Comment
   map <C-/> <Action>(CommentByLineComment)
 
-  " Neo-Tree
-  map <leader>e <Action>(ActivateProjectToolWindow)
-
   " Telescope
   map <leader>/ <Action>(FindInPath)
   map <leader>ff <Action>(GotoFile)
   map <leader>fr <Action>(RecentFiles)
 
+  " Neo-Tree
+  map <leader>1 <Action>(ActivateProjectToolWindow)
+
   " Aerial
-  map <leader>cs <Action>(ActivateStructureToolWindow)
+  map <leader>2 <Action>(ActivateStructureToolWindow)
 
   " Fold
   map zc <Action>(CollapseRegion)
