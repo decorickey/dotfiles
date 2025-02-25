@@ -43,10 +43,12 @@ if has('ide')
   map <leader>fr <Action>(RecentFiles)
 
   " Neo-Tree
-  map <leader>1 <Action>(ActivateProjectToolWindow)
+  " File Explorer
+  map <leader>fe <Action>(ActivateProjectToolWindow)
 
   " Aerial
-  map <leader>2 <Action>(ActivateStructureToolWindow)
+  " Code Structure
+  map <leader>cs <Action>(ActivateStructureToolWindow)
 
   " Fold
   map zc <Action>(CollapseRegion)
