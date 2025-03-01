@@ -10,8 +10,7 @@ return {
   opts = function()
     local opts = {
       layout = {
-        min_width = 0.2,
-        max_width = 0.2,
+        min_width = 0.15,
       },
     }
     return opts
