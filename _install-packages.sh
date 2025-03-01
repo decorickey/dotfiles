@@ -7,7 +7,6 @@ packages=(
   "ripgrep"
   "gopls"
   "sqlite3"
-  "yarn"
 )
 
 # Install or update packages

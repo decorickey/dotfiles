@@ -6,6 +6,6 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   keys = {
-    { "<leader>cs", "<cmd>AerialToggle<cr>", desc = "Code Structure" },
+    { "<leader>co", "<cmd>AerialToggle<cr>", desc = "Code Outline" },
   },
 }

@@ -47,8 +47,8 @@ if has('ide')
   map <leader>fe <Action>(ActivateProjectToolWindow)
 
   " Aerial
-  " Code Structure
-  map <leader>cs <Action>(ActivateStructureToolWindow)
+  " Code Outline
+  map <leader>co <Action>(ActivateStructureToolWindow)
 
   " Fold
   map zc <Action>(CollapseRegion)
