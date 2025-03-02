@@ -1,14 +1,4 @@
 return {
-  {
-    "williamboman/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = {
-        "lua_ls",
-        "gopls",
-        "eslint",
-        "ts_ls",
-        "terraformls",
-      },
-    },
-  },
+  "williamboman/mason.nvim",
+  opts = { ensure_installed = { "markdownlint-cli2", "markdown-toc" } },
 }
