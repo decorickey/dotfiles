@@ -3,14 +3,14 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     keys = {
       {
-        "<leader>fe",
+        "<leader>e",
         function()
           require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
         end,
-        desc = "File Explorer",
+        desc = "Explorer",
       },
       { "<leader>fE", false },
-      { "<leader>e", false },
+      { "<leader>fe", false },
       { "<leader>E", false },
     },
   },

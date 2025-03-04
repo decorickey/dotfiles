@@ -43,8 +43,8 @@ if has('ide')
   map <leader>fr <Action>(RecentFiles)
 
   " Neo-Tree
-  " File Explorer
-  map <leader>fe <Action>(ActivateProjectToolWindow)
+  " Explorer
+  map <leader>e <Action>(ActivateProjectToolWindow)
 
   " Aerial
   " Code Outline
