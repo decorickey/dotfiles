@@ -37,18 +37,20 @@ if has('ide')
   " Comment
   map <C-/> <Action>(CommentByLineComment)
 
-  " Telescope
+  " telescope.nvim
   map <leader>/ <Action>(FindInPath)
   map <leader>ff <Action>(GotoFile)
   map <leader>fr <Action>(RecentFiles)
 
-  " Neo-Tree
+  " neo-tree.nvim
   " Explorer
   map <leader>e <Action>(ActivateProjectToolWindow)
 
-  " Aerial
+  " aerial.nvim/trouble.nvim
   " Code Outline
   map <leader>co <Action>(ActivateStructureToolWindow)
+  " Code Symbols
+  map <leader>cs <Action>(ActivateStructureToolWindow)
 
   " Fold
   map zc <Action>(CollapseRegion)
@@ -57,14 +59,18 @@ if has('ide')
   map zO <Action>(ExpandAllRegions)
 
   " LSP
+  " Goto Implementation
+  map gI <Action>(GotoImplementation)
+  " Goto References
+  map gr <Action>(FindUsages)
+  " Goto T[y]pe Definition
+  map gy <Action>(GotoTypeDeclaration)
+  "
   map <leader>la <Action>(ShowIntentionActions)
   map <leader>ld <Action>(ShowErrorDescription)
   map <leader>lf <Action>(ReformatCode)
   map <leader>lR <Action>(FindUsages)
   map <leader>lr <Action>(RenameElement)
-  map gI <Action>(GotoImplementation)
-  map gr <Action>(FindUsages)
-  map gy <Action>(GotoTypeDeclaration)
 
   " IDEA Original
   map gsm <Action>(GotoSuperMethod)
