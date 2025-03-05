@@ -5,6 +5,9 @@ packages=(
   "gh"
   "neovim"
   "ripgrep"
+  "lazygit"
+  "fd"
+  "fd-find"
   "gopls"
   "sqlite3"
 )
