@@ -6,6 +6,9 @@ return {
     ensure_installed = {
       "lua",
       "markdown",
+      "go",
+      "gomod",
+      "gosum",
     },
   },
 }
