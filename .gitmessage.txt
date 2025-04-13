@@ -1,0 +1,27 @@
+<type>(<scope>): <description>
+
+# type 一覧と用途：
+# ----------------------------------------------
+# feat      : 新機能の追加
+# fix       : バグ修正
+# chore     : ビルドツール・依存関係・その他雑務（アプリの挙動に関係しない）
+# docs      : ドキュメントのみの変更
+# style     : フォーマットの修正（空白、インデント、セミコロンなど）
+# refactor  : 挙動を変えないコードの改善（リファクタリング）
+# test      : テストの追加・修正
+# perf      : パフォーマンス改善
+# build     : ビルドシステムや外部依存に関する変更（npm scriptsなど）
+# ci        : CI関連（GitHub Actions など）
+# revert    : 以前のコミットの取り消し
+
+# scope（任意）：
+# 変更対象を明示（例: api, auth, ui, db など）
+
+# description：
+# わかりやすく簡潔に変更内容を書く（例: add user authentication）
+
+# 例：
+# feat(auth): add JWT-based login
+# fix(api): handle empty response correctly
+# docs(readme): update installation instructions
+# refactor: clean up user service logic
