@@ -30,6 +30,12 @@ if has('ide')
   map <C-i> <Action>(Forward)
   map <C-o> <Action>(Back)
 
+  " Code
+  map <leader>cr <Action>(RenameElement)
+  map <leader>ca <Action>(ShowIntentionActions)
+  map <leader>cf <Action>(ReformatCode)
+  map <leader>cd <Action>(ShowErrorDescription)
+
   " Buffers(Tabs)
   map <leader>d <Action>(CloseEditor)
   map <leader>t <Action>(ActivateTerminalToolWindow)
@@ -65,12 +71,6 @@ if has('ide')
   map gr <Action>(FindUsages)
   " Goto T[y]pe Definition
   map gy <Action>(GotoTypeDeclaration)
-  "
-  map <leader>la <Action>(ShowIntentionActions)
-  map <leader>ld <Action>(ShowErrorDescription)
-  map <leader>lf <Action>(ReformatCode)
-  map <leader>lR <Action>(FindUsages)
-  map <leader>lr <Action>(RenameElement)
 
   " IDEA Original
   map gsm <Action>(GotoSuperMethod)
