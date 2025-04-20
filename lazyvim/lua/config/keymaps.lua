@@ -12,3 +12,4 @@ map("n", "<leader>t", "<leader>ft", { remap = true, desc = "Terminal" })
 
 -- Comment
 map("n", "<C-/>", "gcc", { remap = true, desc = "Comment" })
+map("v", "<C-/>", "gc", { remap = true, desc = "Comment" })

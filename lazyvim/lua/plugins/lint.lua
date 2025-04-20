@@ -8,6 +8,7 @@ return {
       ["markdownlint-cli2"] = {
         args = { "--config", vim.fn.expand("~/dotfiles/.markdownlint.yaml"), "--" },
       },
+      ["go"] = { "golangci_lint" },
     },
   },
 }
