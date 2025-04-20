@@ -6,12 +6,6 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
-        "gopls",
-        "eslint",
-        "ts_ls",
-        "terraformls",
-        "markdownlint-cli2",
-        "markdown-toc",
       },
     },
   },

@@ -5,10 +5,6 @@ return {
     indent = { enable = true },
     ensure_installed = {
       "lua",
-      "markdown",
-      "go",
-      "gomod",
-      "gosum",
     },
   },
 }
