@@ -30,33 +30,15 @@ if has('ide')
   map <C-i> <Action>(Forward)
   map <C-o> <Action>(Back)
 
+  " Buffers(Tabs)
+  map <leader>bd <Action>(CloseEditor)
+  map <leader>ft <Action>(ActivateTerminalToolWindow)
+
   " Code
   map <leader>cr <Action>(RenameElement)
   map <leader>ca <Action>(ShowIntentionActions)
   map <leader>cf <Action>(ReformatCode)
   map <leader>cd <Action>(ShowErrorDescription)
-
-  " Buffers(Tabs)
-  map <leader>d <Action>(CloseEditor)
-  map <leader>t <Action>(ActivateTerminalToolWindow)
-
-  " Comment
-  map <C-/> <Action>(CommentByLineComment)
-
-  " telescope.nvim
-  map <leader>/ <Action>(FindInPath)
-  map <leader>ff <Action>(GotoFile)
-  map <leader>fr <Action>(RecentFiles)
-
-  " neo-tree.nvim
-  " Explorer
-  map <leader>e <Action>(ActivateProjectToolWindow)
-
-  " aerial.nvim/trouble.nvim
-  " Code Outline
-  map <leader>co <Action>(ActivateStructureToolWindow)
-  " Code Symbols
-  map <leader>cs <Action>(ActivateStructureToolWindow)
 
   " Fold
   map zc <Action>(CollapseRegion)
@@ -71,6 +53,18 @@ if has('ide')
   map gr <Action>(FindUsages)
   " Goto T[y]pe Definition
   map gy <Action>(GotoTypeDeclaration)
+
+  " telescope.nvim
+  map <leader>/ <Action>(FindInPath)
+  map <leader>ff <Action>(GotoFile)
+  map <leader>fr <Action>(RecentFiles)
+
+  " aerial.nvim/trouble.nvim
+  map <leader>co <Action>(ActivateStructureToolWindow)
+  map <leader>cs <Action>(ActivateStructureToolWindow)
+
+  " neo-tree.nvim
+  map <leader>e <Action>(ActivateProjectToolWindow)
 
   " IDEA Original
   map gsm <Action>(GotoSuperMethod)

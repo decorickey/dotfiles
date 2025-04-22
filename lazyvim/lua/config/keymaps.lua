@@ -5,11 +5,12 @@
 local map = vim.keymap.set
 
 map("n", "gn", "<Nop>")
+map("n", "gN", "<Nop>")
 
 -- Buffers
-map("n", "<leader>d", "<leader>bd", { remap = true, desc = "Delete Buffer" })
-map("n", "<leader>t", "<leader>ft", { remap = true, desc = "Terminal" })
+-- map("n", "<leader>d", "<leader>bd", { remap = true, desc = "Delete Buffer" })
+-- map("n", "<leader>t", "<leader>ft", { remap = true, desc = "Terminal" })
 
 -- Comment
-map("n", "<C-/>", "gcc", { remap = true, desc = "Comment" })
-map("v", "<C-/>", "gc", { remap = true, desc = "Comment" })
+-- map("n", "<C-/>", "gcc", { remap = true, desc = "Comment" })
+-- map("v", "<C-/>", "gc", { remap = true, desc = "Comment" })
