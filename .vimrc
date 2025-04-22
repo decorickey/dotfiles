@@ -46,6 +46,9 @@ if has('ide')
   map zo <Action>(ExpandRegion)
   map zO <Action>(ExpandAllRegions)
 
+  " Comment
+  map gcc <Action>(CommentByLineComment)
+
   " LSP
   " Goto Implementation
   map gI <Action>(GotoImplementation)
