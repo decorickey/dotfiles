@@ -13,16 +13,9 @@ setopt append_history       # 履歴に追加保存
 setopt hist_no_store        # historyコマンドは履歴に登録しない
 setopt hist_reduce_blanks   # 余分な空白は詰めて保存
 
-# Git
-git config --global core.editor "nvim"
-git config --global push.autoSetupRemote true
-
 # NeoVim
 alias -g vim="nvim"
 alias -g view="nvim -R"
-
-# Go
-export PATH="$HOME/go/bin:$PATH"
 
 # Volta
 export PATH="$HOME/.volta/bin:$PATH"
