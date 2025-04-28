@@ -2,7 +2,7 @@
 
 set -e
 
-echo "Homebrewインストールスクリプト（Apple Silicon & Linux対応、evalあり版）を開始します..."
+echo "Homebrewインストールスクリプト（修正版・sudo許可版）を開始します..."
 
 OS="$(uname)"
 
@@ -10,8 +10,8 @@ if [[ "$OS" == "Darwin" ]]; then
     echo "macOS (Apple Silicon) が検出されました。"
 
     if ! command -v brew >/dev/null 2>&1; then
-        echo "Homebrewをインストールします（非インタラクティブ）..."
-        NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        echo "Homebrewをインストールします（sudoパスワード入力が必要になる場合があります）..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     else
         echo "Homebrewはすでにインストールされています。"
     fi
@@ -26,8 +26,8 @@ elif [[ "$OS" == "Linux" ]]; then
         sudo apt-get update
         sudo apt-get install -y build-essential curl file git
 
-        echo "Homebrewをインストールします（非インタラクティブ）..."
-        NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        echo "Homebrewをインストールします..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     else
         echo "Homebrewはすでにインストールされています。"
     fi
