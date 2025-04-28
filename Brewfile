@@ -1,0 +1,8 @@
+brew "git"
+brew "gh"
+brew "neovim"
+brew "lazygit"
+brew "ripgrep"
+brew "fd"
+brew "gopls"
+brew "sqlite3"
