@@ -21,6 +21,7 @@ alias -g view="nvim -R"
 export PATH="$HOME/go/bin:$PATH"
 
 # fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source <(fzf --zsh)
 
 # fzf - git

@@ -1,5 +1,6 @@
 brew "git"
 brew "gh"
+brew "yq"
 brew "neovim"
 brew "lazygit"
 brew "ripgrep"
