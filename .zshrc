@@ -17,8 +17,8 @@ setopt hist_reduce_blanks   # 余分な空白は詰めて保存
 alias -g vim="nvim"
 alias -g view="nvim -R"
 
-# Volta
-export PATH="$HOME/.volta/bin:$PATH"
+# Go
+export PATH="$HOME/go/bin:$PATH"
 
 # fzf
 source <(fzf --zsh)
@@ -37,3 +37,7 @@ function ds() {
   [ -n "$cid" ] && docker stop "$cid"
 }
 alias -g cid='`docker ps | sed 1d | fzf -q "$1" | awk '\''{print $1}'\''`'
+
+# Volta
+export PATH="$HOME/.volta/bin:$PATH"
+
