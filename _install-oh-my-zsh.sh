@@ -32,7 +32,7 @@ else
 fi
 echo
 
-# Ensure the ~/.zshrc sources ~/dotfiles/.zshrc
+# ~/.zshrcが~/dotfiles/.zshrcを読み込むようにする
 if ! grep -Fxq "source ~/dotfiles/.zshrc" ~/.zshrc; then
   echo 'source ~/dotfiles/.zshrc' >>~/.zshrc
 fi
