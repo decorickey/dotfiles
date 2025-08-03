@@ -20,6 +20,13 @@ rm -rf "$TARGET_CLAUDE_MD"
 ln -sf "$SOURCE_CLAUDE_MD" "$TARGET_CLAUDE_MD"
 echo "シンボリックリンクを作成/更新しました: $SOURCE_CLAUDE_MD -> $TARGET_CLAUDE_MD"
 
+# settings.json ファイルへのシンボリックリンクを作成
+TARGET_SETTINGS_JSON="$CLAUDE_DIR/settings.json"
+SOURCE_SETTINGS_JSON="$DOTFILES_CLAUDE_DIR/settings.json"
+rm -rf "$TARGET_SETTINGS_JSON"
+ln -sf "$SOURCE_SETTINGS_JSON" "$TARGET_SETTINGS_JSON"
+
+echo "シンボリックリンクを作成/更新しました: $SOURCE_CLAUDE_MD -> $TARGET_CLAUDE_MD"
 # docs ディレクトリへのシンボリックリンクを作成
 TARGET_DOCS_PATH="$CLAUDE_DIR/docs"
 SOURCE_DOCS_DIR="$DOTFILES_CLAUDE_DIR/docs"
