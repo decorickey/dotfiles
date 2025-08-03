@@ -1,18 +1,15 @@
 # Claude Code 個人設定
 
-## 基本ルール
+## 共通ルール
 
 - 日本語で回答してください。
 
-## 設計ルール
+## プログラミングルール
 
-- エリック・エヴァンスが提唱するDDD(Domain Driven Design)に従ってください。
-- Kent Beckとt_wadaが提唱するTDD(Test Driven Development)に従ってください。
+- DDD(Domain Driven Design)は、エリック・エヴァンスが提唱するDDDに従ってください。
+- TDD(Test Driven Development)は、Kent Beckとt_wadaが提唱するTDDに従ってください。
 - Clean Architectureの原則に従ってください。
-- Martin Fowlerが提唱するリファクタリング原則に従って、リファクタリングすべきコードがあれば提案してください。
-
-## プログラミング言語共通ルール
-
+- リファクタリングは、Martin Fowlerが提唱するリファクタリング原則に従ってください。作業中にリファクタリングすべきコードがあれば提案してください。
 - コードを読めば明らかに理解できるコメントは書かないでください。
 - テストコードでしか使わないコードはプロダクションコードに書かないでください。
 
