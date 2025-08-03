@@ -1,35 +1,94 @@
 #!/bin/bash
 
-# .claude ディレクトリのパス
-CLAUDE_DIR="$HOME/.claude"
-# dotfiles/claude ディレクトリのパス
-DOTFILES_CLAUDE_DIR="$HOME/dotfiles/claude"
+set -euo pipefail
 
-# .claude ディレクトリが存在しない場合は作成
-if [ ! -d "$CLAUDE_DIR" ]; then
-  mkdir -p "$CLAUDE_DIR"
-  echo "ディレクトリを作成しました: $CLAUDE_DIR"
-else
-  echo "ディレクトリは既に存在します: $CLAUDE_DIR"
-fi
+# 定数定義
+readonly CLAUDE_DIR="$HOME/.claude"
+readonly DOTFILES_CLAUDE_DIR="$HOME/dotfiles/claude"
+readonly AGENTS_DIR="$CLAUDE_DIR/agents"
+readonly SOURCE_AGENTS_DIR="$DOTFILES_CLAUDE_DIR/agents"
 
-# CLAUDE.md ファイルへのシンボリックリンクを作成
-TARGET_CLAUDE_MD="$CLAUDE_DIR/CLAUDE.md"
-SOURCE_CLAUDE_MD="$DOTFILES_CLAUDE_DIR/CLAUDE.md"
-rm -rf "$TARGET_CLAUDE_MD"
-ln -sf "$SOURCE_CLAUDE_MD" "$TARGET_CLAUDE_MD"
-echo "シンボリックリンクを作成/更新しました: $SOURCE_CLAUDE_MD -> $TARGET_CLAUDE_MD"
+# 色付きログ出力
+log_info() {
+  echo -e "\033[0;32m[INFO]\033[0m $1"
+}
 
-# settings.json ファイルへのシンボリックリンクを作成
-TARGET_SETTINGS_JSON="$CLAUDE_DIR/settings.json"
-SOURCE_SETTINGS_JSON="$DOTFILES_CLAUDE_DIR/settings.json"
-rm -rf "$TARGET_SETTINGS_JSON"
-ln -sf "$SOURCE_SETTINGS_JSON" "$TARGET_SETTINGS_JSON"
+log_warn() {
+  echo -e "\033[0;33m[WARN]\033[0m $1"
+}
 
-echo "シンボリックリンクを作成/更新しました: $SOURCE_CLAUDE_MD -> $TARGET_CLAUDE_MD"
-# docs ディレクトリへのシンボリックリンクを作成
-TARGET_DOCS_PATH="$CLAUDE_DIR/docs"
-SOURCE_DOCS_DIR="$DOTFILES_CLAUDE_DIR/docs"
-rm -rf "$TARGET_DOCS_PATH"
-ln -sf "$SOURCE_DOCS_DIR" "$TARGET_DOCS_PATH"
-echo "シンボリックリンクを作成/更新しました: $TARGET_DOCS_PATH -> $SOURCE_DOCS_DIR"
+log_error() {
+  echo -e "\033[0;31m[ERROR]\033[0m $1"
+}
+
+# ディレクトリ作成関数
+create_directory_if_not_exists() {
+  local dir="$1"
+  if [ ! -d "$dir" ]; then
+    mkdir -p "$dir"
+    log_info "ディレクトリを作成しました: $dir"
+  else
+    log_info "ディレクトリは既に存在します: $dir"
+  fi
+}
+
+# シンボリックリンク作成関数
+create_symlink() {
+  local source="$1"
+  local target="$2"
+  local description="${3:-ファイル}"
+
+  if [ ! -e "$source" ]; then
+    log_error "ソースファイルが存在しません: $source"
+    return 1
+  fi
+
+  rm -rf "$target"
+  ln -sf "$source" "$target"
+  log_info "${description}のシンボリックリンクを作成/更新しました: $source -> $target"
+}
+
+# エージェントファイルのシンボリックリンク作成
+setup_agent_symlinks() {
+  if [ ! -d "$SOURCE_AGENTS_DIR" ]; then
+    log_warn "エージェントディレクトリが見つかりません: $SOURCE_AGENTS_DIR"
+    return 0
+  fi
+
+  local agent_files=("$SOURCE_AGENTS_DIR"/*.md)
+
+  # ファイルが存在しない場合の処理
+  if [ ! -e "${agent_files[0]}" ]; then
+    log_warn "エージェントファイルが見つかりません: $SOURCE_AGENTS_DIR/*.md"
+    return 0
+  fi
+
+  for agent_file in "${agent_files[@]}"; do
+    if [ -f "$agent_file" ]; then
+      local filename=$(basename "$agent_file")
+      local target_file="$AGENTS_DIR/$filename"
+      create_symlink "$agent_file" "$target_file" "エージェント"
+    fi
+  done
+}
+
+# メイン処理
+main() {
+  log_info "Claude Code セットアップを開始します..."
+
+  # 必要なディレクトリの作成
+  create_directory_if_not_exists "$CLAUDE_DIR"
+  create_directory_if_not_exists "$AGENTS_DIR"
+
+  # 設定ファイルのシンボリックリンク作成
+  create_symlink "$DOTFILES_CLAUDE_DIR/CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md" "CLAUDE.md"
+  create_symlink "$DOTFILES_CLAUDE_DIR/settings.json" "$CLAUDE_DIR/settings.json" "settings.json"
+
+  # エージェントファイルのシンボリックリンク作成
+  setup_agent_symlinks
+
+  log_info "Claude Code セットアップが完了しました。"
+}
+
+# スクリプト実行
+main "$@"
