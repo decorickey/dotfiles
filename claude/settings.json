@@ -7,6 +7,7 @@
       "Bash(find:*)",
       "Bash(xargs:*)",
       "Bash(git diff:*)",
+      "Bash(git fetch:*)",
       "Bash(go build:*)",
       "Bash(go test:*)",
       "Bash(go fmt:*)",
@@ -15,8 +16,8 @@
     ],
     "deny": []
   },
+  "model": "opus",
   "feedbackSurveyState": {
-    "lastShownTime": 1754209191977
-  },
-  "model": "opus"
+    "lastShownTime": 1754310351523
+  }
 }
