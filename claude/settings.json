@@ -2,17 +2,21 @@
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "allow": [
+      "Bash(ls:*)",
       "Bash(grep:*)",
       "Bash(find:*)",
+      "Bash(xargs:*)",
       "Bash(git diff:*)",
       "Bash(go build:*)",
       "Bash(go test:*)",
       "Bash(go fmt:*)",
-      "Bash(go vet:*)"
+      "Bash(go vet:*)",
+      "Bash(golangci-lint:*)"
     ],
     "deny": []
   },
   "feedbackSurveyState": {
     "lastShownTime": 1754209191977
-  }
+  },
+  "model": "opus"
 }

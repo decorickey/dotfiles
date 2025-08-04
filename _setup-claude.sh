@@ -13,6 +13,8 @@ readonly CLAUDE_DIR="$HOME/.claude"
 readonly DOTFILES_CLAUDE_DIR="$SCRIPT_DIR/claude"
 readonly AGENTS_DIR="$CLAUDE_DIR/agents"
 readonly SOURCE_AGENTS_DIR="$DOTFILES_CLAUDE_DIR/agents"
+readonly COMMANDS_DIR="$CLAUDE_DIR/commands"
+readonly SOURCE_COMMANDS_DIR="$DOTFILES_CLAUDE_DIR/commands"
 
 # エージェントディレクトリのシンボリックリンク作成
 setup_agent_symlinks() {
@@ -31,6 +33,23 @@ setup_agent_symlinks() {
     create_symlink "$SOURCE_AGENTS_DIR" "$AGENTS_DIR" "agentsディレクトリ"
 }
 
+# コマンドディレクトリのシンボリックリンク作成
+setup_command_symlinks() {
+    if [ ! -d "$SOURCE_COMMANDS_DIR" ]; then
+        log_warn "コマンドディレクトリが見つかりません: $SOURCE_COMMANDS_DIR"
+        return 0
+    fi
+    
+    # 既存のcommandsディレクトリを削除
+    if [ -e "$COMMANDS_DIR" ]; then
+        log_info "既存のcommandsディレクトリを削除: $COMMANDS_DIR"
+        rm -rf "$COMMANDS_DIR"
+    fi
+    
+    # commandsディレクトリ自体をシンボリックリンクとして作成
+    create_symlink "$SOURCE_COMMANDS_DIR" "$COMMANDS_DIR" "commandsディレクトリ"
+}
+
 # メイン処理
 main() {
     print_section "Claude Code セットアップ"
@@ -44,6 +63,9 @@ main() {
     
     # エージェントファイルのシンボリックリンク作成
     setup_agent_symlinks
+    
+    # コマンドディレクトリのシンボリックリンク作成
+    setup_command_symlinks
     
     print_completion "Claude Code セットアップ"
 }
