@@ -7,6 +7,8 @@
       "Bash(grep:*)",
       "Bash(find:*)",
       "Bash(xargs:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr diff:*)",
       "Bash(git diff:*)",
       "Bash(git fetch:*)",
       "Bash(go build:*)",
@@ -22,4 +24,3 @@
     "lastShownTime": 1754310351523
   }
 }
-
