@@ -15,7 +15,6 @@ setopt hist_reduce_blanks   # 余分な空白は詰めて保存
 
 # NeoVim
 alias -g vim="nvim"
-alias -g view="nvim -R"
 
 # Go
 export PATH="$HOME/go/bin:$PATH"

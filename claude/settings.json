@@ -2,6 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "allow": [
+      "Bash(make:*)",
       "Bash(ls:*)",
       "Bash(grep:*)",
       "Bash(find:*)",
@@ -21,3 +22,4 @@
     "lastShownTime": 1754310351523
   }
 }
+
