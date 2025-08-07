@@ -4,7 +4,7 @@
 
 -- Disable autoformat and spell checking for markdown files
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "markdown" },
+  pattern = { "markdown", "sh" },
   callback = function()
     vim.b.autoformat = false
     vim.opt_local.spell = false
@@ -18,3 +18,4 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.spell = false
   end,
 })
+
