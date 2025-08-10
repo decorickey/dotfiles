@@ -1,3 +1,4 @@
+brew "tmux"
 brew "fd"
 brew "yq"
 brew "git"
