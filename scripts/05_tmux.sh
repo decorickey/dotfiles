@@ -17,7 +17,7 @@ source "$ROOT_DIR/scripts/logging.sh"
 # 定数定義
 readonly FEATURE_NAME="tmux"
 readonly TMUX_CONF="$HOME/.tmux.conf"
-readonly SOURCE_TMUX_CONF="$ROOT_DIR/tmux.conf"
+readonly SOURCE_TMUX_CONF="$ROOT_DIR/.tmux.conf"
 
 # 関数定義
 setup_tmux_config() {
