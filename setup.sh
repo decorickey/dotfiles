@@ -1,62 +1,36 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# dotfiles セットアップスクリプト
+# 統一されたインターフェースで各種ツールをセットアップします
+#
 
 set -euo pipefail
 
-# 定数定義
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly LOG_FILE="$SCRIPT_DIR/setup.log"
 
-# 共通ライブラリの読み込み
-source "$SCRIPT_DIR/_common.sh"
+# ライブラリの読み込み
+source "$SCRIPT_DIR/scripts/logging.sh"
+source "$SCRIPT_DIR/scripts/common.sh"
 
-# セットアップステップ定義
-# 連想配列の代わりに関数を使用（bash/zsh互換）
+# セットアップスクリプトの定義（連想配列の代わりに関数を使用）
 get_setup_script() {
     case "$1" in
-        "packages") echo "_install-packages.sh" ;;
-        "oh-my-zsh") echo "_install-oh-my-zsh.sh" ;;
-        "fzf") echo "_install-fzf.sh" ;;
-        "volta") echo "_install-volta.sh" ;;
-        "git") echo "_setup-git.sh" ;;
-        "neovim") echo "_setup-neovim.sh" ;;
-        "claude") echo "_setup-claude.sh" ;;
+        "packages") echo "01_packages.sh" ;;
+        "shell") echo "02_shell.sh" ;;
+        "git") echo "03_git.sh" ;;
+        "neovim") echo "04_neovim.sh" ;;
+        "tmux") echo "05_tmux.sh" ;;
+        "volta") echo "06_volta.sh" ;;
+        "claude") echo "07_claude.sh" ;;
         *) echo "" ;;
     esac
 }
 
-# デフォルトのステップ順序
-readonly DEFAULT_STEPS=(
-    "packages"
-    "oh-my-zsh"
-    "fzf"
-    "volta"
-    "git"
-    "neovim"
-    "claude"
-)
+# デフォルトの実行順序
+readonly DEFAULT_ORDER=(packages shell git neovim tmux volta claude)
 
-# ログファイル付きのログ関数（オーバーライド）
-log_info() {
-    local message="$1"
-    echo -e "\033[0;32m[INFO]\033[0m $message" | tee -a "$LOG_FILE"
-}
-
-log_warn() {
-    local message="$1"
-    echo -e "\033[0;33m[WARN]\033[0m $message" | tee -a "$LOG_FILE"
-}
-
-log_error() {
-    local message="$1"
-    echo -e "\033[0;31m[ERROR]\033[0m $message" | tee -a "$LOG_FILE"
-}
-
-log_success() {
-    local message="$1"
-    echo -e "\033[0;36m[SUCCESS]\033[0m $message" | tee -a "$LOG_FILE"
-}
-
-# ヘルプメッセージ表示
+# ヘルプメッセージ
 show_help() {
     cat << EOF
 使用方法: $0 [オプション] [ステップ...]
@@ -64,71 +38,66 @@ show_help() {
 オプション:
     -h, --help     このヘルプメッセージを表示
     -l, --list     利用可能なセットアップステップを表示
-    -s, --skip     指定したステップをスキップ
     -o, --only     指定したステップのみ実行
+    -s, --skip     指定したステップをスキップ
 
-ステップ:
+例:
+    $0                    # すべてのステップを実行
+    $0 --only packages    # packagesステップのみ実行
+    $0 --skip volta       # voltaステップをスキップ
 EOF
-    for step in "${DEFAULT_STEPS[@]}"; do
-        echo "    $step"
-    done
-    echo
-    echo "例:"
-    echo "  $0                    # すべてのステップを実行"
-    echo "  $0 --only packages    # packagesステップのみ実行"
-    echo "  $0 --skip volta       # voltaステップをスキップ"
 }
 
 # 利用可能なステップを表示
 list_steps() {
-    log_info "利用可能なセットアップステップ:"
-    for step in "${DEFAULT_STEPS[@]}"; do
-        local script=$(get_setup_script "$step")
-        echo "  - $step ($script)"
+    echo "利用可能なセットアップステップ:"
+    for step in "${DEFAULT_ORDER[@]}"; do
+        echo "  - $step"
     done
 }
 
-# スクリプトの存在確認
-check_script_exists() {
-    local script="$1"
-    local script_path="$SCRIPT_DIR/$script"
-    
-    if [ ! -f "$script_path" ]; then
-        log_error "スクリプトが見つかりません: $script_path"
+# セットアップスクリプトを実行
+run_script() {
+    local name="$1"
+    local script_name=$(get_setup_script "$name")
+    if [[ -z "$script_name" ]]; then
+        log_error "不明なステップ: $name"
         return 1
     fi
     
-    ensure_executable "$script_path"
-    return 0
-}
-
-# セットアップステップの実行
-run_setup_step() {
-    local step_name="$1"
-    local script=$(get_setup_script "$step_name")
+    local script="scripts/$script_name"
     
-    log_info "========== $step_name セットアップ開始 =========="
-    
-    if ! check_script_exists "$script"; then
-        log_error "$step_name のセットアップをスキップします"
-        return 1
+    if [[ ! -f "$SCRIPT_DIR/$script" ]]; then
+        # 古いスクリプトにフォールバック
+        local old_script="_setup-$name.sh"
+        if [[ -f "$SCRIPT_DIR/$old_script" ]]; then
+            script="$old_script"
+        else
+            old_script="_install-$name.sh"
+            if [[ -f "$SCRIPT_DIR/$old_script" ]]; then
+                script="$old_script"
+            else
+                log_error "スクリプトが見つかりません: $name"
+                return 1
+            fi
+        fi
     fi
     
-    if (cd "$SCRIPT_DIR" && source "./$script"); then
-        log_success "$step_name のセットアップが完了しました"
+    log_info "実行中: $name"
+    if bash "$SCRIPT_DIR/$script" 2>&1 | tee -a "$LOG_FILE"; then
+        log_success "$name が完了しました"
+        return 0
     else
-        log_error "$step_name のセットアップが失敗しました"
+        log_error "$name が失敗しました"
         return 1
     fi
-    
-    echo
 }
 
 # メイン処理
 main() {
-    local skip_steps=()
-    local only_steps=()
     local mode="all"
+    local selected_steps=()
+    local skip_steps=()
     
     # オプション解析
     while [[ $# -gt 0 ]]; do
@@ -141,19 +110,19 @@ main() {
                 list_steps
                 exit 0
                 ;;
+            -o|--only)
+                mode="only"
+                shift
+                while [[ $# -gt 0 ]] && [[ ! "$1" =~ ^- ]]; do
+                    selected_steps+=("$1")
+                    shift
+                done
+                ;;
             -s|--skip)
                 mode="skip"
                 shift
                 while [[ $# -gt 0 ]] && [[ ! "$1" =~ ^- ]]; do
                     skip_steps+=("$1")
-                    shift
-                done
-                ;;
-            -o|--only)
-                mode="only"
-                shift
-                while [[ $# -gt 0 ]] && [[ ! "$1" =~ ^- ]]; do
-                    only_steps+=("$1")
                     shift
                 done
                 ;;
@@ -168,23 +137,17 @@ main() {
     # ログファイルの初期化
     echo "セットアップ開始: $(date)" > "$LOG_FILE"
     
-    log_info "dotfiles セットアップを開始します..."
+    log_section "dotfiles セットアップ"
     log_info "ログファイル: $LOG_FILE"
-    echo
-    
-    # OS情報を表示
-    show_os_info
-    echo
     
     # 実行するステップの決定
     local steps_to_run=()
-    
     case $mode in
         "only")
-            steps_to_run=("${only_steps[@]}")
+            steps_to_run=("${selected_steps[@]}")
             ;;
         "skip")
-            for step in "${DEFAULT_STEPS[@]}"; do
+            for step in "${DEFAULT_ORDER[@]}"; do
                 local skip=false
                 for skip_step in "${skip_steps[@]}"; do
                     if [[ "$step" == "$skip_step" ]]; then
@@ -198,30 +161,22 @@ main() {
             done
             ;;
         *)
-            steps_to_run=("${DEFAULT_STEPS[@]}")
+            steps_to_run=("${DEFAULT_ORDER[@]}")
             ;;
     esac
     
     # ステップの実行
     local failed_steps=()
-    
     for step in "${steps_to_run[@]}"; do
-        local script_check=$(get_setup_script "$step")
-        if [[ -z "$script_check" ]]; then
-            log_error "未知のステップ: $step"
-            failed_steps+=("$step")
-            continue
-        fi
-        
-        if ! run_setup_step "$step"; then
+        if ! run_script "$step"; then
             failed_steps+=("$step")
         fi
+        echo
     done
     
     # 結果表示
-    echo
-    if [ ${#failed_steps[@]} -eq 0 ]; then
-        log_success "すべてのセットアップが正常に完了しました！"
+    if [[ ${#failed_steps[@]} -eq 0 ]]; then
+        log_success "すべてのセットアップが完了しました！"
     else
         log_error "以下のステップで失敗しました:"
         for step in "${failed_steps[@]}"; do
@@ -231,5 +186,4 @@ main() {
     fi
 }
 
-# スクリプト実行
 main "$@"

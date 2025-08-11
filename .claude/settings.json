@@ -5,11 +5,13 @@
   },
   "permissions": {
     "allow": [
+      "Bash(chmod:*)",
       "Bash(cp:*)",
       "Bash(find:*)",
       "Bash(grep:*)",
       "Bash(head:*)",
       "Bash(List:*)",
+      "Bash(ln:*)",
       "Bash(ls:*)",
       "Bash(make:*)",
       "Bash(mkdir:*)",
@@ -18,6 +20,7 @@
       "Bash(rmdir:*)",
       "Bash(sed:*)",
       "Bash(serena:*)",
+      "Bash(touch:*)",
       "Bash(xargs:*)",
       "Bash(gh api:*)",
       "Bash(gh pr diff:*)",
@@ -37,4 +40,3 @@
     "lastShownTime": 1754798044817
   }
 }
-
