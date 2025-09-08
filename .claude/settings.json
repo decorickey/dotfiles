@@ -33,13 +33,37 @@
       "Bash(git pull:*)",
       "Bash(go build:*)",
       "Bash(go fmt:*)",
-      "Bash(go test:*)",
+      "Bash(*:go test:*)",
       "Bash(go vet:*)",
       "Bash(golangci-lint:*)"
     ],
     "deny": []
   },
-  "model": "opus",
+  "model": "opusplan",
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude Codeのタスクが完了しました✅\" with title \"Claude Code\" sound name \"Basso\"'"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude Codeが助けを求めています💡\" with title \"Claude Code\" sound name \"Basso\"'"
+          }
+        ]
+      }
+    ]
+  },
   "feedbackSurveyState": {
     "lastShownTime": 1756267248358
   }
