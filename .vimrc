@@ -75,7 +75,7 @@ if has('ide')
   map gnc <Action>(VcsShowNextChangeMarker)
   map gpc <Action>(VcsShowPrevChangeMarker)
   map <leader>ch <Action>(CallHierarchy)
-  map <leader>| <Action>(MoveTabRight)
+  " map <leader>| <Action>(MoveTabRight)
 
 endif
 
