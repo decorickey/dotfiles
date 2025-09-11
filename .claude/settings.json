@@ -5,6 +5,10 @@
   },
   "permissions": {
     "allow": [
+      "Grep",
+      "LS",
+      "Read",
+      "WebSearch",
       "Bash(cd:*)",
       "Bash(chmod:*)",
       "Bash(cp:*)",
@@ -25,9 +29,6 @@
       "Bash(tail:*)",
       "Bash(touch:*)",
       "Bash(xargs:*)",
-      "Bash(gh api:*)",
-      "Bash(gh pr diff:*)",
-      "Bash(gh pr view:*)",
       "Bash(git diff:*)",
       "Bash(git fetch:*)",
       "Bash(git pull:*)",
