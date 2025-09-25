@@ -9,6 +9,7 @@
       "LS",
       "Read",
       "WebSearch",
+      "Bash(cat:*)",
       "Bash(cd:*)",
       "Bash(chmod:*)",
       "Bash(cp:*)",
@@ -29,12 +30,14 @@
       "Bash(tail:*)",
       "Bash(touch:*)",
       "Bash(xargs:*)",
+      "Bash(gh pr diff:*)",
       "Bash(git diff:*)",
       "Bash(git fetch:*)",
+      "Bash(git log:*)",
       "Bash(git pull:*)",
       "Bash(go build:*)",
       "Bash(go fmt:*)",
-      "Bash(*:go test:*)",
+      "Bash(go test:*)",
       "Bash(go vet:*)",
       "Bash(golangci-lint:*)"
     ],
@@ -73,3 +76,4 @@
     "lastShownTime": 1756267248358
   }
 }
+
