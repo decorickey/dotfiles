@@ -9,6 +9,7 @@ return {
         -- 独自の設定のために必要
         args = { "--config", vim.fn.expand("~/dotfiles/.markdownlint.yaml"), "--" },
       },
+
       ["golangcilint"] = {},
     },
   },
