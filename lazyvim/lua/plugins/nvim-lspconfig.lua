@@ -18,15 +18,7 @@ return {
       dockerls = {},
       docker_compose_language_service = {},
       -- JSON
-      jsonls = {
-        settings = {
-          json = {
-            format = {
-              enable = true,
-            },
-          },
-        },
-      },
+      jsonls = {},
     },
   },
 }
