@@ -23,12 +23,13 @@ get_setup_script() {
         "tmux") echo "05_tmux.sh" ;;
         "volta") echo "06_volta.sh" ;;
         "claude") echo "07_claude.sh" ;;
+        "vscode") echo "08_vscode.sh" ;;
         *) echo "" ;;
     esac
 }
 
 # デフォルトの実行順序
-readonly DEFAULT_ORDER=(packages shell git neovim tmux volta claude)
+readonly DEFAULT_ORDER=(packages shell git neovim tmux volta claude vscode)
 
 # ヘルプメッセージ
 show_help() {

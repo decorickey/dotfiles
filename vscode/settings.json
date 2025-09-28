@@ -1,0 +1,34 @@
+{
+  "vscode-neovim.neovimInitVimPaths.darwin": "~/dotfiles/.vimrc",
+  "vscode-neovim.neovimInitVimPaths.linux": "~/dotfiles/.vimrc",
+  "vscode-neovim.neovimInitVimPaths.win32": "~/dotfiles/.vimrc",
+  "vscode-neovim.useSystemClipboard": true,
+  "vscode-neovim.compositeKeys": {
+    "jj": {
+      "command": "vscode-neovim.escape"
+    }
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "gopls": {
+    "formatting.gofumpt": true,
+    "ui.codelenses": {
+      "run_govulncheck": true,
+      "test": true,
+      "vulncheck": true
+    },
+    "staticcheck": true
+  },
+  "go.delveConfig": {},
+  "go.enableCodeLens": {},
+  "explorer.confirmDelete": false,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  }
+}

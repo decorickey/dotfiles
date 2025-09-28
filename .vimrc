@@ -77,5 +77,62 @@ if has('ide')
   map <leader>ch <Action>(CallHierarchy)
   " map <leader>| <Action>(MoveTabRight)
 
+elseif exists('g:vscode')
+  " VSCode NeoVim Extension -----------------------------------------
+  " Basic
+  map L <Cmd>call VSCodeNotify('workbench.action.nextEditor')<CR>
+  map H <Cmd>call VSCodeNotify('workbench.action.previousEditor')<CR>
+  map <C-h> <Cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
+  map <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
+  map <C-k> <Cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<CR>
+  map <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
+  map <C-i> <Cmd>call VSCodeNotify('workbench.action.navigateForward')<CR>
+  map <C-o> <Cmd>call VSCodeNotify('workbench.action.navigateBack')<CR>
+
+  " Buffers(Tabs)
+  map <leader>bd <Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
+  map <leader>ft <Cmd>call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>
+
+  " Code
+  map <leader>cr <Cmd>call VSCodeNotify('editor.action.rename')<CR>
+  map <leader>ca <Cmd>call VSCodeNotify('editor.action.quickFix')<CR>
+  map <leader>cf <Cmd>call VSCodeNotify('editor.action.formatDocument')<CR>
+  map <leader>cd <Cmd>call VSCodeNotify('editor.action.showHover')<CR>
+
+  " Fold
+  map zc <Cmd>call VSCodeNotify('editor.fold')<CR>
+  map zC <Cmd>call VSCodeNotify('editor.foldAll')<CR>
+  map zo <Cmd>call VSCodeNotify('editor.unfold')<CR>
+  map zO <Cmd>call VSCodeNotify('editor.unfoldAll')<CR>
+
+  " Comment
+  map gcc <Cmd>call VSCodeNotify('editor.action.commentLine')<CR>
+
+  " LSP
+  " Goto Implementation
+  map gI <Cmd>call VSCodeNotify('editor.action.goToImplementation')<CR>
+  " Goto References
+  map gr <Cmd>call VSCodeNotify('references-view.findReferences')<CR>
+  " Goto T[y]pe Definition
+  map gy <Cmd>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>
+
+  " telescope.nvim equivalent
+  map <leader>/ <Cmd>call VSCodeNotify('workbench.action.findInFiles')<CR>
+  map <leader>ff <Cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>
+  map <leader>fr <Cmd>call VSCodeNotify('workbench.action.openRecent')<CR>
+
+  " aerial.nvim/trouble.nvim equivalent
+  map <leader>co <Cmd>call VSCodeNotify('outline.focus')<CR>
+  map <leader>cs <Cmd>call VSCodeNotify('workbench.action.gotoSymbol')<CR>
+
+  " neo-tree.nvim equivalent
+  map <leader>e <Cmd>call VSCodeNotify('workbench.view.explorer')<CR>
+
+  " VSCode Original
+  map gne <Cmd>call VSCodeNotify('editor.action.marker.nextInFiles')<CR>
+  map gnc <Cmd>call VSCodeNotify('workbench.action.editor.nextChange')<CR>
+  map gpc <Cmd>call VSCodeNotify('workbench.action.editor.previousChange')<CR>
+  map <leader>ch <Cmd>call VSCodeNotify('references-view.showCallHierarchy')<CR>
+
 endif
 

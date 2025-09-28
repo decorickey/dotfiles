@@ -1,0 +1,62 @@
+[
+  {
+    "key": "ctrl+/",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly && vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly && vscode-neovim.mode == 'visual'"
+  },
+  {
+    "key": "space f f",
+    "command": "workbench.action.quickOpen",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "space slash",
+    "command": "workbench.action.findInFiles",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "space f r",
+    "command": "workbench.action.openRecent",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "space e",
+    "command": "workbench.view.explorer",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "space f t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "space c r",
+    "command": "editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly && vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "space c a",
+    "command": "editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly && vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "space c f",
+    "command": "editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "space c o",
+    "command": "outline.focus",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "space c s",
+    "command": "workbench.action.gotoSymbol",
+    "when": "editorHasDocumentSymbolProvider && editorTextFocus && vscode-neovim.mode == 'normal'"
+  }
+]
