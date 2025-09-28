@@ -1,37 +1,117 @@
 [
   {
-    "key": "ctrl+/",
-    "command": "editor.action.commentLine",
-    "when": "editorTextFocus && !editorReadonly && vscode-neovim.mode == 'normal'"
+    "key": "H",
+    "command": "workbench.action.previousEditor",
+    "when": "vscode-neovim.mode == 'normal'"
   },
   {
-    "key": "ctrl+/",
+    "key": "L",
+    "command": "workbench.action.nextEditor",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusLeftGroup",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "workbench.action.navigateForward",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.focusBelowGroup",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusAboveGroup",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusRightGroup",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "workbench.action.navigateBack",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "g c",
     "command": "editor.action.blockComment",
     "when": "editorTextFocus && !editorReadonly && vscode-neovim.mode == 'visual'"
   },
   {
-    "key": "space f f",
-    "command": "workbench.action.quickOpen",
+    "key": "g c c",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly && vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "g I",
+    "command": "editor.action.goToImplementation",
     "when": "vscode-neovim.mode == 'normal'"
   },
   {
-    "key": "space slash",
+    "key": "g n c",
+    "command": "workbench.action.editor.nextChange",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "g n e",
+    "command": "editor.action.marker.nextInFiles",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "g p c",
+    "command": "workbench.action.editor.previousChange",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "g r",
+    "command": "references-view.findReferences",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "g y",
+    "command": "editor.action.goToTypeDefinition",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "space /",
     "command": "workbench.action.findInFiles",
     "when": "vscode-neovim.mode == 'normal'"
   },
   {
-    "key": "space f r",
-    "command": "workbench.action.openRecent",
+    "key": "space b d",
+    "command": "workbench.action.closeActiveEditor",
     "when": "vscode-neovim.mode == 'normal'"
   },
   {
-    "key": "space e",
-    "command": "workbench.view.explorer",
+    "key": "space c a",
+    "command": "editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly && vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "space c d",
+    "command": "editor.action.showHover",
     "when": "vscode-neovim.mode == 'normal'"
   },
   {
-    "key": "space f t",
-    "command": "workbench.action.terminal.toggleTerminal",
+    "key": "space c f",
+    "command": "editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "space c h",
+    "command": "references-view.showCallHierarchy",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "space c o",
+    "command": "outline.focus",
     "when": "vscode-neovim.mode == 'normal'"
   },
   {
@@ -40,23 +120,48 @@
     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly && vscode-neovim.mode == 'normal'"
   },
   {
-    "key": "space c a",
-    "command": "editor.action.quickFix",
-    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly && vscode-neovim.mode == 'normal'"
-  },
-  {
-    "key": "space c f",
-    "command": "editor.action.formatDocument",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && vscode-neovim.mode == 'normal'"
-  },
-  {
-    "key": "space c o",
-    "command": "outline.focus",
-    "when": "vscode-neovim.mode == 'normal'"
-  },
-  {
     "key": "space c s",
     "command": "workbench.action.gotoSymbol",
     "when": "editorHasDocumentSymbolProvider && editorTextFocus && vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "space e",
+    "command": "workbench.view.explorer",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "space f f",
+    "command": "workbench.action.quickOpen",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "space f r",
+    "command": "workbench.action.openRecent",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "space f t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "z C",
+    "command": "editor.foldAll",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "z O",
+    "command": "editor.unfoldAll",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "z c",
+    "command": "editor.fold",
+    "when": "vscode-neovim.mode == 'normal'"
+  },
+  {
+    "key": "z o",
+    "command": "editor.unfold",
+    "when": "vscode-neovim.mode == 'normal'"
   }
 ]
