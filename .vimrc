@@ -88,6 +88,9 @@ elseif exists('g:vscode')
   map <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
   map <C-i> <Cmd>call VSCodeNotify('workbench.action.navigateForward')<CR>
   map <C-o> <Cmd>call VSCodeNotify('workbench.action.navigateBack')<CR>
+  " Line end (Ctrl+E) - directly map $ to avoid VSCode command mismatch
+  nnoremap <silent> <C-e> $
+  xnoremap <silent> <C-e> $
 
   " Buffers(Tabs)
   map <leader>bd <Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>

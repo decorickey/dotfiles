@@ -43,7 +43,6 @@
     ],
     "deny": []
   },
-  "model": "opusplan",
   "hooks": {
     "Stop": [
       {
@@ -72,7 +71,9 @@
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
   },
+  "alwaysThinkingEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1756267248358
-  }
+  },
+  "model": "opus"
 }
