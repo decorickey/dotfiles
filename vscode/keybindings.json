@@ -1,3 +1,14 @@
 [
-  { "key": "ctrl+e", "command": "-scrollLineDown" }
+  // Ctrl+E: VSCodeのデフォルト動作（1行スクロールダウン）を無効化
+  { "key": "ctrl+e", "command": "-scrollLineDown" },
+
+  // Ctrl+E: 行末へ移動
+  // 注意: .vimrcでも同じ設定（nnoremap <C-e> $）があるが、
+  // VSCode-NeoVimエクステンションとの連携を確実にするため、
+  // VSCode側でも明示的に設定している
+  {
+    "key": "ctrl+e",
+    "command": "cursorLineEnd",
+    "when": "editorTextFocus && !editorReadonly"
+  }
 ]

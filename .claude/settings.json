@@ -6,7 +6,6 @@
   "permissions": {
     "allow": [
       "Grep",
-      "LS",
       "Read",
       "WebSearch",
       "Bash(cat:*)",
@@ -74,6 +73,5 @@
   "alwaysThinkingEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1756267248358
-  },
-  "model": "opus"
+  }
 }
