@@ -11,19 +11,6 @@ return {
           gopls = {},
         },
       },
-
-      -- Markdown
-      marksman = {},
-
-      -- Terraform
-      terraformls = {},
-
-      -- Docker
-      dockerls = {},
-      docker_compose_language_service = {},
-
-      -- JSON
-      jsonls = {},
     },
   },
 }

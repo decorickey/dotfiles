@@ -12,20 +12,6 @@ return {
       "gomod",
       "gowork",
       "gosum",
-
-      -- Docker
-      "dockerfile",
-
-      -- JSON
-      "json",
-      "json5",
-
-      -- SQL
-      "sql",
-
-      -- Terraform
-      "terraform",
-      "hcl",
     },
   },
 }
