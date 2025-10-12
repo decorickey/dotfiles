@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# スクリプト名: 06_volta.sh
+# スクリプト名: volta.sh
 # 説明: VoltaのインストールとNode.jsバージョン管理の設定
 # 依存: なし (curlが必要)
 #
@@ -13,7 +13,7 @@ readonly ROOT_DIR="$(dirname "$SCRIPT_DIR")"
 # 必要なライブラリのみ読み込む
 source "$ROOT_DIR/scripts/common.sh"
 source "$ROOT_DIR/scripts/logging.sh"
-source "$ROOT_DIR/scripts/shell.sh"
+source "$ROOT_DIR/scripts/shell_utils.sh"
 
 # 定数定義
 readonly FEATURE_NAME="Volta"
@@ -140,4 +140,3 @@ main() {
 }
 
 main "$@"
-

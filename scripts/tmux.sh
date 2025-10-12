@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #
-# スクリプト名: 05_tmux.sh
+# スクリプト名: tmux.sh
 # 説明: tmuxの設定ファイルのセットアップ
-# 依存: 01_packages.sh (tmux)
+# 依存: packages.sh (tmux)
 #
 
 set -euo pipefail
@@ -74,7 +74,7 @@ main() {
   log_section "$FEATURE_NAME Setup"
 
   # tmuxの確認
-  if ! require_command tmux "Please run 01_packages.sh first"; then
+  if ! require_command tmux "Please run packages.sh first"; then
     return 1
   fi
 
@@ -97,4 +97,3 @@ main() {
 }
 
 main "$@"
-

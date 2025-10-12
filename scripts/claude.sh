@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 07_claude.sh - Claude Codeの設定ファイルとエージェント、コマンドのセットアップ
+# claude.sh - Claude Codeの設定ファイルとエージェント、コマンドのセットアップ
 # Claude Codeの設定ファイル、エージェント、コマンドディレクトリのシンボリックリンクを作成します
 # 依存: なし
 #
@@ -191,4 +191,3 @@ main() {
 }
 
 main "$@"
-

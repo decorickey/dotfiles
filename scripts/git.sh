@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #
-# 03_git.sh - Git設定
+# git.sh - Git設定
 # Gitのグローバル設定を行います
-# 依存: 01_packages.sh (gitコマンドが必要)
+# 依存: packages.sh (gitコマンドが必要)
 #
 
 set -euo pipefail
@@ -97,7 +97,7 @@ main() {
   # 依存関係の確認
   if ! command_exists git; then
     log_error "git is required but not installed"
-    log_info "Please run 01_packages.sh first"
+    log_info "Please run packages.sh first"
     return 1
   fi
 
@@ -120,4 +120,3 @@ main() {
 }
 
 main "$@"
-

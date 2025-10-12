@@ -16,16 +16,16 @@ source "$SCRIPT_DIR/scripts/common.sh"
 # セットアップスクリプトの定義（連想配列の代わりに関数を使用）
 get_setup_script() {
   case "$1" in
-  "packages") echo "01_packages.sh" ;;
-  "shell") echo "02_shell.sh" ;;
-  "git") echo "03_git.sh" ;;
-  "neovim") echo "04_neovim.sh" ;;
-  "tmux") echo "05_tmux.sh" ;;
-  "volta") echo "06_volta.sh" ;;
-  "claude") echo "07_claude.sh" ;;
-  "vscode") echo "08_vscode.sh" ;;
-  "codex") echo "09_codex.sh" ;;
-  "gemini") echo "10_gemini.sh" ;;
+  "packages") echo "packages.sh" ;;
+  "shell") echo "shell.sh" ;;
+  "git") echo "git.sh" ;;
+  "neovim") echo "neovim.sh" ;;
+  "tmux") echo "tmux.sh" ;;
+  "volta") echo "volta.sh" ;;
+  "claude") echo "claude.sh" ;;
+  "vscode") echo "vscode.sh" ;;
+  "codex") echo "codex.sh" ;;
+  "gemini") echo "gemini.sh" ;;
   *) echo "" ;;
   esac
 }

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #
-# スクリプト名: 08_vscode.sh
+# スクリプト名: vscode.sh
 # 説明: VSCode設定の管理とNeovim統合設定
-# 依存: 04_neovim.sh (.vimrc)
+# 依存: neovim.sh (.vimrc)
 #
 
 set -euo pipefail
@@ -167,4 +167,3 @@ main() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   main "$@"
 fi
-

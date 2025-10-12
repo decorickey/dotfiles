@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #
-# スクリプト名: 04_neovim.sh
+# スクリプト名: neovim.sh
 # 説明: NeovimとLazyVimの設定、IdeaVimの設定
-# 依存: 01_packages.sh (neovim, git)
+# 依存: packages.sh (neovim, git)
 #
 
 set -euo pipefail
@@ -139,11 +139,11 @@ main() {
   log_section "$FEATURE_NAME Setup"
 
   # Neovimの確認
-  if ! require_command nvim "Please run 01_packages.sh first"; then
+  if ! require_command nvim "Please run packages.sh first"; then
     return 1
   fi
 
-  if ! require_command git "Please run 01_packages.sh first"; then
+  if ! require_command git "Please run packages.sh first"; then
     return 1
   fi
 
@@ -178,4 +178,3 @@ main() {
 }
 
 main "$@"
-

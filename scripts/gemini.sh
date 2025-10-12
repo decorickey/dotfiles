@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 10_gemini.sh - Gemini CLI 用個人ガイダンスのセットアップ
+# gemini.sh - Gemini CLI 用個人ガイダンスのセットアップ
 # Gemini CLI のグローバルガイダンスファイルをホームディレクトリにシンボリックリンクします
 # 依存: なし
 #
