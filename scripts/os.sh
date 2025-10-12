@@ -9,9 +9,10 @@ readonly OS="$(uname)"
 
 # OS判定関数
 is_macos() {
-    [[ "$OS" == "Darwin" ]]
+  [[ "$OS" == "Darwin" ]]
 }
 
 is_linux() {
-    [[ "$OS" == "Linux" ]]
+  [[ "$OS" == "Linux" ]]
 }
+
