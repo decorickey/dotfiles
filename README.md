@@ -1,6 +1,6 @@
 # dotfiles
 
-macOS / Ubuntu の開発環境を `./setup.sh` で一括セットアップする dotfiles リポジトリです。
+MacOS の開発環境を `./setup.sh` で一括セットアップする dotfiles リポジトリです。
 
 ## Quick start
 
