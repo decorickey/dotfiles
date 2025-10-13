@@ -1,6 +1,6 @@
 # dotfiles
 
-## 必須アプリケーション
+## 手動インストール
 
 - Google Chrome
 - Google日本語入力
