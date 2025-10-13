@@ -19,8 +19,11 @@ readonly FEATURE_NAME="Codex Guidance"
 readonly CODEX_DIR="$HOME/.codex"
 readonly SOURCE_CODEX_DIR="$ROOT_DIR/.codex"
 readonly GUIDANCE_FILENAME="AGETNTS.md"
+readonly CONFIG_FILENAME="config.toml"
 readonly SOURCE_GUIDANCE_FILE="$SOURCE_CODEX_DIR/$GUIDANCE_FILENAME"
 readonly TARGET_GUIDANCE_FILE="$CODEX_DIR/$GUIDANCE_FILENAME"
+readonly SOURCE_CONFIG_FILE="$SOURCE_CODEX_DIR/$CONFIG_FILENAME"
+readonly TARGET_CONFIG_FILE="$CODEX_DIR/$CONFIG_FILENAME"
 
 setup_codex_guidance() {
   log_info "Codex ガイダンスファイルをセットアップしています..."
@@ -33,6 +36,17 @@ setup_codex_guidance() {
   fi
 
   create_symlink "$SOURCE_GUIDANCE_FILE" "$TARGET_GUIDANCE_FILE" "Codex guidance"
+}
+
+setup_codex_config() {
+  log_info "Codex 設定ファイルをセットアップしています..."
+
+  if [[ ! -f "$SOURCE_CONFIG_FILE" ]]; then
+    log_warn "Codex 設定ファイルが見つかりません: $SOURCE_CONFIG_FILE"
+    return 0
+  fi
+
+  create_symlink "$SOURCE_CONFIG_FILE" "$TARGET_CONFIG_FILE" "Codex configuration"
 }
 
 verify_installation() {
@@ -49,6 +63,12 @@ verify_installation() {
     log_error "Codex ガイダンスファイルが正しくリンクされていません: $TARGET_GUIDANCE_FILE"
     return 1
   fi
+
+  if [[ -L "$TARGET_CONFIG_FILE" ]] && [[ -f "$TARGET_CONFIG_FILE" ]]; then
+    log_success "Codex 設定ファイルが正しくリンクされています"
+  else
+    log_warn "Codex 設定ファイルが見つからないかリンクされていません: $TARGET_CONFIG_FILE"
+  fi
 }
 
 show_usage_info() {
@@ -57,6 +77,9 @@ show_usage_info() {
   log_info ""
   log_info "利用可能なファイル:"
   log_info "  • グローバルガイダンス: $TARGET_GUIDANCE_FILE"
+  if [[ -f "$TARGET_CONFIG_FILE" ]]; then
+    log_info "  • 設定ファイル: $TARGET_CONFIG_FILE"
+  fi
 }
 
 main() {
@@ -64,6 +87,11 @@ main() {
 
   if ! setup_codex_guidance; then
     log_error "$FEATURE_NAME のセットアップに失敗しました"
+    return 1
+  fi
+
+  if ! setup_codex_config; then
+    log_error "$FEATURE_NAME の設定ファイルのセットアップに失敗しました"
     return 1
   fi
 
