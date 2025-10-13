@@ -134,6 +134,23 @@ verify_setup() {
   return 0
 }
 
+# クリーンアップ処理
+cleanup() {
+  log_section "Cleaning up $FEATURE_NAME"
+
+  if [[ -L "$SETTINGS_DST" ]]; then
+    rm "$SETTINGS_DST"
+    log_info "Removed VSCode settings symlink: $SETTINGS_DST"
+  fi
+
+  if [[ -L "$KEYBINDINGS_DST" ]]; then
+    rm "$KEYBINDINGS_DST"
+    log_info "Removed VSCode keybindings symlink: $KEYBINDINGS_DST"
+  fi
+
+  log_success "$FEATURE_NAME cleanup completed!"
+}
+
 # メイン処理
 main() {
   log_section "Setting up $FEATURE_NAME"

@@ -57,6 +57,23 @@ show_usage_info() {
   log_info "  • グローバルガイダンス: $TARGET_GUIDANCE_FILE"
 }
 
+cleanup() {
+  log_section "Cleaning up $FEATURE_NAME"
+
+  if [[ -L "$TARGET_GUIDANCE_FILE" ]]; then
+    rm "$TARGET_GUIDANCE_FILE"
+    log_info "Removed Gemini guidance symlink: $TARGET_GUIDANCE_FILE"
+  fi
+
+  # ディレクトリが空であれば削除
+  if [[ -d "$GEMINI_DIR" ]] && [[ -z "$(ls -A "$GEMINI_DIR")" ]]; then
+    rmdir "$GEMINI_DIR"
+    log_info "Removed empty directory: $GEMINI_DIR"
+  fi
+
+  log_success "$FEATURE_NAME cleanup completed!"
+}
+
 main() {
   log_section "$FEATURE_NAME Setup"
 

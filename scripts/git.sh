@@ -90,6 +90,39 @@ verify_installation() {
   return 0
 }
 
+# クリーンアップ処理
+cleanup() {
+  log_section "Cleaning up $FEATURE_NAME"
+
+  if ! command_exists git; then
+    log_warn "git command not found, skipping cleanup."
+    return 0
+  fi
+
+  local configs_to_unset=(
+    "init.defaultBranch"
+    "core.editor"
+    "core.autocrlf"
+    "pull.rebase"
+    "push.default"
+    "commit.template"
+  )
+
+  for key in "${configs_to_unset[@]}"; do
+    if git config --global --get "$key" >/dev/null; then
+      git config --global --unset "$key"
+      log_info "Unset git config: $key"
+    fi
+  done
+
+  if git config --global --get-regexp "^alias\." >/dev/null; then
+    git config --global --remove-section alias
+    log_info "Removed all git aliases"
+  fi
+
+  log_success "$FEATURE_NAME cleanup completed!"
+}
+
 # メイン処理
 main() {
   log_section "$FEATURE_NAME Setup"

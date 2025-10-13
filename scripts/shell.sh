@@ -13,6 +13,7 @@ readonly ROOT_DIR="$(dirname "$SCRIPT_DIR")"
 # 必要なライブラリを読み込む
 source "$ROOT_DIR/scripts/common.sh"
 source "$ROOT_DIR/scripts/logging.sh"
+source "$ROOT_DIR/scripts/shell_utils.sh"
 
 # 定数定義
 readonly FEATURE_NAME="Shell Environment"
@@ -117,6 +118,23 @@ verify_installation() {
   fi
 
   return 0
+}
+
+# クリーンアップ処理
+cleanup() {
+  log_section "Cleaning up $FEATURE_NAME"
+
+  # .zshrcからfzf関連の設定を削除
+  remove_from_shell_config "fzf configuration"
+  remove_from_shell_config "FZF_DEFAULT_OPTS"
+  remove_from_shell_config "FZF_DEFAULT_COMMAND"
+  remove_from_shell_config "FZF_CTRL_T_COMMAND"
+  remove_from_shell_config ".fzf.zsh"
+
+  log_info "To completely uninstall Oh My Zsh, run: uninstall_oh_my_zsh"
+  log_info "To completely uninstall fzf, remove the directory: $FZF_DIR"
+
+  log_success "$FEATURE_NAME cleanup completed!"
 }
 
 # メイン処理

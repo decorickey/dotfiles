@@ -15,7 +15,7 @@ source "$ROOT_DIR/scripts/common.sh"
 source "$ROOT_DIR/scripts/logging.sh"
 
 # 定数定義
-readonly FEATURE_NAME="Neovim"
+readonly FEATURE_NAME="Neovim & IdeaVim"
 readonly CONFIG_DIR="$HOME/.config"
 readonly NVIM_DIR="$CONFIG_DIR/nvim"
 readonly LAZYVIM_DIR="$ROOT_DIR/lazyvim"
@@ -27,9 +27,9 @@ readonly NVIM_DATA_DIR="$HOME/.local/share/nvim"
 readonly NVIM_STATE_DIR="$HOME/.local/state/nvim"
 readonly NVIM_CACHE_DIR="$HOME/.cache/nvim"
 
-# 関数定義
-cleanup_neovim() {
-  log_info "Cleaning up Neovim related files..."
+# クリーンアップ処理
+cleanup() {
+  log_section "Cleaning up $FEATURE_NAME"
 
   local dirs=(
     "$NVIM_DATA_DIR"
@@ -45,16 +45,21 @@ cleanup_neovim() {
   done
 
   # 既存のnvim設定ディレクトリの削除
-  if [[ -e "$NVIM_DIR" ]]; then
-    if [[ -L "$NVIM_DIR" ]]; then
-      rm "$NVIM_DIR"
-      log_info "Removed existing symlink: $NVIM_DIR"
-    else
-      rm -rf "$NVIM_DIR"
-      log_info "Removed existing directory: $NVIM_DIR"
-    fi
+  if [[ -L "$NVIM_DIR" ]]; then
+    rm "$NVIM_DIR"
+    log_info "Removed existing symlink: $NVIM_DIR"
+  elif [[ -d "$NVIM_DIR" ]]; then
+    rm -rf "$NVIM_DIR"
+    log_info "Removed existing directory: $NVIM_DIR"
   fi
 
+  # IdeaVim設定の削除
+  if [[ -L "$IDEAVIMRC_FILE" ]]; then
+    rm "$IDEAVIMRC_FILE"
+    log_info "Removed IdeaVim symlink: $IDEAVIMRC_FILE"
+  fi
+
+  log_success "$FEATURE_NAME cleanup completed!"
   return 0
 }
 
@@ -148,7 +153,7 @@ main() {
   fi
 
   # クリーンアップ
-  if ! cleanup_neovim; then
+  if ! cleanup; then
     log_error "Failed to cleanup Neovim"
     return 1
   fi

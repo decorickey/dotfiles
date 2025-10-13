@@ -104,6 +104,20 @@ verify_installation() {
   fi
 }
 
+# クリーンアップ処理
+cleanup() {
+  log_section "Cleaning up $FEATURE_NAME"
+
+  # .zshrcからVolta関連の設定を削除
+  remove_from_shell_config "Volta configuration"
+  remove_from_shell_config "VOLTA_HOME"
+  remove_from_shell_config "Volta binary path"
+
+  log_info "To completely uninstall Volta, you may need to remove the directory: $VOLTA_HOME"
+
+  log_success "$FEATURE_NAME cleanup completed!"
+}
+
 # メイン処理
 main() {
   log_section "$FEATURE_NAME Setup"

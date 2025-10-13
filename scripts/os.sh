@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+set -euo pipefail
+
 #
 # os.sh - OS判定
 # macOSとLinuxの判定機能を提供

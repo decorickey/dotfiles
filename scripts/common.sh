@@ -4,6 +4,8 @@
 # ファイル操作、コマンド確認、その他のユーティリティ機能を提供
 #
 
+set -euo pipefail
+
 # 必要なライブラリ
 source "$(dirname "${BASH_SOURCE[0]}")/logging.sh"
 

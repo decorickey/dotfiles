@@ -69,6 +69,18 @@ verify_installation() {
   return 0
 }
 
+# クリーンアップ処理
+cleanup() {
+  log_section "Cleaning up $FEATURE_NAME"
+
+  if [[ -L "$TMUX_CONF" ]]; then
+    rm "$TMUX_CONF"
+    log_info "Removed tmux configuration symlink: $TMUX_CONF"
+  fi
+
+  log_success "$FEATURE_NAME cleanup completed!"
+}
+
 # メイン処理
 main() {
   log_section "$FEATURE_NAME Setup"

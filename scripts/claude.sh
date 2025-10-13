@@ -156,6 +156,37 @@ verify_installation() {
   return 0
 }
 
+cleanup() {
+  log_section "Cleaning up $FEATURE_NAME"
+
+  if [[ -L "$CLAUDE_DIR/CLAUDE.md" ]]; then
+    rm "$CLAUDE_DIR/CLAUDE.md"
+    log_info "Removed Claude guidance symlink: $CLAUDE_DIR/CLAUDE.md"
+  fi
+
+  if [[ -L "$CLAUDE_DIR/settings.json" ]]; then
+    rm "$CLAUDE_DIR/settings.json"
+    log_info "Removed Claude settings symlink: $CLAUDE_DIR/settings.json"
+  fi
+
+  if [[ -L "$AGENTS_DIR" ]]; then
+    rm "$AGENTS_DIR"
+    log_info "Removed Claude agents symlink: $AGENTS_DIR"
+  fi
+
+  if [[ -L "$COMMANDS_DIR" ]]; then
+    rm "$COMMANDS_DIR"
+    log_info "Removed Claude commands symlink: $COMMANDS_DIR"
+  fi
+
+  if [[ -d "$CLAUDE_DIR" ]] && [[ -z "$(ls -A "$CLAUDE_DIR")" ]]; then
+    rmdir "$CLAUDE_DIR"
+    log_info "Removed empty directory: $CLAUDE_DIR"
+  fi
+
+  log_success "$FEATURE_NAME cleanup completed!"
+}
+
 # メイン処理
 main() {
   log_section "$FEATURE_NAME Setup"

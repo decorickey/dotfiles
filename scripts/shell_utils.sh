@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+set -euo pipefail
+
 #
 # shell_utils.sh - シェル設定関連
 # シェル設定ファイルへの追加とパス管理機能を提供
@@ -53,4 +56,26 @@ set_env_var() {
 
   # 現在のセッションにも反映
   export "$var_name=$var_value"
+}
+
+# zsh設定ファイルから行を削除
+remove_from_shell_config() {
+  local pattern="$1"
+
+  if [[ ! -f "$ZSHRC" ]]; then
+    log_warn ".zshrc not found, skipping removal."
+    return 0
+  fi
+
+  # パターンに一致する行が存在するか確認
+  if grep -q "$pattern" "$ZSHRC"; then
+    log_info "Removing lines matching pattern '$pattern' from .zshrc..."
+    # パターンに一致しない行を一時ファイルに書き出す
+    grep -v "$pattern" "$ZSHRC" > "${ZSHRC}.tmp"
+    # 一時ファイルを元のファイルに置き換える
+    mv "${ZSHRC}.tmp" "$ZSHRC"
+    log_success "Successfully removed lines from .zshrc"
+  else
+    log_debug "Pattern '$pattern' not found in .zshrc."
+  fi
 }

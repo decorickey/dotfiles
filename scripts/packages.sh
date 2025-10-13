@@ -14,6 +14,7 @@ readonly ROOT_DIR="$(dirname "$SCRIPT_DIR")"
 source "$ROOT_DIR/scripts/common.sh"
 source "$ROOT_DIR/scripts/logging.sh"
 source "$ROOT_DIR/scripts/os.sh"
+source "$ROOT_DIR/scripts/shell_utils.sh"
 
 # 定数定義
 readonly FEATURE_NAME="Package Manager"
@@ -83,6 +84,12 @@ install_packages() {
     return 1
   fi
 
+  log_info "Checking packages from Brewfile..."
+  if brew bundle check --file="$BREWFILE" &>/dev/null; then
+    log_success "All packages are already installed."
+    return 0
+  fi
+
   log_info "Installing packages from Brewfile..."
 
   # Homebrew自体の更新
@@ -129,6 +136,45 @@ verify_installation() {
   return 0
 }
 
+# クリーンアップ処理
+cleanup() {
+  log_section "Cleaning up $FEATURE_NAME"
+
+  if ! command_exists brew; then
+    log_warn "brew command not found, skipping cleanup."
+    return 0
+  fi
+
+  # .zshrcからHomebrewのPATH設定を削除
+  remove_from_shell_config "shellenv"
+
+  # パッケージのアンインストール確認
+  log_warn "This will uninstall all packages listed in the Brewfile."
+  log_warn "This action cannot be undone."
+  read -p "Type 'yes' to continue: " -r
+  echo
+  if [[ "$REPLY" != "yes" ]]; then
+    log_info "Skipping package uninstallation."
+    return 0
+  fi
+
+  log_info "Uninstalling packages from Brewfile..."
+
+  local formulas=$(brew bundle list --file="$BREWFILE" --formula)
+  if [[ -n "$formulas" ]]; then
+    # shellcheck disable=SC2086
+    brew uninstall $formulas
+  fi
+
+  local casks=$(brew bundle list --file="$BREWFILE" --cask)
+  if [[ -n "$casks" ]]; then
+    # shellcheck disable=SC2086
+    brew uninstall --cask $casks
+  fi
+
+  log_success "$FEATURE_NAME cleanup completed!"
+}
+
 # メイン処理
 main() {
   log_section "$FEATURE_NAME Setup"
@@ -147,6 +193,13 @@ main() {
       log_error "Homebrew installation verification failed"
       return 1
     fi
+  fi
+
+  # Homebrew環境のチェック
+  log_info "Checking Homebrew environment with 'brew doctor'..."
+  if ! brew doctor; then
+    log_warn "brew doctor found some issues. Please review them."
+    # エラーがあっても続行するが、警告は出す
   fi
 
   # パッケージのインストール

@@ -82,6 +82,27 @@ show_usage_info() {
   fi
 }
 
+cleanup() {
+  log_section "Cleaning up $FEATURE_NAME"
+
+  if [[ -L "$TARGET_GUIDANCE_FILE" ]]; then
+    rm "$TARGET_GUIDANCE_FILE"
+    log_info "Removed Codex guidance symlink: $TARGET_GUIDANCE_FILE"
+  fi
+
+  if [[ -L "$TARGET_CONFIG_FILE" ]]; then
+    rm "$TARGET_CONFIG_FILE"
+    log_info "Removed Codex config symlink: $TARGET_CONFIG_FILE"
+  fi
+
+  if [[ -d "$CODEX_DIR" ]] && [[ -z "$(ls -A "$CODEX_DIR")" ]]; then
+    rmdir "$CODEX_DIR"
+    log_info "Removed empty directory: $CODEX_DIR"
+  fi
+
+  log_success "$FEATURE_NAME cleanup completed!"
+}
+
 main() {
   log_section "$FEATURE_NAME Setup"
 

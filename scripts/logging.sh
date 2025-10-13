@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+set -euo pipefail
+
 #
 # logging.sh - ログ出力関数
 # 色付きのログ出力機能を提供
