@@ -1,43 +1,94 @@
 # AGENTS
 
 ## リポジトリ概要
-- macOS/Ubuntu 用 dotfiles リポジトリ。`setup.sh` から各種セットアップスクリプトを統一的に実行し、開発環境を構築する。
-- コアスクリプトは `scripts/` 以下にあり、`logging.sh` と `common.sh` がシンボリックリンク作成やログ出力などの共通機能を提供する。
-- Neovim/LazyVim 設定、VSCode NeoVim 連携、tmux、Volta、Claude Code/Codex のパーソナルガイダンスなどをまとめて管理する。
+- macOS / Ubuntu 向け dotfiles。`./setup.sh` を入口に各種開発ツールと設定を自動適用する。
+- コア処理は `scripts/` 以下に分割され、`logging.sh` で統一的なログ、`common.sh` でシンボリックリンクやコマンド確認などを提供。
+- Neovim (LazyVim)・VSCode NeoVim 連携・tmux・Volta・AI ガイダンス (Claude / Codex / Gemini) をまとめて管理する。
 
 ## セットアップの流れ
-- 推奨コマンドは `./setup.sh`。  
-  - `--list` で利用可能ステップを表示。  
-  - `--only <step ...>` で指定ステップのみを実行。  
-  - `--skip <step ...>` で指定ステップを飛ばす。
+- 推奨コマンドは `./setup.sh`。`--list` で利用可能ステップの確認、`--only <step ...>` で指定ステップのみ実行、`--skip <step ...>` でスキップ指定。
 - デフォルト実行順序: `packages → shell → git → neovim → tmux → volta → claude → codex → gemini → vscode`。
-- 各スクリプトはホームディレクトリへのシンボリックリンク作成と導入後の簡易検証まで行い、ログは `setup.log` に追記される。
+- 実行ログは `setup.log` に追記されるため、失敗時はここを参照。
 
-## 主な構成要素
-- **Homebrew (`scripts/packages.sh`)**  
-  - `Brewfile` に記載された git/tmux/neovim/go などのコマンドラインツールを `brew bundle` で一括導入。  
-  - Homebrew 未導入時は OS 判定 (`scripts/os.sh`) に基づきインストールと PATH 設定を行う。
-- **シェル (`scripts/shell.sh`)**  
-  - Oh My Zsh と fzf を非対話インストール。`~/.zshrc` には fzf の既定オプション、Go/Volta の PATH 追記、便利 alias が含まれる。
-- **Git (`scripts/git.sh`)**  
-  - グローバル設定（`core.editor=nvim`、`init.defaultBranch=main` 等）とコミットテンプレート (`.gitmessage.txt`) の関連付け。
-- **Neovim (`scripts/neovim.sh`)**  
-  - `lazyvim/` ディレクトリを `~/.config/nvim` にリンクし、`.vimrc` を共通設定として読み込み。  
-  - Neovim 初回起動時に Lazy.nvim がプラグインを自動インストール。Treesitter/LSP は Lua & Go を中心に構成。
-- **tmux (`scripts/tmux.sh`)**  
-  - `~/.tmux.conf` にリンク。プレフィックス `Ctrl-q`、Vim ライクなペイン操作、ステータス調整などを適用。
-- **Volta (`scripts/volta.sh`)**  
-  - Volta の取得・PATH 設定・簡易確認までを自動化。Node/Yarn などは必要に応じ手動で `volta install`。
-- **VSCode (`scripts/vscode.sh`)**  
-  - VSCode がインストール済みかつ `code` コマンドが使える前提で、`vscode/` 内の設定・キーバインドを `~/Library/Application Support/Code/User` へリンク。  
-  - NeoVim 拡張 (`asvetliakov.vscode-neovim`) の導入を促す。
-- **AI ガイダンス**
-  - Claude Code 向け設定 (`scripts/claude.sh`)：`~/.claude` にグローバル指示、コマンド定義、通知フックをリンク。  
-  - Codex 向け個人ガイダンス (`scripts/codex.sh`)：`~/.codex/AGETNTS.md` に指示（常に日本語、作業前に計画提示）を反映。
-  - Gemini CLI 向け個人ガイダンス (`scripts/gemini.sh`)：`~/.gemini/GEMINI.md` をリンクし、Gemini との作業指針を共有。
+### Quick start
+```bash
+./setup.sh
+./setup.sh --only neovim tmux
+./setup.sh --skip claude codex
+```
+
+## ステップ詳細
+### packages (`scripts/packages.sh`)
+- OS を判定して Homebrew を導入し、PATH 設定まで自動化。
+- `Brewfile` を `brew bundle` で処理し、git / tmux / neovim / go など主要ツールを一括インストール。
+- インストール後に欠けている主要コマンドがあれば警告を出す。
+
+### shell (`scripts/shell.sh`)
+- git を前提に Oh My Zsh と fzf を非対話モードで導入。
+- `~/.zshrc` に fzf 既定オプション、Go / Volta PATH、各種 alias を追記。
+- fzf の再読込やシェル再起動の案内を表示。
+
+### git (`scripts/git.sh`)
+- `core.editor=nvim`、`init.defaultBranch=main` 等のグローバル設定を適用。
+- `.gitmessage.txt` をコミットテンプレートとして紐付け、`git lg` など alias 群も追加。
+- ユーザー名 / メール未設定の場合は設定コマンドを案内。
+
+### neovim (`scripts/neovim.sh`)
+- 既存の Neovim キャッシュ・設定ディレクトリをクリーンアップ。
+- `lazyvim/` を `~/.config/nvim` へリンクし、`.vimrc` を IdeaVim と共有 (`~/.ideavimrc`)。
+- 初回起動時の Lazy.nvim プラグイン導入や `:LazySync` / `:checkhealth` の案内を出力。
+
+### tmux (`scripts/tmux.sh`)
+- `.tmux.conf` をホームへリンクし、tmux の存在を検証。
+- 既存セッション向けに `tmux source-file ~/.tmux.conf` 等の再読込手順を提示。
+
+### volta (`scripts/volta.sh`)
+- Volta の有無を判定し、必要ならインストールスクリプトを実行。
+- `VOLTA_HOME` と PATH を `.zshrc` に追記し、`volta list` などで検証。
+- `volta install node@latest` など使用例を示す。
+
+### claude (`scripts/claude.sh`)
+- `~/.claude` を作成し、`CLAUDE.md` / `settings.json` / `agents` / `commands` を dotfiles からリンク。
+- それぞれのリンク状態を検証し、利用可能なファイル一覧を案内。
+
+### codex (`scripts/codex.sh`)
+- `~/.codex/AGETNTS.md` に Codex 向けグローバルガイダンスをリンク。
+- `config.toml` があれば同様にリンクし、検証ログとファイル一覧を表示。
+
+### gemini (`scripts/gemini.sh`)
+- `~/.gemini/GEMINI.md` をリンクし、Gemini CLI のガイダンスを共有。
+- ディレクトリとシンボリックリンクの検証を行う。
+
+### vscode (`scripts/vscode.sh`)
+- `code` コマンドの有無をチェックし、なければインストール手順を案内。
+- `vscode/settings.json` と `vscode/keybindings.json` を VSCode User ディレクトリにリンク。
+- `.vimrc` の VSCode 対応設定を確認し、NeoVim 拡張 (`asvetliakov.vscode-neovim`) の導入を促す。
+
+## 共通ユーティリティ
+- `scripts/common.sh`: コマンド存在確認、シンボリックリンク作成、ディレクトリ作成など。
+- `scripts/logging.sh`: INFO / WARN / ERROR / SUCCESS を色付きで表示するロガー。
+- `scripts/os.sh`: Homebrew のインストール先などを OS ごとに切り替える。
+- `scripts/shell_utils.sh`: `.zshrc` への PATH 追記や環境変数設定を支援。
 
 ## 付属ドットファイル
-- `.vimrc`：NeoVim/IdeaVim/VSCode NeoVim 拡張で共通利用するキーマップと基本オプション。
-- `.zshrc`：履歴設定、fzf ロード、Go/Volta PATH、fzf を使った git/docker 操作用 alias。
-- `.tmux.conf`：プリフィックス・配色・コピー操作などのカスタマイズ。
-- `.markdownlint.yaml`：Markdown Lint の無効化ルール（MD012/MD013/MD028/MD041）を定義。
+- `.vimrc`: Neovim / IdeaVim / VSCode NeoVim 拡張で共通利用する設定。
+- `.zshrc`: 履歴設定、fzf 連携、Go / Volta PATH、git / docker 向け alias。
+- `.tmux.conf`: プレフィックス `Ctrl-q`、Vim ライクなペイン操作、ステータスライン調整。
+- `.markdownlint.yaml`: Markdown Lint の無効化ルール (MD012 / MD013 / MD028 / MD041)。
+
+## ディレクトリ構成 (抜粋)
+```text
+dotfiles/
+├── setup.sh             # 全体セットアップのエントリーポイント
+├── scripts/             # 各セットアップ処理と共通ユーティリティ
+├── lazyvim/             # Neovim (LazyVim) 設定
+├── vscode/              # VSCode の設定とキーバインド
+├── .claude/ .codex/ .gemini/ # AI アシスタント向けガイダンス
+├── Brewfile             # Homebrew で導入するツール一覧
+└── setup.log            # セットアップログ (実行時に生成)
+```
+
+## トラブルシューティング
+- ステップごとの詳細ログは `setup.log` を確認。
+- Homebrew / Volta の PATH が反映されない場合は新しいシェルを開くか `source ~/.zshrc` を実行。
+- VSCode の設定ディレクトリが存在しない場合は一度 VSCode を起動してから再実行。
