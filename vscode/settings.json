@@ -30,5 +30,6 @@
   "github.copilot.nextEditSuggestions.enabled": true,
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
-  }
+  },
+  "workbench.editor.enablePreview": false
 }
