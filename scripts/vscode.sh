@@ -13,10 +13,18 @@ readonly ROOT_DIR="$(dirname "$SCRIPT_DIR")"
 # 必要なライブラリのみ読み込む
 source "$ROOT_DIR/scripts/common.sh"
 source "$ROOT_DIR/scripts/logging.sh"
+source "$ROOT_DIR/scripts/os.sh"
 
 # 定数定義
 readonly FEATURE_NAME="VSCode"
-readonly VSCODE_USER_DIR="$HOME/Library/Application Support/Code/User"
+if is_macos; then
+  readonly VSCODE_USER_DIR="$HOME/Library/Application Support/Code/User"
+elif is_linux; then
+  readonly VSCODE_USER_DIR="$HOME/.config/Code/User"
+else
+  log_error "Unsupported OS for VSCode setup."
+  exit 1
+fi
 readonly DOTFILES_VSCODE_DIR="$ROOT_DIR/vscode"
 readonly VIMRC_FILE="$ROOT_DIR/.vimrc"
 
