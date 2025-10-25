@@ -64,7 +64,7 @@
 
 ### codex (`scripts/codex.sh`)
 
-- `~/.codex/AGETNTS.md` に Codex 向けグローバルガイダンスをリンク。
+- `~/.codex/AGENTS.md` に Codex 向けグローバルガイダンスをリンク。
 - `config.toml` があれば同様にリンクし、検証ログとファイル一覧を表示。
 
 ### gemini (`scripts/gemini.sh`)
