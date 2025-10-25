@@ -1,3 +1,8 @@
-sandbox_mode = "read-only"
-approval_policy = "on-request"
-network_access = true
+# approval_policy = "on-request"
+# sandbox_mode = "danger-full-access"
+# network_access = true
+# show_raw_agent_reasoning = true
+#
+# [tools]
+# web_search = true
+# view_image = true
