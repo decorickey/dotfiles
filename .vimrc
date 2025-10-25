@@ -18,6 +18,20 @@ set norelativenumber
 set hlsearch
 set incsearch
 
+" optional settings -----------------------------------------
+" 外部でファイルが変更されたら自動で再読み込み
+set autoread
+
+" Neovim/Vim にフォーカスが戻ったりバッファを移動したときにチェック
+autocmd FocusGained,BufEnter * checktime
+
+" 一定時間ごとに自動チェック（CursorHoldイベント）
+set updatetime=1000
+autocmd CursorHold * checktime
+
+" 外部更新時の長いメッセージを抑制
+set shortmess+=A
+
 " .ideavimrc -----------------------------------------
 if has('ide')
   " Basic
