@@ -62,11 +62,10 @@ if has('ide')
   map <leader>ff <Action>(GotoFile)
   map <leader>fr <Action>(RecentFiles)
 
-  " aerial.nvim/trouble.nvim
-  map <leader>co <Action>(ActivateStructureToolWindow)
+  " aerial.nvim
   map <leader>cs <Action>(ActivateStructureToolWindow)
 
-  " neo-tree.nvim
+  " snacks.nvim 
   map <leader>e <Action>(ActivateProjectToolWindow)
 
   " IDEA Original
