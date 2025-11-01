@@ -96,6 +96,20 @@ install_packages() {
   log_info "Updating Homebrew..."
   brew update
 
+  # Formula のアップグレードは失敗しても続行
+  if ! brew upgrade; then
+    log_warn "brew upgrade formula failed; continuing..."
+  fi
+
+  # Brewfile 指定の cask をアップグレード（存在すれば）
+  local brew_casks
+  brew_casks="$(brew bundle list --file="$BREWFILE" --cask || true)"
+  if [[ -n "$brew_casks" ]]; then
+    if ! brew upgrade --cask $brew_casks; then
+      log_warn "brew upgrade --cask failed; continuing..."
+    fi
+  fi
+
   # Brewfileからインストール
   if brew bundle install --file="$BREWFILE"; then
     log_success "Package installation completed"
