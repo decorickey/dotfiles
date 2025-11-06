@@ -49,7 +49,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"Claude Codeのタスクが完了しました✅\" with title \"Claude Code\" sound name \"Basso\"'"
+            "command": "~/dotfiles/agent_notify.sh --title \"Claude Code\" \"Claude Codeのタスクが完了しました✅\""
           }
         ]
       }
@@ -60,7 +60,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"Claude Codeが助けを求めています💡\" with title \"Claude Code\" sound name \"Basso\"'"
+            "command": "~/dotfiles/agent_notify.sh --title \"Claude Code\" \"Claude Codeが助けを求めています💡\""
           }
         ]
       }
