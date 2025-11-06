@@ -41,3 +41,5 @@ alias -g cid='`docker ps | sed 1d | fzf -q "$1" | awk '\''{print $1}'\''`'
 # Volta
 export PATH="$HOME/.volta/bin:$PATH"
 
+# Codex
+eval "$(codex completion zsh)"

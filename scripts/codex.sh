@@ -21,6 +21,8 @@ readonly SOURCE_CODEX_DIR="$ROOT_DIR/.codex"
 readonly GUIDANCE_FILENAME="AGENTS.md"
 readonly SOURCE_GUIDANCE_FILE="$SOURCE_CODEX_DIR/$GUIDANCE_FILENAME"
 readonly TARGET_GUIDANCE_FILE="$CODEX_DIR/$GUIDANCE_FILENAME"
+readonly SOURCE_PROMPTS_DIR="$SOURCE_CODEX_DIR/prompts"
+readonly PROMPTS_DIR="$CODEX_DIR/prompts"
 
 setup_codex_guidance() {
   log_info "Codex ガイダンスファイルをセットアップしています..."
@@ -33,6 +35,22 @@ setup_codex_guidance() {
   fi
 
   create_symlink "$SOURCE_GUIDANCE_FILE" "$TARGET_GUIDANCE_FILE" "Codex guidance"
+}
+
+setup_codex_prompts() {
+  log_info "Codex プロンプトディレクトリをセットアップしています..."
+
+  if [[ ! -d "$SOURCE_PROMPTS_DIR" ]]; then
+    log_warn "プロンプトディレクトリが見つかりません: $SOURCE_PROMPTS_DIR"
+    return 0
+  fi
+
+  if [[ -e "$PROMPTS_DIR" ]]; then
+    log_info "既存のプロンプトディレクトリを削除します: $PROMPTS_DIR"
+    rm -rf "$PROMPTS_DIR"
+  fi
+
+  create_symlink "$SOURCE_PROMPTS_DIR" "$PROMPTS_DIR" "Codex prompts directory"
 }
 
 verify_installation() {
@@ -50,6 +68,14 @@ verify_installation() {
     return 1
   fi
 
+  if [[ -d "$SOURCE_PROMPTS_DIR" ]]; then
+    if [[ -L "$PROMPTS_DIR" ]] && [[ -d "$PROMPTS_DIR" ]]; then
+      log_success "Codex プロンプトディレクトリが正しくリンクされています"
+    else
+      log_warn "Codex プロンプトディレクトリがリンクされていません: $PROMPTS_DIR"
+    fi
+  fi
+
 }
 
 show_usage_info() {
@@ -58,6 +84,9 @@ show_usage_info() {
   log_info ""
   log_info "利用可能なファイル:"
   log_info "  • グローバルガイダンス: $TARGET_GUIDANCE_FILE"
+  if [[ -L "$PROMPTS_DIR" ]]; then
+    log_info "  • プロンプト: $PROMPTS_DIR"
+  fi
 }
 
 cleanup() {
@@ -66,6 +95,11 @@ cleanup() {
   if [[ -L "$TARGET_GUIDANCE_FILE" ]]; then
     rm "$TARGET_GUIDANCE_FILE"
     log_info "Removed Codex guidance symlink: $TARGET_GUIDANCE_FILE"
+  fi
+
+  if [[ -L "$PROMPTS_DIR" ]]; then
+    rm "$PROMPTS_DIR"
+    log_info "Removed Codex prompts symlink: $PROMPTS_DIR"
   fi
 
   if [[ -d "$CODEX_DIR" ]] && [[ -z "$(ls -A "$CODEX_DIR")" ]]; then
@@ -80,6 +114,11 @@ main() {
   log_section "$FEATURE_NAME Setup"
 
   if ! setup_codex_guidance; then
+    log_error "$FEATURE_NAME のセットアップに失敗しました"
+    return 1
+  fi
+
+  if ! setup_codex_prompts; then
     log_error "$FEATURE_NAME のセットアップに失敗しました"
     return 1
   fi
