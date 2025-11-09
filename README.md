@@ -25,3 +25,18 @@ MacOS の開発環境を `./setup.sh` で一括セットアップする dotfiles
 ## More details
 
 各ステップの挙動や構成ファイルの説明は `AGENTS.md` を参照してください。
+
+## Codex
+
+```toml
+approval_policy = "on-request"
+model_reasoning_effort = "high"
+notify = ["bash", "/Users/shikida.rikiya/dotfiles/agent_notify.sh", "--title", "Codex", "Codexからの通知です💡"]
+
+[features]
+web_search_request = true
+
+[sandbox_workspace_write]
+network_access = true
+
+```
