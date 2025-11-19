@@ -18,5 +18,4 @@ brew "golangci-lint"
 brew "sqlite3"
 
 cask "codex"
-brew "gemini-cli"
 cask "claude-code"
