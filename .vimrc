@@ -27,7 +27,7 @@ autocmd FocusGained,BufEnter * checktime
 
 " 一定時間ごとに自動チェック（CursorHoldイベント）
 set updatetime=1000
-autocmd CursorHold * checktime
+autocmd CursorHold,CursorHoldI * checktime
 
 " 外部更新時の長いメッセージを抑制
 set shortmess+=A
@@ -151,4 +151,3 @@ elseif exists('g:vscode')
   map <leader>ch <Cmd>call VSCodeNotify('references-view.showCallHierarchy')<CR>
 
 endif
-
