@@ -9,7 +9,7 @@
 ## セットアップの流れ
 
 - 推奨コマンドは `./setup.sh`。`--list` で利用可能ステップの確認、`--only <step ...>` で指定ステップのみ実行、`--skip <step ...>` でスキップ指定。
-- デフォルト実行順序: `packages → shell → git → neovim → tmux → volta → claude → codex → gemini → vscode`。
+- デフォルト実行順序: `packages → shell → git → go → neovim → tmux → volta → claude → codex → gemini → vscode`。
 - 実行ログは `setup.log` に追記されるため、失敗時はここを参照。
 
 ### Quick start
@@ -39,6 +39,13 @@
 - `core.editor=nvim`、`init.defaultBranch=main` 等のグローバル設定を適用。
 - `.gitmessage.txt` をコミットテンプレートとして紐付け、`git lg` など alias 群も追加。
 - ユーザー名 / メール未設定の場合は設定コマンドを案内。
+
+### go (`scripts/go.sh`)
+
+- `GOBIN` を明示 (`$HOME/go/bin` を既定) し、PATH に未登録なら追加。コメントで「未指定でも GOPATH/bin だが固定する」旨を明記。
+- `gopls` / `delve` は `go install ...@latest` でインストール・更新。
+- `golangci-lint` は公式 `install.sh` を利用し、`-b "$GOBIN"` で配置（Homebrew 版は使用しない。存在する場合は警告のみ）。
+- Go / curl が無い場合は packages ステップ再実行を案内し、各ツールのバージョンをログ出力。
 
 ### neovim (`scripts/neovim.sh`)
 

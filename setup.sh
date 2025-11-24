@@ -19,6 +19,7 @@ get_setup_script() {
   "packages") echo "packages.sh" ;;
   "shell") echo "shell.sh" ;;
   "git") echo "git.sh" ;;
+  "go") echo "go.sh" ;;
   "neovim") echo "neovim.sh" ;;
   "tmux") echo "tmux.sh" ;;
   "volta") echo "volta.sh" ;;
@@ -31,7 +32,7 @@ get_setup_script() {
 }
 
 # デフォルトの実行順序
-readonly DEFAULT_ORDER=(packages shell git neovim tmux volta claude codex gemini vscode)
+readonly DEFAULT_ORDER=(packages shell git go neovim tmux volta claude codex gemini vscode)
 
 # ヘルプメッセージ
 show_help() {

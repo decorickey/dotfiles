@@ -17,7 +17,11 @@ setopt hist_reduce_blanks   # 余分な空白は詰めて保存
 alias -g vim="nvim"
 
 # Go
-export PATH="$HOME/go/bin:$PATH"
+# GOBIN を明示（未設定でも GOPATH/bin だが、場所を固定しておく）
+export GOBIN="${GOBIN:-$HOME/go/bin}"
+if [[ ":$PATH:" != *":$GOBIN:"* ]]; then
+  export PATH="$GOBIN:$PATH"
+fi
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

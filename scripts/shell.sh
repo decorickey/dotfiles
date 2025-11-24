@@ -89,6 +89,28 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"'
   fi
 }
 
+# dotfiles の .zshrc を読み込む設定を保証
+ensure_dotfiles_zshrc() {
+  local zshrc="$HOME/.zshrc"
+  local line='source ~/dotfiles/.zshrc'
+
+  if [[ ! -f "$zshrc" ]]; then
+    log_warn "$zshrc not found. Creating and adding dotfiles sourcing."
+    echo "$line" >"$zshrc"
+    log_success "Created $zshrc with dotfiles sourcing"
+    return 0
+  fi
+
+  if grep -Fxq "$line" "$zshrc"; then
+    log_info "dotfiles .zshrc already sourced in $zshrc"
+    return 0
+  fi
+
+  echo "" >>"$zshrc"
+  echo "$line" >>"$zshrc"
+  log_success "Added dotfiles .zshrc sourcing to $zshrc"
+}
+
 # シェル環境の検証
 verify_installation() {
   log_info "Verifying shell environment setup..."
@@ -162,6 +184,9 @@ main() {
 
   # fzf設定の追加
   setup_fzf_config
+
+  # dotfiles/.zshrc を確実に読み込む設定を付与
+  ensure_dotfiles_zshrc
 
   # インストール検証
   if ! verify_installation; then
