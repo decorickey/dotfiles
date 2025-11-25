@@ -31,7 +31,7 @@ MacOS の開発環境を `./setup.sh` で一括セットアップする dotfiles
 ```toml
 approval_policy = "on-request"
 model_reasoning_effort = "high"
-notify = ["bash", "/Users/shikida.rikiya/dotfiles/agent_notify.sh", "--title", "Codex", "Codexからの通知です💡"]
+notify = ["bash", "/Users/HOME/dotfiles/agent_notify.sh", "--title", "Codex", "Codexからの通知です💡"]
 
 [features]
 web_search_request = true
