@@ -12,6 +12,7 @@ brew "lazygit"
 brew "ripgrep"
 
 brew "go"
+brew "golangci-lint"
 
 brew "sqlite3"
 

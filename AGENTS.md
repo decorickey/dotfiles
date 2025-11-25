@@ -44,7 +44,7 @@
 
 - `GOBIN` を明示 (`$HOME/go/bin` を既定) し、PATH に未登録なら追加。コメントで「未指定でも GOPATH/bin だが固定する」旨を明記。
 - `gopls` / `delve` は `go install ...@latest` でインストール・更新。
-- `golangci-lint` は公式 `install.sh` を利用し、`-b "$GOBIN"` で配置（Homebrew 版は使用しない。存在する場合は警告のみ）。
+- `golangci-lint` は Homebrew でインストール・更新する。
 - Go / curl が無い場合は packages ステップ再実行を案内し、各ツールのバージョンをログ出力。
 
 ### neovim (`scripts/neovim.sh`)

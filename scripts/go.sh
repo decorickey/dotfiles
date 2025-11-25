@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # go.sh - Go 開発ツールセットアップ
-# gopls / delve を go install で、golangci-lint を公式 install.sh で導入する
+# gopls / delve を go install で、golangci-lint を Homebrew で導入する
 # GOBIN は未指定でも GOPATH/bin になるが、場所を明示して運用を安定させる
 
 set -euo pipefail
@@ -14,7 +14,6 @@ source "$ROOT_DIR/scripts/logging.sh"
 source "$ROOT_DIR/scripts/shell_utils.sh"
 
 readonly FEATURE_NAME="Go tools"
-readonly DEFAULT_GOLANGCI_LINT_VERSION="${GOLANGCI_LINT_VERSION:-v1.60.3}"
 
 resolve_gobin() {
   local gobin
@@ -68,26 +67,20 @@ install_go_tool() {
 }
 
 install_golangci_lint() {
-  local version="$DEFAULT_GOLANGCI_LINT_VERSION"
-  local url="https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh"
+  log_info "Installing golangci-lint via Homebrew"
 
-  log_info "Installing golangci-lint ($version) via official script"
-
-  if ! curl -sSfL "$url" | sh -s -- -b "$GOBIN" "$version"; then
-    log_warn "golangci-lint install failed"
-    return 1
+  if brew list --formula golangci-lint >/dev/null 2>&1; then
+    log_info "golangci-lint already installed; upgrading to latest"
+    brew upgrade golangci-lint || log_warn "golangci-lint upgrade failed (continuing)"
+  else
+    if ! brew install golangci-lint; then
+      log_warn "golangci-lint install failed"
+      return 1
+    fi
   fi
 
   if command_exists golangci-lint; then
     golangci-lint version || true
-  fi
-
-  if command -v golangci-lint >/dev/null 2>&1; then
-    local loc
-    loc="$(command -v golangci-lint)"
-    if [[ "$loc" == *"/brew/"* || "$loc" == *"/opt/homebrew"* ]]; then
-      log_warn "Homebrew golangci-lint detected at $loc. PATH order will prefer $GOBIN."
-    fi
   fi
 }
 
@@ -98,6 +91,9 @@ main() {
     return 1
   fi
   if ! require_command curl "curl is required to download installers"; then
+    return 1
+  fi
+  if ! require_command brew "Please install Homebrew first (run packages step)"; then
     return 1
   fi
 
