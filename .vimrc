@@ -32,6 +32,12 @@ autocmd CursorHold,CursorHoldI * checktime
 " 外部更新時の長いメッセージを抑制
 set shortmess+=A
 
+" Markdown list continuation
+augroup markdown_bullet_continuation
+  autocmd!
+  autocmd FileType markdown let g:markdown_recommended_style = 0 | setlocal formatoptions+=r formatoptions+=o formatoptions+=n | setlocal comments=b:*,b:-,b:1. | setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\|^\\s*[-*]\\s\\+
+augroup END
+
 " .ideavimrc -----------------------------------------
 if has('ide')
   " Basic
