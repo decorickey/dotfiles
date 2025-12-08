@@ -74,5 +74,5 @@
   "feedbackSurveyState": {
     "lastShownTime": 1756267248358
   },
-  "model": "sonnet[1m]"
+  "model": "opus"
 }
