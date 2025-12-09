@@ -8,6 +8,7 @@
       "Grep",
       "Read",
       "WebSearch",
+      "Bash(awk:*)",
       "Bash(cat:*)",
       "Bash(cd:*)",
       "Bash(chmod:*)",
