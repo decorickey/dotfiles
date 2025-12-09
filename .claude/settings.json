@@ -42,6 +42,7 @@
     ],
     "deny": []
   },
+  "model": "sonnet[1m]",
   "hooks": {
     "Stop": [
       {
@@ -70,9 +71,8 @@
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
   },
-  "alwaysThinkingEnabled": true,
+  "alwaysThinkingEnabled": false,
   "feedbackSurveyState": {
     "lastShownTime": 1756267248358
-  },
-  "model": "opus"
+  }
 }
