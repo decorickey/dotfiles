@@ -27,6 +27,7 @@
       "Bash(rmdir:*)",
       "Bash(sed:*)",
       "Bash(serena:*)",
+      "Bash(sort:*)",
       "Bash(tail:*)",
       "Bash(touch:*)",
       "Bash(xargs:*)",
@@ -41,9 +42,10 @@
       "Bash(go vet:*)",
       "Bash(golangci-lint:*)"
     ],
-    "deny": []
+    "deny": [],
+    "defaultMode": "plan"
   },
-  "model": "sonnet[1m]",
+  "model": "opus",
   "hooks": {
     "Stop": [
       {
@@ -72,7 +74,7 @@
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
   },
-  "alwaysThinkingEnabled": false,
+  "alwaysThinkingEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1756267248358
   }
