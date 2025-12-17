@@ -17,7 +17,7 @@ source "$ROOT_DIR/scripts/shell_utils.sh"
 
 # 定数定義
 readonly FEATURE_NAME="Volta"
-readonly VOLTA_HOME="${VOLTA_HOME:-$HOME/.volta}"
+VOLTA_HOME="${VOLTA_HOME:-$HOME/.volta}"
 readonly VOLTA_BIN="$VOLTA_HOME/bin"
 readonly VOLTA_INSTALL_URL="https://get.volta.sh"
 

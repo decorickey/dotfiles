@@ -13,6 +13,10 @@ readonly ROOT_DIR="$(dirname "$SCRIPT_DIR")"
 # 必要なライブラリのみ読み込む
 source "$ROOT_DIR/scripts/common.sh"
 source "$ROOT_DIR/scripts/logging.sh"
+source "$ROOT_DIR/scripts/shell_utils.sh"
+
+# Homebrewのパスを確保（packages.shからの継承がない場合に備える）
+ensure_homebrew_path
 
 # 定数定義
 readonly FEATURE_NAME="tmux"

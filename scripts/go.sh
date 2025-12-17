@@ -13,6 +13,9 @@ source "$ROOT_DIR/scripts/common.sh"
 source "$ROOT_DIR/scripts/logging.sh"
 source "$ROOT_DIR/scripts/shell_utils.sh"
 
+# Homebrewのパスを確保（packages.shからの継承がない場合に備える）
+ensure_homebrew_path
+
 readonly FEATURE_NAME="Go tools"
 
 resolve_gobin() {

@@ -79,3 +79,32 @@ remove_from_shell_config() {
     log_debug "Pattern '$pattern' not found in .zshrc."
   fi
 }
+
+# Homebrewのパスを設定する共通関数
+# 各スクリプトが独立して動作できるようにする
+ensure_homebrew_path() {
+  local brew_path=""
+
+  # Homebrewがすでにコマンドとして利用可能な場合は何もしない
+  if command -v brew &>/dev/null; then
+    log_debug "Homebrew is already in PATH"
+    return 0
+  fi
+
+  # macOSとLinuxで異なるHomebrewのパスを確認
+  if [[ "$(uname)" == "Darwin" ]]; then
+    brew_path="/opt/homebrew/bin/brew"
+  else
+    brew_path="/home/linuxbrew/.linuxbrew/bin/brew"
+  fi
+
+  # Homebrewが指定のパスに存在する場合は環境変数を設定
+  if [[ -x "$brew_path" ]]; then
+    log_debug "Setting up Homebrew environment from $brew_path"
+    eval "$("$brew_path" shellenv)"
+    return 0
+  else
+    log_warn "Homebrew not found at $brew_path"
+    return 1
+  fi
+}
