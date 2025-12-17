@@ -45,7 +45,6 @@
     "deny": [],
     "defaultMode": "plan"
   },
-  "model": "sonnet[1m]",
   "hooks": {
     "Stop": [
       {
@@ -74,7 +73,6 @@
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
   },
-  "alwaysThinkingEnabled": false,
   "feedbackSurveyState": {
     "lastShownTime": 1756267248358
   }
