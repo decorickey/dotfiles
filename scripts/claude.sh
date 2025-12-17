@@ -46,6 +46,14 @@ setup_claude_config() {
     log_warn "settings.json not found: $settings_json"
   fi
 
+  # statusline-command.shのシンボリックリンク作成
+  local statusline_script="$SOURCE_CLAUDE_DIR/statusline-command.sh"
+  if [[ -f "$statusline_script" ]]; then
+    create_symlink "$statusline_script" "$CLAUDE_DIR/statusline-command.sh" "statusline-command.sh script"
+  else
+    log_warn "statusline-command.sh not found: $statusline_script"
+  fi
+
   return 0
 }
 
@@ -104,6 +112,9 @@ show_usage_info() {
   if [[ -f "$CLAUDE_DIR/settings.json" ]]; then
     log_info "  • Settings: $CLAUDE_DIR/settings.json"
   fi
+  if [[ -f "$CLAUDE_DIR/statusline-command.sh" ]]; then
+    log_info "  • Statusline script: $CLAUDE_DIR/statusline-command.sh"
+  fi
   if [[ -d "$AGENTS_DIR" ]]; then
     log_info "  • Agents directory: $AGENTS_DIR"
   fi
@@ -133,6 +144,11 @@ verify_installation() {
 
   if [[ -L "$CLAUDE_DIR/settings.json" ]] && [[ -e "$CLAUDE_DIR/settings.json" ]]; then
     log_info "settings.json is properly linked"
+    ((config_files_found++))
+  fi
+
+  if [[ -L "$CLAUDE_DIR/statusline-command.sh" ]] && [[ -e "$CLAUDE_DIR/statusline-command.sh" ]]; then
+    log_info "statusline-command.sh is properly linked"
     ((config_files_found++))
   fi
 
@@ -167,6 +183,11 @@ cleanup() {
   if [[ -L "$CLAUDE_DIR/settings.json" ]]; then
     rm "$CLAUDE_DIR/settings.json"
     log_info "Removed Claude settings symlink: $CLAUDE_DIR/settings.json"
+  fi
+
+  if [[ -L "$CLAUDE_DIR/statusline-command.sh" ]]; then
+    rm "$CLAUDE_DIR/statusline-command.sh"
+    log_info "Removed Claude statusline script symlink: $CLAUDE_DIR/statusline-command.sh"
   fi
 
   if [[ -L "$AGENTS_DIR" ]]; then

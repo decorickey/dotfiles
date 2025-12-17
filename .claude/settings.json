@@ -5,9 +5,6 @@
   },
   "permissions": {
     "allow": [
-      "Grep",
-      "Read",
-      "WebSearch",
       "Bash(awk:*)",
       "Bash(cat:*)",
       "Bash(cd:*)",
@@ -40,15 +37,18 @@
       "Bash(go fmt:*)",
       "Bash(go test:*)",
       "Bash(go vet:*)",
-      "Bash(golangci-lint:*)"
+      "Bash(golangci-lint:*)",
+      "Grep",
+      "Read",
+      "WebSearch"
     ],
     "deny": [],
     "defaultMode": "plan"
   },
+  "model": "sonnet[1m]",
   "hooks": {
     "Stop": [
       {
-        "matcher": "",
         "hooks": [
           {
             "type": "command",
@@ -59,7 +59,6 @@
     ],
     "Notification": [
       {
-        "matcher": "",
         "hooks": [
           {
             "type": "command",
