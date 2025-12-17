@@ -52,7 +52,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/dotfiles/agent_notify.sh --title \"Claude Code\" \"Claude Codeのタスクが完了しました✅\""
+            "command": "$HOME/dotfiles/agent_notify.sh --title 'Claude Code' 'Claude Codeのタスクが完了しました✅'"
           }
         ]
       }
@@ -62,7 +62,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/dotfiles/agent_notify.sh --title \"Claude Code\" \"Claude Codeが助けを求めています💡\""
+            "command": "$HOME/dotfiles/agent_notify.sh --title 'Claude Code' 'Claude Codeが助けを求めています💡'"
           }
         ]
       }
