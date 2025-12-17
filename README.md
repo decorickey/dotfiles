@@ -16,11 +16,10 @@ MacOS の開発環境を `./setup.sh` で一括セットアップする dotfiles
 
 - Google Chrome
 - Google日本語入力
+- 1Password
 - iTerm2
 - Raycast
-- 1Password
 - JetBrains Toolbox
-- Docker Desktop
 
 ## More details
 
