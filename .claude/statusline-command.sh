@@ -29,12 +29,12 @@ if git rev-parse --git-dir > /dev/null 2>&1; then
     untracked=""
 
     # ステージング済みの変更
-    if ! git diff --cached --quiet --no-optional-locks 2>/dev/null; then
+    if ! git diff --cached --quiet 2>/dev/null; then
         staged="${GREEN}●"
     fi
 
     # 未ステージングの変更
-    if ! git diff --quiet --no-optional-locks 2>/dev/null; then
+    if ! git diff --quiet 2>/dev/null; then
         unstaged="${YELLOW}●"
     fi
 
