@@ -111,6 +111,7 @@ main() {
 
   install_go_tool "gopls" "golang.org/x/tools/gopls@latest" "gopls" "gopls version" || status=1
   install_go_tool "delve" "github.com/go-delve/delve/cmd/dlv@latest" "dlv" "dlv version" || status=1
+  install_go_tool "wire" "github.com/google/wire/cmd/wire@latest" "wire" "wire help" || status=1
   install_golangci_lint || status=1
 
   if [[ $status -eq 0 ]]; then
