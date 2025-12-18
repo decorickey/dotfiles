@@ -14,28 +14,13 @@ MacOS の開発環境を `./setup.sh` で一括セットアップする dotfiles
 
 ## Manual installs
 
-- Google Chrome
 - Google日本語入力
+- Google Chrome
 - 1Password
-- iTerm2
-- Raycast
 - JetBrains Toolbox
+- VSCode
+- Postman
 
 ## More details
 
 各ステップの挙動や構成ファイルの説明は `AGENTS.md` を参照してください。
-
-## Codex
-
-```toml
-approval_policy = "on-request"
-model_reasoning_effort = "high"
-notify = ["bash", "/Users/HOME/dotfiles/agent_notify.sh", "--title", "Codex", "Codexからの通知です💡"]
-
-[features]
-web_search_request = true
-
-[sandbox_workspace_write]
-network_access = true
-
-```
