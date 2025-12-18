@@ -17,7 +17,6 @@ MacOS の開発環境を `./setup.sh` で一括セットアップする dotfiles
 - Google日本語入力
 - Google Chrome
 - 1Password
-- Raycast
 - JetBrains Toolbox
 - VSCode
 - Postman
