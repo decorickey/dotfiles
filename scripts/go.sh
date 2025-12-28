@@ -110,6 +110,10 @@ main() {
   local status=0
 
   install_go_tool "gopls" "golang.org/x/tools/gopls@latest" "gopls" "gopls version" || status=1
+  install_go_tool "goimports" "golang.org/x/tools/cmd/goimports@latest" "goimports" "goimports -h" || status=1
+  install_go_tool "staticcheck" "honnef.co/go/tools/cmd/staticcheck@latest" "staticcheck" "staticcheck -version" || status=1
+  install_go_tool "revive" "github.com/mgechev/revive@latest" "revive" "revive -version" || status=1
+  install_go_tool "govulncheck" "golang.org/x/vuln/cmd/govulncheck@latest" "govulncheck" "govulncheck -version" || status=1
   install_go_tool "delve" "github.com/go-delve/delve/cmd/dlv@latest" "dlv" "dlv version" || status=1
   install_go_tool "wire" "github.com/google/wire/cmd/wire@latest" "wire" "wire help" || status=1
   install_golangci_lint || status=1

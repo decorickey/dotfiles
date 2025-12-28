@@ -17,7 +17,7 @@ setopt hist_reduce_blanks   # 余分な空白は詰めて保存
 alias -g vim="nvim"
 
 # Go
-# GOBIN を明示（未設定でも GOPATH/bin だが、場所を固定しておく）
+# GOBIN を明示的にPATHに追加（未指定でも検索対象だが場所を固定しておく）
 export GOBIN="${GOBIN:-$HOME/go/bin}"
 if [[ ":$PATH:" != *":$GOBIN:"* ]]; then
   export PATH="$GOBIN:$PATH"
